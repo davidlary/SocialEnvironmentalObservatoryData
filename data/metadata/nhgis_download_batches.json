@@ -1,4 +1,15 @@
 {
+  "batch_00_historical_acs": [
+    "2010_ACS1",
+    "2011_ACS1",
+    "2012_ACS1",
+    "2013_ACS1",
+    "2014_ACS1",
+    "2015_ACS1",
+    "2016_ACS1",
+    "2017_ACS1",
+    "2018_ACS1"
+  ],
   "batch_01_recent_acs": [
     "2019_ACS1",
     "2015_2019_ACS5a",
