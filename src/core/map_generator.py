@@ -148,9 +148,13 @@ class MapGenerator:
         # Convert Polars to pandas for geopandas merge
         data_pd = data.select(["FIPS", "Value"]).to_pandas()
 
-        counties_with_data = counties.merge(
+        # Ensure GEOID is string for proper merge (create new column to avoid modifying cached data)
+        counties_for_merge = counties.copy()
+        counties_for_merge["GEOID_STR"] = counties_for_merge["GEOID"].astype(str).str.zfill(5)
+
+        counties_with_data = counties_for_merge.merge(
             data_pd,
-            left_on="GEOID",
+            left_on="GEOID_STR",
             right_on="FIPS",
             how="left",
         )
