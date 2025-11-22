@@ -32,6 +32,7 @@ from utils.constants import SYSTEM_NAME, SYSTEM_VERSION
 
 # Import processors
 from processors.epa_aqs_processor import EPAAQSProcessor
+from processors.ipums_nhgis_processor import IPUMSNHGISProcessor
 
 
 # ============================================================================
@@ -40,6 +41,7 @@ from processors.epa_aqs_processor import EPAAQSProcessor
 
 PROCESSOR_REGISTRY = {
     "epa_aqs": EPAAQSProcessor,
+    "ipums_nhgis": IPUMSNHGISProcessor,
     # Add more processors as implemented
 }
 
