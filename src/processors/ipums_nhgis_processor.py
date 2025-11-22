@@ -116,8 +116,17 @@ class IPUMSNHGISProcessor:
                     logger.debug(f"Extracting {csv_file}")
 
                     # Read CSV directly from ZIP
+                    # IPUMS CSV has 2-row header:
+                    # Row 1: Column names (GISJOIN, YEAR, etc.)
+                    # Row 2: Descriptions ("GIS Join Match Code", "Data File Year", etc.)
+                    # Row 3+: Actual data
+                    # IPUMS uses "." for missing values
                     with zf.open(csv_file) as f:
-                        df = pl.read_csv(f)
+                        df = pl.read_csv(
+                            f,
+                            skip_rows_after_header=1,
+                            null_values=["."]
+                        )
 
                     # Convert GISJOIN to FIPS
                     if "GISJOIN" not in df.columns:
