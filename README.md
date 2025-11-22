@@ -54,27 +54,62 @@ python scripts/01_download_metadata.py
 ```
 
 This downloads:
-- Official Census FIPS codes (3,143 counties)
-- TIGER/Line county boundaries (2020 vintage)
+- Official Census FIPS codes (3,234 counties including territories)
+- TIGER/Line county boundaries (2020 vintage, 127 MB)
 - Validates metadata completeness
 
-### 3. Start Downloading Data
+### 3. Configure API Credentials (Optional)
+
+Some data sources require API keys. Copy the template and add your keys:
 
 ```bash
-# Download data from a specific source
-python scripts/03_download_source.py --source nhgis
+# Copy credentials template
+cp config/api_credentials_template.json config/api_credentials.json
 
-# Or download entire category
-python scripts/03_download_source.py --category 01_AIR_ATMOSPHERE
-
-# Or download everything (will take days/weeks!)
-python scripts/03_download_source.py --all
+# Edit and add your API keys
+# This file is gitignored and will never be committed
 ```
 
-### 4. Generate Maps
+API Keys needed for:
+- **EPA AQS**: Sign up at https://aqs.epa.gov/data/api/signup
+- **Census Bureau**: Sign up at https://api.census.gov/data/key_signup.html
+- **NHGIS**: Create account at https://data2.nhgis.org/main
+- **NASA Earthdata**: Register at https://urs.earthdata.nasa.gov/users/new
+
+Alternatively, set environment variables:
+```bash
+export EPA_AQS_API_KEY="your_key_here"
+export EPA_AQS_EMAIL="your.email@example.com"
+```
+
+### 4. Start Downloading Data
 
 ```bash
-# Generate maps for all TSV files
+# Download EPA Air Quality data (all pollutants, all years)
+python scripts/03_download_source.py --source epa_aqs
+
+# Download specific parameter and years
+python scripts/03_download_source.py --source epa_aqs --variable PM25 --years 2020 2021 2022
+
+# Force re-download (ignore cache)
+python scripts/03_download_source.py --source epa_aqs --force-refresh
+```
+
+**Available sources:**
+- `epa_aqs` - EPA Air Quality System (PM2.5, PM10, O3, NO2, SO2, CO)
+- More sources coming soon...
+
+### 5. Process Data to TSV Format
+
+```bash
+# Process cached downloads to county-level TSV files
+python scripts/04_process_cached_data.py
+```
+
+### 6. Generate Maps
+
+```bash
+# Generate choropleth maps for all TSV files
 python scripts/05_generate_maps.py --all
 ```
 
