@@ -58,29 +58,34 @@ This downloads:
 - TIGER/Line county boundaries (2020 vintage, 127 MB)
 - Validates metadata completeness
 
-### 3. Configure API Credentials (Optional)
+### 3. Configure API Credentials (**REQUIRED for EPA AQS**)
 
-Some data sources require API keys. Copy the template and add your keys:
+**EPA AQS data requires API credentials.** Sign up (free, takes 2 minutes):
 
+1. **Get EPA AQS API Key**: https://aqs.epa.gov/data/api/signup
+   - Enter your email address
+   - You'll receive an API key immediately by email
+   - You need BOTH the API key AND your email address
+
+2. **Set environment variables** (recommended):
+```bash
+export EPA_AQS_API_KEY="your_key_from_email"
+export EPA_AQS_EMAIL="your.email@example.com"
+```
+
+OR **use config file**:
 ```bash
 # Copy credentials template
 cp config/api_credentials_template.json config/api_credentials.json
 
-# Edit and add your API keys
+# Edit config/api_credentials.json and add your keys
 # This file is gitignored and will never be committed
 ```
 
-API Keys needed for:
-- **EPA AQS**: Sign up at https://aqs.epa.gov/data/api/signup
-- **Census Bureau**: Sign up at https://api.census.gov/data/key_signup.html
-- **NHGIS**: Create account at https://data2.nhgis.org/main
-- **NASA Earthdata**: Register at https://urs.earthdata.nasa.gov/users/new
-
-Alternatively, set environment variables:
-```bash
-export EPA_AQS_API_KEY="your_key_here"
-export EPA_AQS_EMAIL="your.email@example.com"
-```
+**Other data sources** (optional, for future use):
+- **Census Bureau**: https://api.census.gov/data/key_signup.html
+- **NHGIS**: https://data2.nhgis.org/main
+- **NASA Earthdata**: https://urs.earthdata.nasa.gov/users/new
 
 ### 4. Start Downloading Data
 
