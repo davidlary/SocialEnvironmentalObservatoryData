@@ -82,9 +82,23 @@ cp config/api_credentials_template.json config/api_credentials.json
 # This file is gitignored and will never be committed
 ```
 
+**IPUMS NHGIS API Key** (required for IPUMS NHGIS data):
+
+1. **Get IPUMS API Key**: https://account.ipums.org/api_keys
+   - Log in with your IPUMS account (or create one - free)
+   - Request an API key
+   - You need BOTH the API key AND your email address
+
+2. **Set environment variables** (recommended):
+```bash
+export IPUMS_NHGIS_API_KEY="your_key_here"
+export IPUMS_NHGIS_EMAIL="your.email@example.com"
+```
+
+OR **use config file**: Add to `config/api_credentials.json`
+
 **Other data sources** (optional, for future use):
 - **Census Bureau**: https://api.census.gov/data/key_signup.html
-- **NHGIS**: https://data2.nhgis.org/main
 - **NASA Earthdata**: https://urs.earthdata.nasa.gov/users/new
 
 ### 4. Start Downloading Data
@@ -101,7 +115,8 @@ python scripts/03_download_source.py --source epa_aqs --force-refresh
 ```
 
 **Available sources:**
-- `epa_aqs` - EPA Air Quality System (PM2.5, PM10, O3, NO2, SO2, CO)
+- `epa_aqs` - EPA Air Quality System (PM2.5, PM10, O3, NO2, SO2, CO) - **IMPLEMENTED**
+- `ipums_nhgis` - IPUMS NHGIS Census/Demographic Data (266 datasets, 1790-2023) - **IMPLEMENTED**
 - More sources coming soon...
 
 ### 5. Process Data to TSV Format
@@ -559,6 +574,14 @@ Built with modern, high-performance tools:
 
 ---
 
-**Last Updated:** 2025-11-21
-**Version:** 1.0.0
-**Status:** Phase 1 Implementation Complete
+**Last Updated:** 2025-11-22
+**Version:** 1.1.0
+**Status:** Phase 1 Complete + IPUMS NHGIS Implemented
+
+**Current Implementation Status:**
+- ✅ EPA AQS Downloader (6 pollutants, 1980-2024)
+- ✅ IPUMS NHGIS Downloader (266 datasets, 1790-2023)
+- ✅ Autonomous download pipeline
+- ✅ Progress tracking and resumability
+- ⏳ IPUMS data processor (next priority)
+- ⏳ CDC WONDER downloader (next priority)

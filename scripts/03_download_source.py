@@ -36,6 +36,7 @@ from utils.file_utils import read_json_file
 
 # Import downloaders
 from downloaders.python.epa_aqs_downloader import EPAAQSDownloader
+from downloaders.python.ipums_nhgis_downloader import IPUMSNHGISDownloader
 
 
 # ============================================================================
@@ -44,6 +45,7 @@ from downloaders.python.epa_aqs_downloader import EPAAQSDownloader
 
 DOWNLOADER_REGISTRY = {
     "epa_aqs": EPAAQSDownloader,
+    "ipums_nhgis": IPUMSNHGISDownloader,
     # Add more downloaders here as implemented
 }
 

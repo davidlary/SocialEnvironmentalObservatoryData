@@ -223,6 +223,35 @@ class IPUMSNHGISDownloader(BaseDownloader):
     # NHGIS-SPECIFIC METHODS
     # ========================================================================
 
+    def _get_dataset_tables(self, dataset: str) -> List[str]:
+        """
+        Get available data tables for a dataset.
+
+        Args:
+            dataset: Dataset name
+
+        Returns:
+            List of data table names
+        """
+        try:
+            url = f"{self.metadata_endpoint}/datasets/{dataset}?version={IPUMS_API_VERSION}"
+            response = requests.get(url, headers=self.headers, timeout=30)
+
+            if response.status_code == 200:
+                data = response.json()
+                # Get all data tables from the dataset
+                data_tables = data.get("dataTables", [])
+                table_names = [t.get("name") for t in data_tables if t.get("name")]
+                logger.debug(f"Dataset {dataset}: found {len(table_names)} data tables")
+                return table_names
+            else:
+                logger.warning(f"Could not get tables for {dataset}: {response.status_code}")
+                return []
+
+        except Exception as e:
+            logger.warning(f"Error getting tables for {dataset}: {e}")
+            return []
+
     def _create_extract(self, dataset: str, year: int) -> Optional[str]:
         """
         Create an extract request for a dataset.
@@ -234,15 +263,38 @@ class IPUMSNHGISDownloader(BaseDownloader):
         Returns:
             Extract number or None if failed
         """
-        # Build extract request
+        # Get available data tables for this dataset
+        data_tables = self._get_dataset_tables(dataset)
+
+        if not data_tables:
+            logger.error(f"No data tables found for {dataset}")
+            return None
+
+        # CRITICAL FIX: Limit number of tables to prevent server overload
+        # NHGIS extracts fail when too many tables are requested at once
+        MAX_TABLES_PER_EXTRACT = 50  # Conservative limit based on NHGIS feedback
+
+        if len(data_tables) > MAX_TABLES_PER_EXTRACT:
+            logger.warning(
+                f"Dataset {dataset} has {len(data_tables)} tables, "
+                f"limiting to first {MAX_TABLES_PER_EXTRACT} tables to prevent server overload"
+            )
+            # Select first N tables - these are typically the most important/frequently used
+            data_tables = data_tables[:MAX_TABLES_PER_EXTRACT]
+
+        logger.info(f"Using {len(data_tables)} data tables from {dataset}")
+
+        # Build extract request with correct API v2 format
         extract_request = {
-            "description": f"{dataset} county-level extract (year {year})",
+            "description": f"{dataset} county-level extract",
             "datasets": {
                 dataset: {
-                    "dataFormat": DATA_FORMAT,
+                    "dataTables": data_tables,  # REQUIRED
                     "geogLevels": COUNTY_GEO_LEVELS
                 }
-            }
+            },
+            "dataFormat": DATA_FORMAT,  # At top level, not inside dataset
+            "breakdownAndDataTypeLayout": "single_file"  # Required for datasets with multiple file types
         }
 
         try:
@@ -253,10 +305,10 @@ class IPUMSNHGISDownloader(BaseDownloader):
                 timeout=30
             )
 
-            if response.status_code == 201:
+            if response.status_code in [200, 201]:  # Accept both 200 and 201 as success
                 data = response.json()
                 extract_number = data.get("number")
-                logger.info(f"Extract created: #{extract_number}")
+                logger.info(f"✅ Extract created: #{extract_number}")
                 return str(extract_number)
             else:
                 logger.error(f"Failed to create extract: {response.status_code} - {response.text}")
@@ -303,13 +355,34 @@ class IPUMSNHGISDownloader(BaseDownloader):
 
                 if status == "completed":
                     download_links = data.get("downloadLinks", {})
-                    # Get data file link (not codebook)
-                    data_link = download_links.get("data")
-                    if data_link:
-                        logger.info(f"Extract #{extract_number} complete!")
-                        return data_link
+                    logger.debug(f"Download links: {download_links}")
+
+                    # Try different possible keys for download link
+                    # IPUMS API may use different keys depending on format
+                    data_link_info = (
+                        download_links.get("data") or
+                        download_links.get("tableData") or
+                        download_links.get("gisData")
+                    )
+
+                    if data_link_info:
+                        # CRITICAL FIX: Download link is a dict with 'url', 'bytes', 'sha256'
+                        # Extract the actual URL string from the dict
+                        if isinstance(data_link_info, dict):
+                            data_url = data_link_info.get("url")
+                            if data_url:
+                                logger.info(f"Extract #{extract_number} complete! ({data_link_info.get('bytes', 0) / 1024 / 1024:.1f} MB)")
+                                return data_url
+                            else:
+                                logger.error(f"Download link dict missing 'url' field: {data_link_info}")
+                                return None
+                        else:
+                            # Fallback: if it's already a string URL
+                            logger.info(f"Extract #{extract_number} complete!")
+                            return data_link_info
                     else:
-                        logger.error("No download link in completed extract")
+                        logger.error(f"No download link in completed extract. Available keys: {list(download_links.keys())}")
+                        logger.debug(f"Full response: {json.dumps(data, indent=2)}")
                         return None
 
                 elif status in ["failed", "canceled"]:
