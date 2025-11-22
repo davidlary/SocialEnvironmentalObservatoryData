@@ -75,6 +75,14 @@ class MapGenerator:
                 logger.debug(f"Reprojecting to {CRS_US_ALBERS}")
                 self.county_boundaries = self.county_boundaries.to_crs(CRS_US_ALBERS)
 
+            # Convert GEOID to zero-padded string for merging with FIPS
+            # (do this AFTER CRS transform to ensure it sticks)
+            self.county_boundaries['GEOID'] = (
+                self.county_boundaries['GEOID']
+                .astype(str)
+                .str.zfill(5)
+            )
+
         return self.county_boundaries
 
     def create_map(
@@ -142,19 +150,20 @@ class MapGenerator:
                 variable_name = "Variable"
 
         # Load county boundaries
-        counties = self._load_county_boundaries().copy()
+        counties = self._load_county_boundaries()
 
         # Merge data with geometries
         # Convert Polars to pandas for geopandas merge
-        data_pd = data.select(["FIPS", "Value"]).to_pandas()
+        # Ensure FIPS is string (polars may read it as int64)
+        data_with_fips = data.with_columns([
+            pl.col("FIPS").cast(pl.Utf8).str.zfill(5)
+        ])
+        data_pd = data_with_fips.select(["FIPS", "Value"]).to_pandas()
 
-        # Ensure GEOID is string for proper merge (create new column to avoid modifying cached data)
-        counties_for_merge = counties.copy()
-        counties_for_merge["GEOID_STR"] = counties_for_merge["GEOID"].astype(str).str.zfill(5)
-
-        counties_with_data = counties_for_merge.merge(
+        # Merge on GEOID (already converted to string in _load_county_boundaries)
+        counties_with_data = counties.merge(
             data_pd,
-            left_on="GEOID_STR",
+            left_on="GEOID",
             right_on="FIPS",
             how="left",
         )

@@ -1,0 +1,3235 @@
+FIPS	State_FIPS	County_FIPS	State_Name	County_Name	State_Abbrev
+01003	01	003	Alabama	Baldwin County	AL
+01005	01	005	Alabama	Barbour County	AL
+01007	01	007	Alabama	Bibb County	AL
+01009	01	009	Alabama	Blount County	AL
+01011	01	011	Alabama	Bullock County	AL
+01013	01	013	Alabama	Butler County	AL
+01015	01	015	Alabama	Calhoun County	AL
+01017	01	017	Alabama	Chambers County	AL
+01019	01	019	Alabama	Cherokee County	AL
+01021	01	021	Alabama	Chilton County	AL
+01023	01	023	Alabama	Choctaw County	AL
+01025	01	025	Alabama	Clarke County	AL
+01027	01	027	Alabama	Clay County	AL
+01029	01	029	Alabama	Cleburne County	AL
+01031	01	031	Alabama	Coffee County	AL
+01033	01	033	Alabama	Colbert County	AL
+01035	01	035	Alabama	Conecuh County	AL
+01037	01	037	Alabama	Coosa County	AL
+01039	01	039	Alabama	Covington County	AL
+01041	01	041	Alabama	Crenshaw County	AL
+01043	01	043	Alabama	Cullman County	AL
+01045	01	045	Alabama	Dale County	AL
+01047	01	047	Alabama	Dallas County	AL
+01049	01	049	Alabama	DeKalb County	AL
+01051	01	051	Alabama	Elmore County	AL
+01053	01	053	Alabama	Escambia County	AL
+01055	01	055	Alabama	Etowah County	AL
+01057	01	057	Alabama	Fayette County	AL
+01059	01	059	Alabama	Franklin County	AL
+01061	01	061	Alabama	Geneva County	AL
+01063	01	063	Alabama	Greene County	AL
+01065	01	065	Alabama	Hale County	AL
+01067	01	067	Alabama	Henry County	AL
+01069	01	069	Alabama	Houston County	AL
+01071	01	071	Alabama	Jackson County	AL
+01073	01	073	Alabama	Jefferson County	AL
+01075	01	075	Alabama	Lamar County	AL
+01077	01	077	Alabama	Lauderdale County	AL
+01079	01	079	Alabama	Lawrence County	AL
+01081	01	081	Alabama	Lee County	AL
+01083	01	083	Alabama	Limestone County	AL
+01085	01	085	Alabama	Lowndes County	AL
+01087	01	087	Alabama	Macon County	AL
+01089	01	089	Alabama	Madison County	AL
+01091	01	091	Alabama	Marengo County	AL
+01093	01	093	Alabama	Marion County	AL
+01095	01	095	Alabama	Marshall County	AL
+01097	01	097	Alabama	Mobile County	AL
+01099	01	099	Alabama	Monroe County	AL
+01101	01	101	Alabama	Montgomery County	AL
+01103	01	103	Alabama	Morgan County	AL
+01105	01	105	Alabama	Perry County	AL
+01107	01	107	Alabama	Pickens County	AL
+01109	01	109	Alabama	Pike County	AL
+01111	01	111	Alabama	Randolph County	AL
+01113	01	113	Alabama	Russell County	AL
+01115	01	115	Alabama	St. Clair County	AL
+01117	01	117	Alabama	Shelby County	AL
+01119	01	119	Alabama	Sumter County	AL
+01121	01	121	Alabama	Talladega County	AL
+01123	01	123	Alabama	Tallapoosa County	AL
+01125	01	125	Alabama	Tuscaloosa County	AL
+01127	01	127	Alabama	Walker County	AL
+01129	01	129	Alabama	Washington County	AL
+01131	01	131	Alabama	Wilcox County	AL
+01133	01	133	Alabama	Winston County	AL
+02013	02	013	Alaska	Aleutians East Borough	AK
+02016	02	016	Alaska	Aleutians West Census Area	AK
+02020	02	020	Alaska	Anchorage Municipality	AK
+02050	02	050	Alaska	Bethel Census Area	AK
+02060	02	060	Alaska	Bristol Bay Borough	AK
+02068	02	068	Alaska	Denali Borough	AK
+02070	02	070	Alaska	Dillingham Census Area	AK
+02090	02	090	Alaska	Fairbanks North Star Borough	AK
+02100	02	100	Alaska	Haines Borough	AK
+02105	02	105	Alaska	Hoonah-Angoon Census Area	AK
+02110	02	110	Alaska	Juneau City and Borough	AK
+02122	02	122	Alaska	Kenai Peninsula Borough	AK
+02130	02	130	Alaska	Ketchikan Gateway Borough	AK
+02150	02	150	Alaska	Kodiak Island Borough	AK
+02164	02	164	Alaska	Lake and Peninsula Borough	AK
+02170	02	170	Alaska	Matanuska-Susitna Borough	AK
+02180	02	180	Alaska	Nome Census Area	AK
+02185	02	185	Alaska	North Slope Borough	AK
+02188	02	188	Alaska	Northwest Arctic Borough	AK
+02195	02	195	Alaska	Petersburg Census Area	AK
+02198	02	198	Alaska	Prince of Wales-Hyder Census Area	AK
+02220	02	220	Alaska	Sitka City and Borough	AK
+02230	02	230	Alaska	Skagway Municipality	AK
+02240	02	240	Alaska	Southeast Fairbanks Census Area	AK
+02261	02	261	Alaska	Valdez-Cordova Census Area	AK
+02270	02	270	Alaska	Wade Hampton Census Area	AK
+02275	02	275	Alaska	Wrangell City and Borough	AK
+02282	02	282	Alaska	Yakutat City and Borough	AK
+02290	02	290	Alaska	Yukon-Koyukuk Census Area	AK
+04001	04	001	Arizona	Apache County	AZ
+04003	04	003	Arizona	Cochise County	AZ
+04005	04	005	Arizona	Coconino County	AZ
+04007	04	007	Arizona	Gila County	AZ
+04009	04	009	Arizona	Graham County	AZ
+04011	04	011	Arizona	Greenlee County	AZ
+04012	04	012	Arizona	La Paz County	AZ
+04013	04	013	Arizona	Maricopa County	AZ
+04015	04	015	Arizona	Mohave County	AZ
+04017	04	017	Arizona	Navajo County	AZ
+04019	04	019	Arizona	Pima County	AZ
+04021	04	021	Arizona	Pinal County	AZ
+04023	04	023	Arizona	Santa Cruz County	AZ
+04025	04	025	Arizona	Yavapai County	AZ
+04027	04	027	Arizona	Yuma County	AZ
+05001	05	001	Arkansas	Arkansas County	AR
+05003	05	003	Arkansas	Ashley County	AR
+05005	05	005	Arkansas	Baxter County	AR
+05007	05	007	Arkansas	Benton County	AR
+05009	05	009	Arkansas	Boone County	AR
+05011	05	011	Arkansas	Bradley County	AR
+05013	05	013	Arkansas	Calhoun County	AR
+05015	05	015	Arkansas	Carroll County	AR
+05017	05	017	Arkansas	Chicot County	AR
+05019	05	019	Arkansas	Clark County	AR
+05021	05	021	Arkansas	Clay County	AR
+05023	05	023	Arkansas	Cleburne County	AR
+05025	05	025	Arkansas	Cleveland County	AR
+05027	05	027	Arkansas	Columbia County	AR
+05029	05	029	Arkansas	Conway County	AR
+05031	05	031	Arkansas	Craighead County	AR
+05033	05	033	Arkansas	Crawford County	AR
+05035	05	035	Arkansas	Crittenden County	AR
+05037	05	037	Arkansas	Cross County	AR
+05039	05	039	Arkansas	Dallas County	AR
+05041	05	041	Arkansas	Desha County	AR
+05043	05	043	Arkansas	Drew County	AR
+05045	05	045	Arkansas	Faulkner County	AR
+05047	05	047	Arkansas	Franklin County	AR
+05049	05	049	Arkansas	Fulton County	AR
+05051	05	051	Arkansas	Garland County	AR
+05053	05	053	Arkansas	Grant County	AR
+05055	05	055	Arkansas	Greene County	AR
+05057	05	057	Arkansas	Hempstead County	AR
+05059	05	059	Arkansas	Hot Spring County	AR
+05061	05	061	Arkansas	Howard County	AR
+05063	05	063	Arkansas	Independence County	AR
+05065	05	065	Arkansas	Izard County	AR
+05067	05	067	Arkansas	Jackson County	AR
+05069	05	069	Arkansas	Jefferson County	AR
+05071	05	071	Arkansas	Johnson County	AR
+05073	05	073	Arkansas	Lafayette County	AR
+05075	05	075	Arkansas	Lawrence County	AR
+05077	05	077	Arkansas	Lee County	AR
+05079	05	079	Arkansas	Lincoln County	AR
+05081	05	081	Arkansas	Little River County	AR
+05083	05	083	Arkansas	Logan County	AR
+05085	05	085	Arkansas	Lonoke County	AR
+05087	05	087	Arkansas	Madison County	AR
+05089	05	089	Arkansas	Marion County	AR
+05091	05	091	Arkansas	Miller County	AR
+05093	05	093	Arkansas	Mississippi County	AR
+05095	05	095	Arkansas	Monroe County	AR
+05097	05	097	Arkansas	Montgomery County	AR
+05099	05	099	Arkansas	Nevada County	AR
+05101	05	101	Arkansas	Newton County	AR
+05103	05	103	Arkansas	Ouachita County	AR
+05105	05	105	Arkansas	Perry County	AR
+05107	05	107	Arkansas	Phillips County	AR
+05109	05	109	Arkansas	Pike County	AR
+05111	05	111	Arkansas	Poinsett County	AR
+05113	05	113	Arkansas	Polk County	AR
+05115	05	115	Arkansas	Pope County	AR
+05117	05	117	Arkansas	Prairie County	AR
+05119	05	119	Arkansas	Pulaski County	AR
+05121	05	121	Arkansas	Randolph County	AR
+05123	05	123	Arkansas	St. Francis County	AR
+05125	05	125	Arkansas	Saline County	AR
+05127	05	127	Arkansas	Scott County	AR
+05129	05	129	Arkansas	Searcy County	AR
+05131	05	131	Arkansas	Sebastian County	AR
+05133	05	133	Arkansas	Sevier County	AR
+05135	05	135	Arkansas	Sharp County	AR
+05137	05	137	Arkansas	Stone County	AR
+05139	05	139	Arkansas	Union County	AR
+05141	05	141	Arkansas	Van Buren County	AR
+05143	05	143	Arkansas	Washington County	AR
+05145	05	145	Arkansas	White County	AR
+05147	05	147	Arkansas	Woodruff County	AR
+05149	05	149	Arkansas	Yell County	AR
+06001	06	001	California	Alameda County	CA
+06003	06	003	California	Alpine County	CA
+06005	06	005	California	Amador County	CA
+06007	06	007	California	Butte County	CA
+06009	06	009	California	Calaveras County	CA
+06011	06	011	California	Colusa County	CA
+06013	06	013	California	Contra Costa County	CA
+06015	06	015	California	Del Norte County	CA
+06017	06	017	California	El Dorado County	CA
+06019	06	019	California	Fresno County	CA
+06021	06	021	California	Glenn County	CA
+06023	06	023	California	Humboldt County	CA
+06025	06	025	California	Imperial County	CA
+06027	06	027	California	Inyo County	CA
+06029	06	029	California	Kern County	CA
+06031	06	031	California	Kings County	CA
+06033	06	033	California	Lake County	CA
+06035	06	035	California	Lassen County	CA
+06037	06	037	California	Los Angeles County	CA
+06039	06	039	California	Madera County	CA
+06041	06	041	California	Marin County	CA
+06043	06	043	California	Mariposa County	CA
+06045	06	045	California	Mendocino County	CA
+06047	06	047	California	Merced County	CA
+06049	06	049	California	Modoc County	CA
+06051	06	051	California	Mono County	CA
+06053	06	053	California	Monterey County	CA
+06055	06	055	California	Napa County	CA
+06057	06	057	California	Nevada County	CA
+06059	06	059	California	Orange County	CA
+06061	06	061	California	Placer County	CA
+06063	06	063	California	Plumas County	CA
+06065	06	065	California	Riverside County	CA
+06067	06	067	California	Sacramento County	CA
+06069	06	069	California	San Benito County	CA
+06071	06	071	California	San Bernardino County	CA
+06073	06	073	California	San Diego County	CA
+06075	06	075	California	San Francisco County	CA
+06077	06	077	California	San Joaquin County	CA
+06079	06	079	California	San Luis Obispo County	CA
+06081	06	081	California	San Mateo County	CA
+06083	06	083	California	Santa Barbara County	CA
+06085	06	085	California	Santa Clara County	CA
+06087	06	087	California	Santa Cruz County	CA
+06089	06	089	California	Shasta County	CA
+06091	06	091	California	Sierra County	CA
+06093	06	093	California	Siskiyou County	CA
+06095	06	095	California	Solano County	CA
+06097	06	097	California	Sonoma County	CA
+06099	06	099	California	Stanislaus County	CA
+06101	06	101	California	Sutter County	CA
+06103	06	103	California	Tehama County	CA
+06105	06	105	California	Trinity County	CA
+06107	06	107	California	Tulare County	CA
+06109	06	109	California	Tuolumne County	CA
+06111	06	111	California	Ventura County	CA
+06113	06	113	California	Yolo County	CA
+06115	06	115	California	Yuba County	CA
+08001	08	001	Colorado	Adams County	CO
+08003	08	003	Colorado	Alamosa County	CO
+08005	08	005	Colorado	Arapahoe County	CO
+08007	08	007	Colorado	Archuleta County	CO
+08009	08	009	Colorado	Baca County	CO
+08011	08	011	Colorado	Bent County	CO
+08013	08	013	Colorado	Boulder County	CO
+08014	08	014	Colorado	Broomfield County	CO
+08015	08	015	Colorado	Chaffee County	CO
+08017	08	017	Colorado	Cheyenne County	CO
+08019	08	019	Colorado	Clear Creek County	CO
+08021	08	021	Colorado	Conejos County	CO
+08023	08	023	Colorado	Costilla County	CO
+08025	08	025	Colorado	Crowley County	CO
+08027	08	027	Colorado	Custer County	CO
+08029	08	029	Colorado	Delta County	CO
+08031	08	031	Colorado	Denver County	CO
+08033	08	033	Colorado	Dolores County	CO
+08035	08	035	Colorado	Douglas County	CO
+08037	08	037	Colorado	Eagle County	CO
+08039	08	039	Colorado	Elbert County	CO
+08041	08	041	Colorado	El Paso County	CO
+08043	08	043	Colorado	Fremont County	CO
+08045	08	045	Colorado	Garfield County	CO
+08047	08	047	Colorado	Gilpin County	CO
+08049	08	049	Colorado	Grand County	CO
+08051	08	051	Colorado	Gunnison County	CO
+08053	08	053	Colorado	Hinsdale County	CO
+08055	08	055	Colorado	Huerfano County	CO
+08057	08	057	Colorado	Jackson County	CO
+08059	08	059	Colorado	Jefferson County	CO
+08061	08	061	Colorado	Kiowa County	CO
+08063	08	063	Colorado	Kit Carson County	CO
+08065	08	065	Colorado	Lake County	CO
+08067	08	067	Colorado	La Plata County	CO
+08069	08	069	Colorado	Larimer County	CO
+08071	08	071	Colorado	Las Animas County	CO
+08073	08	073	Colorado	Lincoln County	CO
+08075	08	075	Colorado	Logan County	CO
+08077	08	077	Colorado	Mesa County	CO
+08079	08	079	Colorado	Mineral County	CO
+08081	08	081	Colorado	Moffat County	CO
+08083	08	083	Colorado	Montezuma County	CO
+08085	08	085	Colorado	Montrose County	CO
+08087	08	087	Colorado	Morgan County	CO
+08089	08	089	Colorado	Otero County	CO
+08091	08	091	Colorado	Ouray County	CO
+08093	08	093	Colorado	Park County	CO
+08095	08	095	Colorado	Phillips County	CO
+08097	08	097	Colorado	Pitkin County	CO
+08099	08	099	Colorado	Prowers County	CO
+08101	08	101	Colorado	Pueblo County	CO
+08103	08	103	Colorado	Rio Blanco County	CO
+08105	08	105	Colorado	Rio Grande County	CO
+08107	08	107	Colorado	Routt County	CO
+08109	08	109	Colorado	Saguache County	CO
+08111	08	111	Colorado	San Juan County	CO
+08113	08	113	Colorado	San Miguel County	CO
+08115	08	115	Colorado	Sedgwick County	CO
+08117	08	117	Colorado	Summit County	CO
+08119	08	119	Colorado	Teller County	CO
+08121	08	121	Colorado	Washington County	CO
+08123	08	123	Colorado	Weld County	CO
+08125	08	125	Colorado	Yuma County	CO
+09001	09	001	Connecticut	Fairfield County	CT
+09003	09	003	Connecticut	Hartford County	CT
+09005	09	005	Connecticut	Litchfield County	CT
+09007	09	007	Connecticut	Middlesex County	CT
+09009	09	009	Connecticut	New Haven County	CT
+09011	09	011	Connecticut	New London County	CT
+09013	09	013	Connecticut	Tolland County	CT
+09015	09	015	Connecticut	Windham County	CT
+10001	10	001	Delaware	Kent County	DE
+10003	10	003	Delaware	New Castle County	DE
+10005	10	005	Delaware	Sussex County	DE
+11001	11	001	District of Columbia	District of Columbia	DC
+12001	12	001	Florida	Alachua County	FL
+12003	12	003	Florida	Baker County	FL
+12005	12	005	Florida	Bay County	FL
+12007	12	007	Florida	Bradford County	FL
+12009	12	009	Florida	Brevard County	FL
+12011	12	011	Florida	Broward County	FL
+12013	12	013	Florida	Calhoun County	FL
+12015	12	015	Florida	Charlotte County	FL
+12017	12	017	Florida	Citrus County	FL
+12019	12	019	Florida	Clay County	FL
+12021	12	021	Florida	Collier County	FL
+12023	12	023	Florida	Columbia County	FL
+12027	12	027	Florida	DeSoto County	FL
+12029	12	029	Florida	Dixie County	FL
+12031	12	031	Florida	Duval County	FL
+12033	12	033	Florida	Escambia County	FL
+12035	12	035	Florida	Flagler County	FL
+12037	12	037	Florida	Franklin County	FL
+12039	12	039	Florida	Gadsden County	FL
+12041	12	041	Florida	Gilchrist County	FL
+12043	12	043	Florida	Glades County	FL
+12045	12	045	Florida	Gulf County	FL
+12047	12	047	Florida	Hamilton County	FL
+12049	12	049	Florida	Hardee County	FL
+12051	12	051	Florida	Hendry County	FL
+12053	12	053	Florida	Hernando County	FL
+12055	12	055	Florida	Highlands County	FL
+12057	12	057	Florida	Hillsborough County	FL
+12059	12	059	Florida	Holmes County	FL
+12061	12	061	Florida	Indian River County	FL
+12063	12	063	Florida	Jackson County	FL
+12065	12	065	Florida	Jefferson County	FL
+12067	12	067	Florida	Lafayette County	FL
+12069	12	069	Florida	Lake County	FL
+12071	12	071	Florida	Lee County	FL
+12073	12	073	Florida	Leon County	FL
+12075	12	075	Florida	Levy County	FL
+12077	12	077	Florida	Liberty County	FL
+12079	12	079	Florida	Madison County	FL
+12081	12	081	Florida	Manatee County	FL
+12083	12	083	Florida	Marion County	FL
+12085	12	085	Florida	Martin County	FL
+12086	12	086	Florida	Miami-Dade County	FL
+12087	12	087	Florida	Monroe County	FL
+12089	12	089	Florida	Nassau County	FL
+12091	12	091	Florida	Okaloosa County	FL
+12093	12	093	Florida	Okeechobee County	FL
+12095	12	095	Florida	Orange County	FL
+12097	12	097	Florida	Osceola County	FL
+12099	12	099	Florida	Palm Beach County	FL
+12101	12	101	Florida	Pasco County	FL
+12103	12	103	Florida	Pinellas County	FL
+12105	12	105	Florida	Polk County	FL
+12107	12	107	Florida	Putnam County	FL
+12109	12	109	Florida	St. Johns County	FL
+12111	12	111	Florida	St. Lucie County	FL
+12113	12	113	Florida	Santa Rosa County	FL
+12115	12	115	Florida	Sarasota County	FL
+12117	12	117	Florida	Seminole County	FL
+12119	12	119	Florida	Sumter County	FL
+12121	12	121	Florida	Suwannee County	FL
+12123	12	123	Florida	Taylor County	FL
+12125	12	125	Florida	Union County	FL
+12127	12	127	Florida	Volusia County	FL
+12129	12	129	Florida	Wakulla County	FL
+12131	12	131	Florida	Walton County	FL
+12133	12	133	Florida	Washington County	FL
+13001	13	001	Georgia	Appling County	GA
+13003	13	003	Georgia	Atkinson County	GA
+13005	13	005	Georgia	Bacon County	GA
+13007	13	007	Georgia	Baker County	GA
+13009	13	009	Georgia	Baldwin County	GA
+13011	13	011	Georgia	Banks County	GA
+13013	13	013	Georgia	Barrow County	GA
+13015	13	015	Georgia	Bartow County	GA
+13017	13	017	Georgia	Ben Hill County	GA
+13019	13	019	Georgia	Berrien County	GA
+13021	13	021	Georgia	Bibb County	GA
+13023	13	023	Georgia	Bleckley County	GA
+13025	13	025	Georgia	Brantley County	GA
+13027	13	027	Georgia	Brooks County	GA
+13029	13	029	Georgia	Bryan County	GA
+13031	13	031	Georgia	Bulloch County	GA
+13033	13	033	Georgia	Burke County	GA
+13035	13	035	Georgia	Butts County	GA
+13037	13	037	Georgia	Calhoun County	GA
+13039	13	039	Georgia	Camden County	GA
+13043	13	043	Georgia	Candler County	GA
+13045	13	045	Georgia	Carroll County	GA
+13047	13	047	Georgia	Catoosa County	GA
+13049	13	049	Georgia	Charlton County	GA
+13051	13	051	Georgia	Chatham County	GA
+13053	13	053	Georgia	Chattahoochee County	GA
+13055	13	055	Georgia	Chattooga County	GA
+13057	13	057	Georgia	Cherokee County	GA
+13059	13	059	Georgia	Clarke County	GA
+13061	13	061	Georgia	Clay County	GA
+13063	13	063	Georgia	Clayton County	GA
+13065	13	065	Georgia	Clinch County	GA
+13067	13	067	Georgia	Cobb County	GA
+13069	13	069	Georgia	Coffee County	GA
+13071	13	071	Georgia	Colquitt County	GA
+13073	13	073	Georgia	Columbia County	GA
+13075	13	075	Georgia	Cook County	GA
+13077	13	077	Georgia	Coweta County	GA
+13079	13	079	Georgia	Crawford County	GA
+13081	13	081	Georgia	Crisp County	GA
+13083	13	083	Georgia	Dade County	GA
+13085	13	085	Georgia	Dawson County	GA
+13087	13	087	Georgia	Decatur County	GA
+13089	13	089	Georgia	DeKalb County	GA
+13091	13	091	Georgia	Dodge County	GA
+13093	13	093	Georgia	Dooly County	GA
+13095	13	095	Georgia	Dougherty County	GA
+13097	13	097	Georgia	Douglas County	GA
+13099	13	099	Georgia	Early County	GA
+13101	13	101	Georgia	Echols County	GA
+13103	13	103	Georgia	Effingham County	GA
+13105	13	105	Georgia	Elbert County	GA
+13107	13	107	Georgia	Emanuel County	GA
+13109	13	109	Georgia	Evans County	GA
+13111	13	111	Georgia	Fannin County	GA
+13113	13	113	Georgia	Fayette County	GA
+13115	13	115	Georgia	Floyd County	GA
+13117	13	117	Georgia	Forsyth County	GA
+13119	13	119	Georgia	Franklin County	GA
+13121	13	121	Georgia	Fulton County	GA
+13123	13	123	Georgia	Gilmer County	GA
+13125	13	125	Georgia	Glascock County	GA
+13127	13	127	Georgia	Glynn County	GA
+13129	13	129	Georgia	Gordon County	GA
+13131	13	131	Georgia	Grady County	GA
+13133	13	133	Georgia	Greene County	GA
+13135	13	135	Georgia	Gwinnett County	GA
+13137	13	137	Georgia	Habersham County	GA
+13139	13	139	Georgia	Hall County	GA
+13141	13	141	Georgia	Hancock County	GA
+13143	13	143	Georgia	Haralson County	GA
+13145	13	145	Georgia	Harris County	GA
+13147	13	147	Georgia	Hart County	GA
+13149	13	149	Georgia	Heard County	GA
+13151	13	151	Georgia	Henry County	GA
+13153	13	153	Georgia	Houston County	GA
+13155	13	155	Georgia	Irwin County	GA
+13157	13	157	Georgia	Jackson County	GA
+13159	13	159	Georgia	Jasper County	GA
+13161	13	161	Georgia	Jeff Davis County	GA
+13163	13	163	Georgia	Jefferson County	GA
+13165	13	165	Georgia	Jenkins County	GA
+13167	13	167	Georgia	Johnson County	GA
+13169	13	169	Georgia	Jones County	GA
+13171	13	171	Georgia	Lamar County	GA
+13173	13	173	Georgia	Lanier County	GA
+13175	13	175	Georgia	Laurens County	GA
+13177	13	177	Georgia	Lee County	GA
+13179	13	179	Georgia	Liberty County	GA
+13181	13	181	Georgia	Lincoln County	GA
+13183	13	183	Georgia	Long County	GA
+13185	13	185	Georgia	Lowndes County	GA
+13187	13	187	Georgia	Lumpkin County	GA
+13189	13	189	Georgia	McDuffie County	GA
+13191	13	191	Georgia	McIntosh County	GA
+13193	13	193	Georgia	Macon County	GA
+13195	13	195	Georgia	Madison County	GA
+13197	13	197	Georgia	Marion County	GA
+13199	13	199	Georgia	Meriwether County	GA
+13201	13	201	Georgia	Miller County	GA
+13205	13	205	Georgia	Mitchell County	GA
+13207	13	207	Georgia	Monroe County	GA
+13209	13	209	Georgia	Montgomery County	GA
+13211	13	211	Georgia	Morgan County	GA
+13213	13	213	Georgia	Murray County	GA
+13215	13	215	Georgia	Muscogee County	GA
+13217	13	217	Georgia	Newton County	GA
+13219	13	219	Georgia	Oconee County	GA
+13221	13	221	Georgia	Oglethorpe County	GA
+13223	13	223	Georgia	Paulding County	GA
+13225	13	225	Georgia	Peach County	GA
+13227	13	227	Georgia	Pickens County	GA
+13229	13	229	Georgia	Pierce County	GA
+13231	13	231	Georgia	Pike County	GA
+13233	13	233	Georgia	Polk County	GA
+13235	13	235	Georgia	Pulaski County	GA
+13237	13	237	Georgia	Putnam County	GA
+13239	13	239	Georgia	Quitman County	GA
+13241	13	241	Georgia	Rabun County	GA
+13243	13	243	Georgia	Randolph County	GA
+13245	13	245	Georgia	Richmond County	GA
+13247	13	247	Georgia	Rockdale County	GA
+13249	13	249	Georgia	Schley County	GA
+13251	13	251	Georgia	Screven County	GA
+13253	13	253	Georgia	Seminole County	GA
+13255	13	255	Georgia	Spalding County	GA
+13257	13	257	Georgia	Stephens County	GA
+13259	13	259	Georgia	Stewart County	GA
+13261	13	261	Georgia	Sumter County	GA
+13263	13	263	Georgia	Talbot County	GA
+13265	13	265	Georgia	Taliaferro County	GA
+13267	13	267	Georgia	Tattnall County	GA
+13269	13	269	Georgia	Taylor County	GA
+13271	13	271	Georgia	Telfair County	GA
+13273	13	273	Georgia	Terrell County	GA
+13275	13	275	Georgia	Thomas County	GA
+13277	13	277	Georgia	Tift County	GA
+13279	13	279	Georgia	Toombs County	GA
+13281	13	281	Georgia	Towns County	GA
+13283	13	283	Georgia	Treutlen County	GA
+13285	13	285	Georgia	Troup County	GA
+13287	13	287	Georgia	Turner County	GA
+13289	13	289	Georgia	Twiggs County	GA
+13291	13	291	Georgia	Union County	GA
+13293	13	293	Georgia	Upson County	GA
+13295	13	295	Georgia	Walker County	GA
+13297	13	297	Georgia	Walton County	GA
+13299	13	299	Georgia	Ware County	GA
+13301	13	301	Georgia	Warren County	GA
+13303	13	303	Georgia	Washington County	GA
+13305	13	305	Georgia	Wayne County	GA
+13307	13	307	Georgia	Webster County	GA
+13309	13	309	Georgia	Wheeler County	GA
+13311	13	311	Georgia	White County	GA
+13313	13	313	Georgia	Whitfield County	GA
+13315	13	315	Georgia	Wilcox County	GA
+13317	13	317	Georgia	Wilkes County	GA
+13319	13	319	Georgia	Wilkinson County	GA
+13321	13	321	Georgia	Worth County	GA
+15001	15	001	Hawaii	Hawaii County	HI
+15003	15	003	Hawaii	Honolulu County	HI
+15005	15	005	Hawaii	Kalawao County	HI
+15007	15	007	Hawaii	Kauai County	HI
+15009	15	009	Hawaii	Maui County	HI
+16001	16	001	Idaho	Ada County	ID
+16003	16	003	Idaho	Adams County	ID
+16005	16	005	Idaho	Bannock County	ID
+16007	16	007	Idaho	Bear Lake County	ID
+16009	16	009	Idaho	Benewah County	ID
+16011	16	011	Idaho	Bingham County	ID
+16013	16	013	Idaho	Blaine County	ID
+16015	16	015	Idaho	Boise County	ID
+16017	16	017	Idaho	Bonner County	ID
+16019	16	019	Idaho	Bonneville County	ID
+16021	16	021	Idaho	Boundary County	ID
+16023	16	023	Idaho	Butte County	ID
+16025	16	025	Idaho	Camas County	ID
+16027	16	027	Idaho	Canyon County	ID
+16029	16	029	Idaho	Caribou County	ID
+16031	16	031	Idaho	Cassia County	ID
+16033	16	033	Idaho	Clark County	ID
+16035	16	035	Idaho	Clearwater County	ID
+16037	16	037	Idaho	Custer County	ID
+16039	16	039	Idaho	Elmore County	ID
+16041	16	041	Idaho	Franklin County	ID
+16043	16	043	Idaho	Fremont County	ID
+16045	16	045	Idaho	Gem County	ID
+16047	16	047	Idaho	Gooding County	ID
+16049	16	049	Idaho	Idaho County	ID
+16051	16	051	Idaho	Jefferson County	ID
+16053	16	053	Idaho	Jerome County	ID
+16055	16	055	Idaho	Kootenai County	ID
+16057	16	057	Idaho	Latah County	ID
+16059	16	059	Idaho	Lemhi County	ID
+16061	16	061	Idaho	Lewis County	ID
+16063	16	063	Idaho	Lincoln County	ID
+16065	16	065	Idaho	Madison County	ID
+16067	16	067	Idaho	Minidoka County	ID
+16069	16	069	Idaho	Nez Perce County	ID
+16071	16	071	Idaho	Oneida County	ID
+16073	16	073	Idaho	Owyhee County	ID
+16075	16	075	Idaho	Payette County	ID
+16077	16	077	Idaho	Power County	ID
+16079	16	079	Idaho	Shoshone County	ID
+16081	16	081	Idaho	Teton County	ID
+16083	16	083	Idaho	Twin Falls County	ID
+16085	16	085	Idaho	Valley County	ID
+16087	16	087	Idaho	Washington County	ID
+17001	17	001	Illinois	Adams County	IL
+17003	17	003	Illinois	Alexander County	IL
+17005	17	005	Illinois	Bond County	IL
+17007	17	007	Illinois	Boone County	IL
+17009	17	009	Illinois	Brown County	IL
+17011	17	011	Illinois	Bureau County	IL
+17013	17	013	Illinois	Calhoun County	IL
+17015	17	015	Illinois	Carroll County	IL
+17017	17	017	Illinois	Cass County	IL
+17019	17	019	Illinois	Champaign County	IL
+17021	17	021	Illinois	Christian County	IL
+17023	17	023	Illinois	Clark County	IL
+17025	17	025	Illinois	Clay County	IL
+17027	17	027	Illinois	Clinton County	IL
+17029	17	029	Illinois	Coles County	IL
+17031	17	031	Illinois	Cook County	IL
+17033	17	033	Illinois	Crawford County	IL
+17035	17	035	Illinois	Cumberland County	IL
+17037	17	037	Illinois	DeKalb County	IL
+17039	17	039	Illinois	De Witt County	IL
+17041	17	041	Illinois	Douglas County	IL
+17043	17	043	Illinois	DuPage County	IL
+17045	17	045	Illinois	Edgar County	IL
+17047	17	047	Illinois	Edwards County	IL
+17049	17	049	Illinois	Effingham County	IL
+17051	17	051	Illinois	Fayette County	IL
+17053	17	053	Illinois	Ford County	IL
+17055	17	055	Illinois	Franklin County	IL
+17057	17	057	Illinois	Fulton County	IL
+17059	17	059	Illinois	Gallatin County	IL
+17061	17	061	Illinois	Greene County	IL
+17063	17	063	Illinois	Grundy County	IL
+17065	17	065	Illinois	Hamilton County	IL
+17067	17	067	Illinois	Hancock County	IL
+17069	17	069	Illinois	Hardin County	IL
+17071	17	071	Illinois	Henderson County	IL
+17073	17	073	Illinois	Henry County	IL
+17075	17	075	Illinois	Iroquois County	IL
+17077	17	077	Illinois	Jackson County	IL
+17079	17	079	Illinois	Jasper County	IL
+17081	17	081	Illinois	Jefferson County	IL
+17083	17	083	Illinois	Jersey County	IL
+17085	17	085	Illinois	Jo Daviess County	IL
+17087	17	087	Illinois	Johnson County	IL
+17089	17	089	Illinois	Kane County	IL
+17091	17	091	Illinois	Kankakee County	IL
+17093	17	093	Illinois	Kendall County	IL
+17095	17	095	Illinois	Knox County	IL
+17097	17	097	Illinois	Lake County	IL
+17099	17	099	Illinois	LaSalle County	IL
+17101	17	101	Illinois	Lawrence County	IL
+17103	17	103	Illinois	Lee County	IL
+17105	17	105	Illinois	Livingston County	IL
+17107	17	107	Illinois	Logan County	IL
+17109	17	109	Illinois	McDonough County	IL
+17111	17	111	Illinois	McHenry County	IL
+17113	17	113	Illinois	McLean County	IL
+17115	17	115	Illinois	Macon County	IL
+17117	17	117	Illinois	Macoupin County	IL
+17119	17	119	Illinois	Madison County	IL
+17121	17	121	Illinois	Marion County	IL
+17123	17	123	Illinois	Marshall County	IL
+17125	17	125	Illinois	Mason County	IL
+17127	17	127	Illinois	Massac County	IL
+17129	17	129	Illinois	Menard County	IL
+17131	17	131	Illinois	Mercer County	IL
+17133	17	133	Illinois	Monroe County	IL
+17135	17	135	Illinois	Montgomery County	IL
+17137	17	137	Illinois	Morgan County	IL
+17139	17	139	Illinois	Moultrie County	IL
+17141	17	141	Illinois	Ogle County	IL
+17143	17	143	Illinois	Peoria County	IL
+17145	17	145	Illinois	Perry County	IL
+17147	17	147	Illinois	Piatt County	IL
+17149	17	149	Illinois	Pike County	IL
+17151	17	151	Illinois	Pope County	IL
+17153	17	153	Illinois	Pulaski County	IL
+17155	17	155	Illinois	Putnam County	IL
+17157	17	157	Illinois	Randolph County	IL
+17159	17	159	Illinois	Richland County	IL
+17161	17	161	Illinois	Rock Island County	IL
+17163	17	163	Illinois	St. Clair County	IL
+17165	17	165	Illinois	Saline County	IL
+17167	17	167	Illinois	Sangamon County	IL
+17169	17	169	Illinois	Schuyler County	IL
+17171	17	171	Illinois	Scott County	IL
+17173	17	173	Illinois	Shelby County	IL
+17175	17	175	Illinois	Stark County	IL
+17177	17	177	Illinois	Stephenson County	IL
+17179	17	179	Illinois	Tazewell County	IL
+17181	17	181	Illinois	Union County	IL
+17183	17	183	Illinois	Vermilion County	IL
+17185	17	185	Illinois	Wabash County	IL
+17187	17	187	Illinois	Warren County	IL
+17189	17	189	Illinois	Washington County	IL
+17191	17	191	Illinois	Wayne County	IL
+17193	17	193	Illinois	White County	IL
+17195	17	195	Illinois	Whiteside County	IL
+17197	17	197	Illinois	Will County	IL
+17199	17	199	Illinois	Williamson County	IL
+17201	17	201	Illinois	Winnebago County	IL
+17203	17	203	Illinois	Woodford County	IL
+18001	18	001	Indiana	Adams County	IN
+18003	18	003	Indiana	Allen County	IN
+18005	18	005	Indiana	Bartholomew County	IN
+18007	18	007	Indiana	Benton County	IN
+18009	18	009	Indiana	Blackford County	IN
+18011	18	011	Indiana	Boone County	IN
+18013	18	013	Indiana	Brown County	IN
+18015	18	015	Indiana	Carroll County	IN
+18017	18	017	Indiana	Cass County	IN
+18019	18	019	Indiana	Clark County	IN
+18021	18	021	Indiana	Clay County	IN
+18023	18	023	Indiana	Clinton County	IN
+18025	18	025	Indiana	Crawford County	IN
+18027	18	027	Indiana	Daviess County	IN
+18029	18	029	Indiana	Dearborn County	IN
+18031	18	031	Indiana	Decatur County	IN
+18033	18	033	Indiana	DeKalb County	IN
+18035	18	035	Indiana	Delaware County	IN
+18037	18	037	Indiana	Dubois County	IN
+18039	18	039	Indiana	Elkhart County	IN
+18041	18	041	Indiana	Fayette County	IN
+18043	18	043	Indiana	Floyd County	IN
+18045	18	045	Indiana	Fountain County	IN
+18047	18	047	Indiana	Franklin County	IN
+18049	18	049	Indiana	Fulton County	IN
+18051	18	051	Indiana	Gibson County	IN
+18053	18	053	Indiana	Grant County	IN
+18055	18	055	Indiana	Greene County	IN
+18057	18	057	Indiana	Hamilton County	IN
+18059	18	059	Indiana	Hancock County	IN
+18061	18	061	Indiana	Harrison County	IN
+18063	18	063	Indiana	Hendricks County	IN
+18065	18	065	Indiana	Henry County	IN
+18067	18	067	Indiana	Howard County	IN
+18069	18	069	Indiana	Huntington County	IN
+18071	18	071	Indiana	Jackson County	IN
+18073	18	073	Indiana	Jasper County	IN
+18075	18	075	Indiana	Jay County	IN
+18077	18	077	Indiana	Jefferson County	IN
+18079	18	079	Indiana	Jennings County	IN
+18081	18	081	Indiana	Johnson County	IN
+18083	18	083	Indiana	Knox County	IN
+18085	18	085	Indiana	Kosciusko County	IN
+18087	18	087	Indiana	LaGrange County	IN
+18089	18	089	Indiana	Lake County	IN
+18091	18	091	Indiana	LaPorte County	IN
+18093	18	093	Indiana	Lawrence County	IN
+18095	18	095	Indiana	Madison County	IN
+18097	18	097	Indiana	Marion County	IN
+18099	18	099	Indiana	Marshall County	IN
+18101	18	101	Indiana	Martin County	IN
+18103	18	103	Indiana	Miami County	IN
+18105	18	105	Indiana	Monroe County	IN
+18107	18	107	Indiana	Montgomery County	IN
+18109	18	109	Indiana	Morgan County	IN
+18111	18	111	Indiana	Newton County	IN
+18113	18	113	Indiana	Noble County	IN
+18115	18	115	Indiana	Ohio County	IN
+18117	18	117	Indiana	Orange County	IN
+18119	18	119	Indiana	Owen County	IN
+18121	18	121	Indiana	Parke County	IN
+18123	18	123	Indiana	Perry County	IN
+18125	18	125	Indiana	Pike County	IN
+18127	18	127	Indiana	Porter County	IN
+18129	18	129	Indiana	Posey County	IN
+18131	18	131	Indiana	Pulaski County	IN
+18133	18	133	Indiana	Putnam County	IN
+18135	18	135	Indiana	Randolph County	IN
+18137	18	137	Indiana	Ripley County	IN
+18139	18	139	Indiana	Rush County	IN
+18141	18	141	Indiana	St. Joseph County	IN
+18143	18	143	Indiana	Scott County	IN
+18145	18	145	Indiana	Shelby County	IN
+18147	18	147	Indiana	Spencer County	IN
+18149	18	149	Indiana	Starke County	IN
+18151	18	151	Indiana	Steuben County	IN
+18153	18	153	Indiana	Sullivan County	IN
+18155	18	155	Indiana	Switzerland County	IN
+18157	18	157	Indiana	Tippecanoe County	IN
+18159	18	159	Indiana	Tipton County	IN
+18161	18	161	Indiana	Union County	IN
+18163	18	163	Indiana	Vanderburgh County	IN
+18165	18	165	Indiana	Vermillion County	IN
+18167	18	167	Indiana	Vigo County	IN
+18169	18	169	Indiana	Wabash County	IN
+18171	18	171	Indiana	Warren County	IN
+18173	18	173	Indiana	Warrick County	IN
+18175	18	175	Indiana	Washington County	IN
+18177	18	177	Indiana	Wayne County	IN
+18179	18	179	Indiana	Wells County	IN
+18181	18	181	Indiana	White County	IN
+18183	18	183	Indiana	Whitley County	IN
+19001	19	001	Iowa	Adair County	IA
+19003	19	003	Iowa	Adams County	IA
+19005	19	005	Iowa	Allamakee County	IA
+19007	19	007	Iowa	Appanoose County	IA
+19009	19	009	Iowa	Audubon County	IA
+19011	19	011	Iowa	Benton County	IA
+19013	19	013	Iowa	Black Hawk County	IA
+19015	19	015	Iowa	Boone County	IA
+19017	19	017	Iowa	Bremer County	IA
+19019	19	019	Iowa	Buchanan County	IA
+19021	19	021	Iowa	Buena Vista County	IA
+19023	19	023	Iowa	Butler County	IA
+19025	19	025	Iowa	Calhoun County	IA
+19027	19	027	Iowa	Carroll County	IA
+19029	19	029	Iowa	Cass County	IA
+19031	19	031	Iowa	Cedar County	IA
+19033	19	033	Iowa	Cerro Gordo County	IA
+19035	19	035	Iowa	Cherokee County	IA
+19037	19	037	Iowa	Chickasaw County	IA
+19039	19	039	Iowa	Clarke County	IA
+19041	19	041	Iowa	Clay County	IA
+19043	19	043	Iowa	Clayton County	IA
+19045	19	045	Iowa	Clinton County	IA
+19047	19	047	Iowa	Crawford County	IA
+19049	19	049	Iowa	Dallas County	IA
+19051	19	051	Iowa	Davis County	IA
+19053	19	053	Iowa	Decatur County	IA
+19055	19	055	Iowa	Delaware County	IA
+19057	19	057	Iowa	Des Moines County	IA
+19059	19	059	Iowa	Dickinson County	IA
+19061	19	061	Iowa	Dubuque County	IA
+19063	19	063	Iowa	Emmet County	IA
+19065	19	065	Iowa	Fayette County	IA
+19067	19	067	Iowa	Floyd County	IA
+19069	19	069	Iowa	Franklin County	IA
+19071	19	071	Iowa	Fremont County	IA
+19073	19	073	Iowa	Greene County	IA
+19075	19	075	Iowa	Grundy County	IA
+19077	19	077	Iowa	Guthrie County	IA
+19079	19	079	Iowa	Hamilton County	IA
+19081	19	081	Iowa	Hancock County	IA
+19083	19	083	Iowa	Hardin County	IA
+19085	19	085	Iowa	Harrison County	IA
+19087	19	087	Iowa	Henry County	IA
+19089	19	089	Iowa	Howard County	IA
+19091	19	091	Iowa	Humboldt County	IA
+19093	19	093	Iowa	Ida County	IA
+19095	19	095	Iowa	Iowa County	IA
+19097	19	097	Iowa	Jackson County	IA
+19099	19	099	Iowa	Jasper County	IA
+19101	19	101	Iowa	Jefferson County	IA
+19103	19	103	Iowa	Johnson County	IA
+19105	19	105	Iowa	Jones County	IA
+19107	19	107	Iowa	Keokuk County	IA
+19109	19	109	Iowa	Kossuth County	IA
+19111	19	111	Iowa	Lee County	IA
+19113	19	113	Iowa	Linn County	IA
+19115	19	115	Iowa	Louisa County	IA
+19117	19	117	Iowa	Lucas County	IA
+19119	19	119	Iowa	Lyon County	IA
+19121	19	121	Iowa	Madison County	IA
+19123	19	123	Iowa	Mahaska County	IA
+19125	19	125	Iowa	Marion County	IA
+19127	19	127	Iowa	Marshall County	IA
+19129	19	129	Iowa	Mills County	IA
+19131	19	131	Iowa	Mitchell County	IA
+19133	19	133	Iowa	Monona County	IA
+19135	19	135	Iowa	Monroe County	IA
+19137	19	137	Iowa	Montgomery County	IA
+19139	19	139	Iowa	Muscatine County	IA
+19141	19	141	Iowa	O'Brien County	IA
+19143	19	143	Iowa	Osceola County	IA
+19145	19	145	Iowa	Page County	IA
+19147	19	147	Iowa	Palo Alto County	IA
+19149	19	149	Iowa	Plymouth County	IA
+19151	19	151	Iowa	Pocahontas County	IA
+19153	19	153	Iowa	Polk County	IA
+19155	19	155	Iowa	Pottawattamie County	IA
+19157	19	157	Iowa	Poweshiek County	IA
+19159	19	159	Iowa	Ringgold County	IA
+19161	19	161	Iowa	Sac County	IA
+19163	19	163	Iowa	Scott County	IA
+19165	19	165	Iowa	Shelby County	IA
+19167	19	167	Iowa	Sioux County	IA
+19169	19	169	Iowa	Story County	IA
+19171	19	171	Iowa	Tama County	IA
+19173	19	173	Iowa	Taylor County	IA
+19175	19	175	Iowa	Union County	IA
+19177	19	177	Iowa	Van Buren County	IA
+19179	19	179	Iowa	Wapello County	IA
+19181	19	181	Iowa	Warren County	IA
+19183	19	183	Iowa	Washington County	IA
+19185	19	185	Iowa	Wayne County	IA
+19187	19	187	Iowa	Webster County	IA
+19189	19	189	Iowa	Winnebago County	IA
+19191	19	191	Iowa	Winneshiek County	IA
+19193	19	193	Iowa	Woodbury County	IA
+19195	19	195	Iowa	Worth County	IA
+19197	19	197	Iowa	Wright County	IA
+20001	20	001	Kansas	Allen County	KS
+20003	20	003	Kansas	Anderson County	KS
+20005	20	005	Kansas	Atchison County	KS
+20007	20	007	Kansas	Barber County	KS
+20009	20	009	Kansas	Barton County	KS
+20011	20	011	Kansas	Bourbon County	KS
+20013	20	013	Kansas	Brown County	KS
+20015	20	015	Kansas	Butler County	KS
+20017	20	017	Kansas	Chase County	KS
+20019	20	019	Kansas	Chautauqua County	KS
+20021	20	021	Kansas	Cherokee County	KS
+20023	20	023	Kansas	Cheyenne County	KS
+20025	20	025	Kansas	Clark County	KS
+20027	20	027	Kansas	Clay County	KS
+20029	20	029	Kansas	Cloud County	KS
+20031	20	031	Kansas	Coffey County	KS
+20033	20	033	Kansas	Comanche County	KS
+20035	20	035	Kansas	Cowley County	KS
+20037	20	037	Kansas	Crawford County	KS
+20039	20	039	Kansas	Decatur County	KS
+20041	20	041	Kansas	Dickinson County	KS
+20043	20	043	Kansas	Doniphan County	KS
+20045	20	045	Kansas	Douglas County	KS
+20047	20	047	Kansas	Edwards County	KS
+20049	20	049	Kansas	Elk County	KS
+20051	20	051	Kansas	Ellis County	KS
+20053	20	053	Kansas	Ellsworth County	KS
+20055	20	055	Kansas	Finney County	KS
+20057	20	057	Kansas	Ford County	KS
+20059	20	059	Kansas	Franklin County	KS
+20061	20	061	Kansas	Geary County	KS
+20063	20	063	Kansas	Gove County	KS
+20065	20	065	Kansas	Graham County	KS
+20067	20	067	Kansas	Grant County	KS
+20069	20	069	Kansas	Gray County	KS
+20071	20	071	Kansas	Greeley County	KS
+20073	20	073	Kansas	Greenwood County	KS
+20075	20	075	Kansas	Hamilton County	KS
+20077	20	077	Kansas	Harper County	KS
+20079	20	079	Kansas	Harvey County	KS
+20081	20	081	Kansas	Haskell County	KS
+20083	20	083	Kansas	Hodgeman County	KS
+20085	20	085	Kansas	Jackson County	KS
+20087	20	087	Kansas	Jefferson County	KS
+20089	20	089	Kansas	Jewell County	KS
+20091	20	091	Kansas	Johnson County	KS
+20093	20	093	Kansas	Kearny County	KS
+20095	20	095	Kansas	Kingman County	KS
+20097	20	097	Kansas	Kiowa County	KS
+20099	20	099	Kansas	Labette County	KS
+20101	20	101	Kansas	Lane County	KS
+20103	20	103	Kansas	Leavenworth County	KS
+20105	20	105	Kansas	Lincoln County	KS
+20107	20	107	Kansas	Linn County	KS
+20109	20	109	Kansas	Logan County	KS
+20111	20	111	Kansas	Lyon County	KS
+20113	20	113	Kansas	McPherson County	KS
+20115	20	115	Kansas	Marion County	KS
+20117	20	117	Kansas	Marshall County	KS
+20119	20	119	Kansas	Meade County	KS
+20121	20	121	Kansas	Miami County	KS
+20123	20	123	Kansas	Mitchell County	KS
+20125	20	125	Kansas	Montgomery County	KS
+20127	20	127	Kansas	Morris County	KS
+20129	20	129	Kansas	Morton County	KS
+20131	20	131	Kansas	Nemaha County	KS
+20133	20	133	Kansas	Neosho County	KS
+20135	20	135	Kansas	Ness County	KS
+20137	20	137	Kansas	Norton County	KS
+20139	20	139	Kansas	Osage County	KS
+20141	20	141	Kansas	Osborne County	KS
+20143	20	143	Kansas	Ottawa County	KS
+20145	20	145	Kansas	Pawnee County	KS
+20147	20	147	Kansas	Phillips County	KS
+20149	20	149	Kansas	Pottawatomie County	KS
+20151	20	151	Kansas	Pratt County	KS
+20153	20	153	Kansas	Rawlins County	KS
+20155	20	155	Kansas	Reno County	KS
+20157	20	157	Kansas	Republic County	KS
+20159	20	159	Kansas	Rice County	KS
+20161	20	161	Kansas	Riley County	KS
+20163	20	163	Kansas	Rooks County	KS
+20165	20	165	Kansas	Rush County	KS
+20167	20	167	Kansas	Russell County	KS
+20169	20	169	Kansas	Saline County	KS
+20171	20	171	Kansas	Scott County	KS
+20173	20	173	Kansas	Sedgwick County	KS
+20175	20	175	Kansas	Seward County	KS
+20177	20	177	Kansas	Shawnee County	KS
+20179	20	179	Kansas	Sheridan County	KS
+20181	20	181	Kansas	Sherman County	KS
+20183	20	183	Kansas	Smith County	KS
+20185	20	185	Kansas	Stafford County	KS
+20187	20	187	Kansas	Stanton County	KS
+20189	20	189	Kansas	Stevens County	KS
+20191	20	191	Kansas	Sumner County	KS
+20193	20	193	Kansas	Thomas County	KS
+20195	20	195	Kansas	Trego County	KS
+20197	20	197	Kansas	Wabaunsee County	KS
+20199	20	199	Kansas	Wallace County	KS
+20201	20	201	Kansas	Washington County	KS
+20203	20	203	Kansas	Wichita County	KS
+20205	20	205	Kansas	Wilson County	KS
+20207	20	207	Kansas	Woodson County	KS
+20209	20	209	Kansas	Wyandotte County	KS
+21001	21	001	Kentucky	Adair County	KY
+21003	21	003	Kentucky	Allen County	KY
+21005	21	005	Kentucky	Anderson County	KY
+21007	21	007	Kentucky	Ballard County	KY
+21009	21	009	Kentucky	Barren County	KY
+21011	21	011	Kentucky	Bath County	KY
+21013	21	013	Kentucky	Bell County	KY
+21015	21	015	Kentucky	Boone County	KY
+21017	21	017	Kentucky	Bourbon County	KY
+21019	21	019	Kentucky	Boyd County	KY
+21021	21	021	Kentucky	Boyle County	KY
+21023	21	023	Kentucky	Bracken County	KY
+21025	21	025	Kentucky	Breathitt County	KY
+21027	21	027	Kentucky	Breckinridge County	KY
+21029	21	029	Kentucky	Bullitt County	KY
+21031	21	031	Kentucky	Butler County	KY
+21033	21	033	Kentucky	Caldwell County	KY
+21035	21	035	Kentucky	Calloway County	KY
+21037	21	037	Kentucky	Campbell County	KY
+21039	21	039	Kentucky	Carlisle County	KY
+21041	21	041	Kentucky	Carroll County	KY
+21043	21	043	Kentucky	Carter County	KY
+21045	21	045	Kentucky	Casey County	KY
+21047	21	047	Kentucky	Christian County	KY
+21049	21	049	Kentucky	Clark County	KY
+21051	21	051	Kentucky	Clay County	KY
+21053	21	053	Kentucky	Clinton County	KY
+21055	21	055	Kentucky	Crittenden County	KY
+21057	21	057	Kentucky	Cumberland County	KY
+21059	21	059	Kentucky	Daviess County	KY
+21061	21	061	Kentucky	Edmonson County	KY
+21063	21	063	Kentucky	Elliott County	KY
+21065	21	065	Kentucky	Estill County	KY
+21067	21	067	Kentucky	Fayette County	KY
+21069	21	069	Kentucky	Fleming County	KY
+21071	21	071	Kentucky	Floyd County	KY
+21073	21	073	Kentucky	Franklin County	KY
+21075	21	075	Kentucky	Fulton County	KY
+21077	21	077	Kentucky	Gallatin County	KY
+21079	21	079	Kentucky	Garrard County	KY
+21081	21	081	Kentucky	Grant County	KY
+21083	21	083	Kentucky	Graves County	KY
+21085	21	085	Kentucky	Grayson County	KY
+21087	21	087	Kentucky	Green County	KY
+21089	21	089	Kentucky	Greenup County	KY
+21091	21	091	Kentucky	Hancock County	KY
+21093	21	093	Kentucky	Hardin County	KY
+21095	21	095	Kentucky	Harlan County	KY
+21097	21	097	Kentucky	Harrison County	KY
+21099	21	099	Kentucky	Hart County	KY
+21101	21	101	Kentucky	Henderson County	KY
+21103	21	103	Kentucky	Henry County	KY
+21105	21	105	Kentucky	Hickman County	KY
+21107	21	107	Kentucky	Hopkins County	KY
+21109	21	109	Kentucky	Jackson County	KY
+21111	21	111	Kentucky	Jefferson County	KY
+21113	21	113	Kentucky	Jessamine County	KY
+21115	21	115	Kentucky	Johnson County	KY
+21117	21	117	Kentucky	Kenton County	KY
+21119	21	119	Kentucky	Knott County	KY
+21121	21	121	Kentucky	Knox County	KY
+21123	21	123	Kentucky	Larue County	KY
+21125	21	125	Kentucky	Laurel County	KY
+21127	21	127	Kentucky	Lawrence County	KY
+21129	21	129	Kentucky	Lee County	KY
+21131	21	131	Kentucky	Leslie County	KY
+21133	21	133	Kentucky	Letcher County	KY
+21135	21	135	Kentucky	Lewis County	KY
+21137	21	137	Kentucky	Lincoln County	KY
+21139	21	139	Kentucky	Livingston County	KY
+21141	21	141	Kentucky	Logan County	KY
+21143	21	143	Kentucky	Lyon County	KY
+21145	21	145	Kentucky	McCracken County	KY
+21147	21	147	Kentucky	McCreary County	KY
+21149	21	149	Kentucky	McLean County	KY
+21151	21	151	Kentucky	Madison County	KY
+21153	21	153	Kentucky	Magoffin County	KY
+21155	21	155	Kentucky	Marion County	KY
+21157	21	157	Kentucky	Marshall County	KY
+21159	21	159	Kentucky	Martin County	KY
+21161	21	161	Kentucky	Mason County	KY
+21163	21	163	Kentucky	Meade County	KY
+21165	21	165	Kentucky	Menifee County	KY
+21167	21	167	Kentucky	Mercer County	KY
+21169	21	169	Kentucky	Metcalfe County	KY
+21171	21	171	Kentucky	Monroe County	KY
+21173	21	173	Kentucky	Montgomery County	KY
+21175	21	175	Kentucky	Morgan County	KY
+21177	21	177	Kentucky	Muhlenberg County	KY
+21179	21	179	Kentucky	Nelson County	KY
+21181	21	181	Kentucky	Nicholas County	KY
+21183	21	183	Kentucky	Ohio County	KY
+21185	21	185	Kentucky	Oldham County	KY
+21187	21	187	Kentucky	Owen County	KY
+21189	21	189	Kentucky	Owsley County	KY
+21191	21	191	Kentucky	Pendleton County	KY
+21193	21	193	Kentucky	Perry County	KY
+21195	21	195	Kentucky	Pike County	KY
+21197	21	197	Kentucky	Powell County	KY
+21199	21	199	Kentucky	Pulaski County	KY
+21201	21	201	Kentucky	Robertson County	KY
+21203	21	203	Kentucky	Rockcastle County	KY
+21205	21	205	Kentucky	Rowan County	KY
+21207	21	207	Kentucky	Russell County	KY
+21209	21	209	Kentucky	Scott County	KY
+21211	21	211	Kentucky	Shelby County	KY
+21213	21	213	Kentucky	Simpson County	KY
+21215	21	215	Kentucky	Spencer County	KY
+21217	21	217	Kentucky	Taylor County	KY
+21219	21	219	Kentucky	Todd County	KY
+21221	21	221	Kentucky	Trigg County	KY
+21223	21	223	Kentucky	Trimble County	KY
+21225	21	225	Kentucky	Union County	KY
+21227	21	227	Kentucky	Warren County	KY
+21229	21	229	Kentucky	Washington County	KY
+21231	21	231	Kentucky	Wayne County	KY
+21233	21	233	Kentucky	Webster County	KY
+21235	21	235	Kentucky	Whitley County	KY
+21237	21	237	Kentucky	Wolfe County	KY
+21239	21	239	Kentucky	Woodford County	KY
+22001	22	001	Louisiana	Acadia Parish	LA
+22003	22	003	Louisiana	Allen Parish	LA
+22005	22	005	Louisiana	Ascension Parish	LA
+22007	22	007	Louisiana	Assumption Parish	LA
+22009	22	009	Louisiana	Avoyelles Parish	LA
+22011	22	011	Louisiana	Beauregard Parish	LA
+22013	22	013	Louisiana	Bienville Parish	LA
+22015	22	015	Louisiana	Bossier Parish	LA
+22017	22	017	Louisiana	Caddo Parish	LA
+22019	22	019	Louisiana	Calcasieu Parish	LA
+22021	22	021	Louisiana	Caldwell Parish	LA
+22023	22	023	Louisiana	Cameron Parish	LA
+22025	22	025	Louisiana	Catahoula Parish	LA
+22027	22	027	Louisiana	Claiborne Parish	LA
+22029	22	029	Louisiana	Concordia Parish	LA
+22031	22	031	Louisiana	De Soto Parish	LA
+22033	22	033	Louisiana	East Baton Rouge Parish	LA
+22035	22	035	Louisiana	East Carroll Parish	LA
+22037	22	037	Louisiana	East Feliciana Parish	LA
+22039	22	039	Louisiana	Evangeline Parish	LA
+22041	22	041	Louisiana	Franklin Parish	LA
+22043	22	043	Louisiana	Grant Parish	LA
+22045	22	045	Louisiana	Iberia Parish	LA
+22047	22	047	Louisiana	Iberville Parish	LA
+22049	22	049	Louisiana	Jackson Parish	LA
+22051	22	051	Louisiana	Jefferson Parish	LA
+22053	22	053	Louisiana	Jefferson Davis Parish	LA
+22055	22	055	Louisiana	Lafayette Parish	LA
+22057	22	057	Louisiana	Lafourche Parish	LA
+22059	22	059	Louisiana	La Salle Parish	LA
+22061	22	061	Louisiana	Lincoln Parish	LA
+22063	22	063	Louisiana	Livingston Parish	LA
+22065	22	065	Louisiana	Madison Parish	LA
+22067	22	067	Louisiana	Morehouse Parish	LA
+22069	22	069	Louisiana	Natchitoches Parish	LA
+22071	22	071	Louisiana	Orleans Parish	LA
+22073	22	073	Louisiana	Ouachita Parish	LA
+22075	22	075	Louisiana	Plaquemines Parish	LA
+22077	22	077	Louisiana	Pointe Coupee Parish	LA
+22079	22	079	Louisiana	Rapides Parish	LA
+22081	22	081	Louisiana	Red River Parish	LA
+22083	22	083	Louisiana	Richland Parish	LA
+22085	22	085	Louisiana	Sabine Parish	LA
+22087	22	087	Louisiana	St. Bernard Parish	LA
+22089	22	089	Louisiana	St. Charles Parish	LA
+22091	22	091	Louisiana	St. Helena Parish	LA
+22093	22	093	Louisiana	St. James Parish	LA
+22095	22	095	Louisiana	St. John the Baptist Parish	LA
+22097	22	097	Louisiana	St. Landry Parish	LA
+22099	22	099	Louisiana	St. Martin Parish	LA
+22101	22	101	Louisiana	St. Mary Parish	LA
+22103	22	103	Louisiana	St. Tammany Parish	LA
+22105	22	105	Louisiana	Tangipahoa Parish	LA
+22107	22	107	Louisiana	Tensas Parish	LA
+22109	22	109	Louisiana	Terrebonne Parish	LA
+22111	22	111	Louisiana	Union Parish	LA
+22113	22	113	Louisiana	Vermilion Parish	LA
+22115	22	115	Louisiana	Vernon Parish	LA
+22117	22	117	Louisiana	Washington Parish	LA
+22119	22	119	Louisiana	Webster Parish	LA
+22121	22	121	Louisiana	West Baton Rouge Parish	LA
+22123	22	123	Louisiana	West Carroll Parish	LA
+22125	22	125	Louisiana	West Feliciana Parish	LA
+22127	22	127	Louisiana	Winn Parish	LA
+23001	23	001	Maine	Androscoggin County	ME
+23003	23	003	Maine	Aroostook County	ME
+23005	23	005	Maine	Cumberland County	ME
+23007	23	007	Maine	Franklin County	ME
+23009	23	009	Maine	Hancock County	ME
+23011	23	011	Maine	Kennebec County	ME
+23013	23	013	Maine	Knox County	ME
+23015	23	015	Maine	Lincoln County	ME
+23017	23	017	Maine	Oxford County	ME
+23019	23	019	Maine	Penobscot County	ME
+23021	23	021	Maine	Piscataquis County	ME
+23023	23	023	Maine	Sagadahoc County	ME
+23025	23	025	Maine	Somerset County	ME
+23027	23	027	Maine	Waldo County	ME
+23029	23	029	Maine	Washington County	ME
+23031	23	031	Maine	York County	ME
+24001	24	001	Maryland	Allegany County	MD
+24003	24	003	Maryland	Anne Arundel County	MD
+24005	24	005	Maryland	Baltimore County	MD
+24009	24	009	Maryland	Calvert County	MD
+24011	24	011	Maryland	Caroline County	MD
+24013	24	013	Maryland	Carroll County	MD
+24015	24	015	Maryland	Cecil County	MD
+24017	24	017	Maryland	Charles County	MD
+24019	24	019	Maryland	Dorchester County	MD
+24021	24	021	Maryland	Frederick County	MD
+24023	24	023	Maryland	Garrett County	MD
+24025	24	025	Maryland	Harford County	MD
+24027	24	027	Maryland	Howard County	MD
+24029	24	029	Maryland	Kent County	MD
+24031	24	031	Maryland	Montgomery County	MD
+24033	24	033	Maryland	Prince George's County	MD
+24035	24	035	Maryland	Queen Anne's County	MD
+24037	24	037	Maryland	St. Mary's County	MD
+24039	24	039	Maryland	Somerset County	MD
+24041	24	041	Maryland	Talbot County	MD
+24043	24	043	Maryland	Washington County	MD
+24045	24	045	Maryland	Wicomico County	MD
+24047	24	047	Maryland	Worcester County	MD
+24510	24	510	Maryland	Baltimore city	MD
+25001	25	001	Massachusetts	Barnstable County	MA
+25003	25	003	Massachusetts	Berkshire County	MA
+25005	25	005	Massachusetts	Bristol County	MA
+25007	25	007	Massachusetts	Dukes County	MA
+25009	25	009	Massachusetts	Essex County	MA
+25011	25	011	Massachusetts	Franklin County	MA
+25013	25	013	Massachusetts	Hampden County	MA
+25015	25	015	Massachusetts	Hampshire County	MA
+25017	25	017	Massachusetts	Middlesex County	MA
+25019	25	019	Massachusetts	Nantucket County	MA
+25021	25	021	Massachusetts	Norfolk County	MA
+25023	25	023	Massachusetts	Plymouth County	MA
+25025	25	025	Massachusetts	Suffolk County	MA
+25027	25	027	Massachusetts	Worcester County	MA
+26001	26	001	Michigan	Alcona County	MI
+26003	26	003	Michigan	Alger County	MI
+26005	26	005	Michigan	Allegan County	MI
+26007	26	007	Michigan	Alpena County	MI
+26009	26	009	Michigan	Antrim County	MI
+26011	26	011	Michigan	Arenac County	MI
+26013	26	013	Michigan	Baraga County	MI
+26015	26	015	Michigan	Barry County	MI
+26017	26	017	Michigan	Bay County	MI
+26019	26	019	Michigan	Benzie County	MI
+26021	26	021	Michigan	Berrien County	MI
+26023	26	023	Michigan	Branch County	MI
+26025	26	025	Michigan	Calhoun County	MI
+26027	26	027	Michigan	Cass County	MI
+26029	26	029	Michigan	Charlevoix County	MI
+26031	26	031	Michigan	Cheboygan County	MI
+26033	26	033	Michigan	Chippewa County	MI
+26035	26	035	Michigan	Clare County	MI
+26037	26	037	Michigan	Clinton County	MI
+26039	26	039	Michigan	Crawford County	MI
+26041	26	041	Michigan	Delta County	MI
+26043	26	043	Michigan	Dickinson County	MI
+26045	26	045	Michigan	Eaton County	MI
+26047	26	047	Michigan	Emmet County	MI
+26049	26	049	Michigan	Genesee County	MI
+26051	26	051	Michigan	Gladwin County	MI
+26053	26	053	Michigan	Gogebic County	MI
+26055	26	055	Michigan	Grand Traverse County	MI
+26057	26	057	Michigan	Gratiot County	MI
+26059	26	059	Michigan	Hillsdale County	MI
+26061	26	061	Michigan	Houghton County	MI
+26063	26	063	Michigan	Huron County	MI
+26065	26	065	Michigan	Ingham County	MI
+26067	26	067	Michigan	Ionia County	MI
+26069	26	069	Michigan	Iosco County	MI
+26071	26	071	Michigan	Iron County	MI
+26073	26	073	Michigan	Isabella County	MI
+26075	26	075	Michigan	Jackson County	MI
+26077	26	077	Michigan	Kalamazoo County	MI
+26079	26	079	Michigan	Kalkaska County	MI
+26081	26	081	Michigan	Kent County	MI
+26083	26	083	Michigan	Keweenaw County	MI
+26085	26	085	Michigan	Lake County	MI
+26087	26	087	Michigan	Lapeer County	MI
+26089	26	089	Michigan	Leelanau County	MI
+26091	26	091	Michigan	Lenawee County	MI
+26093	26	093	Michigan	Livingston County	MI
+26095	26	095	Michigan	Luce County	MI
+26097	26	097	Michigan	Mackinac County	MI
+26099	26	099	Michigan	Macomb County	MI
+26101	26	101	Michigan	Manistee County	MI
+26103	26	103	Michigan	Marquette County	MI
+26105	26	105	Michigan	Mason County	MI
+26107	26	107	Michigan	Mecosta County	MI
+26109	26	109	Michigan	Menominee County	MI
+26111	26	111	Michigan	Midland County	MI
+26113	26	113	Michigan	Missaukee County	MI
+26115	26	115	Michigan	Monroe County	MI
+26117	26	117	Michigan	Montcalm County	MI
+26119	26	119	Michigan	Montmorency County	MI
+26121	26	121	Michigan	Muskegon County	MI
+26123	26	123	Michigan	Newaygo County	MI
+26125	26	125	Michigan	Oakland County	MI
+26127	26	127	Michigan	Oceana County	MI
+26129	26	129	Michigan	Ogemaw County	MI
+26131	26	131	Michigan	Ontonagon County	MI
+26133	26	133	Michigan	Osceola County	MI
+26135	26	135	Michigan	Oscoda County	MI
+26137	26	137	Michigan	Otsego County	MI
+26139	26	139	Michigan	Ottawa County	MI
+26141	26	141	Michigan	Presque Isle County	MI
+26143	26	143	Michigan	Roscommon County	MI
+26145	26	145	Michigan	Saginaw County	MI
+26147	26	147	Michigan	St. Clair County	MI
+26149	26	149	Michigan	St. Joseph County	MI
+26151	26	151	Michigan	Sanilac County	MI
+26153	26	153	Michigan	Schoolcraft County	MI
+26155	26	155	Michigan	Shiawassee County	MI
+26157	26	157	Michigan	Tuscola County	MI
+26159	26	159	Michigan	Van Buren County	MI
+26161	26	161	Michigan	Washtenaw County	MI
+26163	26	163	Michigan	Wayne County	MI
+26165	26	165	Michigan	Wexford County	MI
+27001	27	001	Minnesota	Aitkin County	MN
+27003	27	003	Minnesota	Anoka County	MN
+27005	27	005	Minnesota	Becker County	MN
+27007	27	007	Minnesota	Beltrami County	MN
+27009	27	009	Minnesota	Benton County	MN
+27011	27	011	Minnesota	Big Stone County	MN
+27013	27	013	Minnesota	Blue Earth County	MN
+27015	27	015	Minnesota	Brown County	MN
+27017	27	017	Minnesota	Carlton County	MN
+27019	27	019	Minnesota	Carver County	MN
+27021	27	021	Minnesota	Cass County	MN
+27023	27	023	Minnesota	Chippewa County	MN
+27025	27	025	Minnesota	Chisago County	MN
+27027	27	027	Minnesota	Clay County	MN
+27029	27	029	Minnesota	Clearwater County	MN
+27031	27	031	Minnesota	Cook County	MN
+27033	27	033	Minnesota	Cottonwood County	MN
+27035	27	035	Minnesota	Crow Wing County	MN
+27037	27	037	Minnesota	Dakota County	MN
+27039	27	039	Minnesota	Dodge County	MN
+27041	27	041	Minnesota	Douglas County	MN
+27043	27	043	Minnesota	Faribault County	MN
+27045	27	045	Minnesota	Fillmore County	MN
+27047	27	047	Minnesota	Freeborn County	MN
+27049	27	049	Minnesota	Goodhue County	MN
+27051	27	051	Minnesota	Grant County	MN
+27053	27	053	Minnesota	Hennepin County	MN
+27055	27	055	Minnesota	Houston County	MN
+27057	27	057	Minnesota	Hubbard County	MN
+27059	27	059	Minnesota	Isanti County	MN
+27061	27	061	Minnesota	Itasca County	MN
+27063	27	063	Minnesota	Jackson County	MN
+27065	27	065	Minnesota	Kanabec County	MN
+27067	27	067	Minnesota	Kandiyohi County	MN
+27069	27	069	Minnesota	Kittson County	MN
+27071	27	071	Minnesota	Koochiching County	MN
+27073	27	073	Minnesota	Lac qui Parle County	MN
+27075	27	075	Minnesota	Lake County	MN
+27077	27	077	Minnesota	Lake of the Woods County	MN
+27079	27	079	Minnesota	Le Sueur County	MN
+27081	27	081	Minnesota	Lincoln County	MN
+27083	27	083	Minnesota	Lyon County	MN
+27085	27	085	Minnesota	McLeod County	MN
+27087	27	087	Minnesota	Mahnomen County	MN
+27089	27	089	Minnesota	Marshall County	MN
+27091	27	091	Minnesota	Martin County	MN
+27093	27	093	Minnesota	Meeker County	MN
+27095	27	095	Minnesota	Mille Lacs County	MN
+27097	27	097	Minnesota	Morrison County	MN
+27099	27	099	Minnesota	Mower County	MN
+27101	27	101	Minnesota	Murray County	MN
+27103	27	103	Minnesota	Nicollet County	MN
+27105	27	105	Minnesota	Nobles County	MN
+27107	27	107	Minnesota	Norman County	MN
+27109	27	109	Minnesota	Olmsted County	MN
+27111	27	111	Minnesota	Otter Tail County	MN
+27113	27	113	Minnesota	Pennington County	MN
+27115	27	115	Minnesota	Pine County	MN
+27117	27	117	Minnesota	Pipestone County	MN
+27119	27	119	Minnesota	Polk County	MN
+27121	27	121	Minnesota	Pope County	MN
+27123	27	123	Minnesota	Ramsey County	MN
+27125	27	125	Minnesota	Red Lake County	MN
+27127	27	127	Minnesota	Redwood County	MN
+27129	27	129	Minnesota	Renville County	MN
+27131	27	131	Minnesota	Rice County	MN
+27133	27	133	Minnesota	Rock County	MN
+27135	27	135	Minnesota	Roseau County	MN
+27137	27	137	Minnesota	St. Louis County	MN
+27139	27	139	Minnesota	Scott County	MN
+27141	27	141	Minnesota	Sherburne County	MN
+27143	27	143	Minnesota	Sibley County	MN
+27145	27	145	Minnesota	Stearns County	MN
+27147	27	147	Minnesota	Steele County	MN
+27149	27	149	Minnesota	Stevens County	MN
+27151	27	151	Minnesota	Swift County	MN
+27153	27	153	Minnesota	Todd County	MN
+27155	27	155	Minnesota	Traverse County	MN
+27157	27	157	Minnesota	Wabasha County	MN
+27159	27	159	Minnesota	Wadena County	MN
+27161	27	161	Minnesota	Waseca County	MN
+27163	27	163	Minnesota	Washington County	MN
+27165	27	165	Minnesota	Watonwan County	MN
+27167	27	167	Minnesota	Wilkin County	MN
+27169	27	169	Minnesota	Winona County	MN
+27171	27	171	Minnesota	Wright County	MN
+27173	27	173	Minnesota	Yellow Medicine County	MN
+28001	28	001	Mississippi	Adams County	MS
+28003	28	003	Mississippi	Alcorn County	MS
+28005	28	005	Mississippi	Amite County	MS
+28007	28	007	Mississippi	Attala County	MS
+28009	28	009	Mississippi	Benton County	MS
+28011	28	011	Mississippi	Bolivar County	MS
+28013	28	013	Mississippi	Calhoun County	MS
+28015	28	015	Mississippi	Carroll County	MS
+28017	28	017	Mississippi	Chickasaw County	MS
+28019	28	019	Mississippi	Choctaw County	MS
+28021	28	021	Mississippi	Claiborne County	MS
+28023	28	023	Mississippi	Clarke County	MS
+28025	28	025	Mississippi	Clay County	MS
+28027	28	027	Mississippi	Coahoma County	MS
+28029	28	029	Mississippi	Copiah County	MS
+28031	28	031	Mississippi	Covington County	MS
+28033	28	033	Mississippi	DeSoto County	MS
+28035	28	035	Mississippi	Forrest County	MS
+28037	28	037	Mississippi	Franklin County	MS
+28039	28	039	Mississippi	George County	MS
+28041	28	041	Mississippi	Greene County	MS
+28043	28	043	Mississippi	Grenada County	MS
+28045	28	045	Mississippi	Hancock County	MS
+28047	28	047	Mississippi	Harrison County	MS
+28049	28	049	Mississippi	Hinds County	MS
+28051	28	051	Mississippi	Holmes County	MS
+28053	28	053	Mississippi	Humphreys County	MS
+28055	28	055	Mississippi	Issaquena County	MS
+28057	28	057	Mississippi	Itawamba County	MS
+28059	28	059	Mississippi	Jackson County	MS
+28061	28	061	Mississippi	Jasper County	MS
+28063	28	063	Mississippi	Jefferson County	MS
+28065	28	065	Mississippi	Jefferson Davis County	MS
+28067	28	067	Mississippi	Jones County	MS
+28069	28	069	Mississippi	Kemper County	MS
+28071	28	071	Mississippi	Lafayette County	MS
+28073	28	073	Mississippi	Lamar County	MS
+28075	28	075	Mississippi	Lauderdale County	MS
+28077	28	077	Mississippi	Lawrence County	MS
+28079	28	079	Mississippi	Leake County	MS
+28081	28	081	Mississippi	Lee County	MS
+28083	28	083	Mississippi	Leflore County	MS
+28085	28	085	Mississippi	Lincoln County	MS
+28087	28	087	Mississippi	Lowndes County	MS
+28089	28	089	Mississippi	Madison County	MS
+28091	28	091	Mississippi	Marion County	MS
+28093	28	093	Mississippi	Marshall County	MS
+28095	28	095	Mississippi	Monroe County	MS
+28097	28	097	Mississippi	Montgomery County	MS
+28099	28	099	Mississippi	Neshoba County	MS
+28101	28	101	Mississippi	Newton County	MS
+28103	28	103	Mississippi	Noxubee County	MS
+28105	28	105	Mississippi	Oktibbeha County	MS
+28107	28	107	Mississippi	Panola County	MS
+28109	28	109	Mississippi	Pearl River County	MS
+28111	28	111	Mississippi	Perry County	MS
+28113	28	113	Mississippi	Pike County	MS
+28115	28	115	Mississippi	Pontotoc County	MS
+28117	28	117	Mississippi	Prentiss County	MS
+28119	28	119	Mississippi	Quitman County	MS
+28121	28	121	Mississippi	Rankin County	MS
+28123	28	123	Mississippi	Scott County	MS
+28125	28	125	Mississippi	Sharkey County	MS
+28127	28	127	Mississippi	Simpson County	MS
+28129	28	129	Mississippi	Smith County	MS
+28131	28	131	Mississippi	Stone County	MS
+28133	28	133	Mississippi	Sunflower County	MS
+28135	28	135	Mississippi	Tallahatchie County	MS
+28137	28	137	Mississippi	Tate County	MS
+28139	28	139	Mississippi	Tippah County	MS
+28141	28	141	Mississippi	Tishomingo County	MS
+28143	28	143	Mississippi	Tunica County	MS
+28145	28	145	Mississippi	Union County	MS
+28147	28	147	Mississippi	Walthall County	MS
+28149	28	149	Mississippi	Warren County	MS
+28151	28	151	Mississippi	Washington County	MS
+28153	28	153	Mississippi	Wayne County	MS
+28155	28	155	Mississippi	Webster County	MS
+28157	28	157	Mississippi	Wilkinson County	MS
+28159	28	159	Mississippi	Winston County	MS
+28161	28	161	Mississippi	Yalobusha County	MS
+28163	28	163	Mississippi	Yazoo County	MS
+29001	29	001	Missouri	Adair County	MO
+29003	29	003	Missouri	Andrew County	MO
+29005	29	005	Missouri	Atchison County	MO
+29007	29	007	Missouri	Audrain County	MO
+29009	29	009	Missouri	Barry County	MO
+29011	29	011	Missouri	Barton County	MO
+29013	29	013	Missouri	Bates County	MO
+29015	29	015	Missouri	Benton County	MO
+29017	29	017	Missouri	Bollinger County	MO
+29019	29	019	Missouri	Boone County	MO
+29021	29	021	Missouri	Buchanan County	MO
+29023	29	023	Missouri	Butler County	MO
+29025	29	025	Missouri	Caldwell County	MO
+29027	29	027	Missouri	Callaway County	MO
+29029	29	029	Missouri	Camden County	MO
+29031	29	031	Missouri	Cape Girardeau County	MO
+29033	29	033	Missouri	Carroll County	MO
+29035	29	035	Missouri	Carter County	MO
+29037	29	037	Missouri	Cass County	MO
+29039	29	039	Missouri	Cedar County	MO
+29041	29	041	Missouri	Chariton County	MO
+29043	29	043	Missouri	Christian County	MO
+29045	29	045	Missouri	Clark County	MO
+29047	29	047	Missouri	Clay County	MO
+29049	29	049	Missouri	Clinton County	MO
+29051	29	051	Missouri	Cole County	MO
+29053	29	053	Missouri	Cooper County	MO
+29055	29	055	Missouri	Crawford County	MO
+29057	29	057	Missouri	Dade County	MO
+29059	29	059	Missouri	Dallas County	MO
+29061	29	061	Missouri	Daviess County	MO
+29063	29	063	Missouri	DeKalb County	MO
+29065	29	065	Missouri	Dent County	MO
+29067	29	067	Missouri	Douglas County	MO
+29069	29	069	Missouri	Dunklin County	MO
+29071	29	071	Missouri	Franklin County	MO
+29073	29	073	Missouri	Gasconade County	MO
+29075	29	075	Missouri	Gentry County	MO
+29077	29	077	Missouri	Greene County	MO
+29079	29	079	Missouri	Grundy County	MO
+29081	29	081	Missouri	Harrison County	MO
+29083	29	083	Missouri	Henry County	MO
+29085	29	085	Missouri	Hickory County	MO
+29087	29	087	Missouri	Holt County	MO
+29089	29	089	Missouri	Howard County	MO
+29091	29	091	Missouri	Howell County	MO
+29093	29	093	Missouri	Iron County	MO
+29095	29	095	Missouri	Jackson County	MO
+29097	29	097	Missouri	Jasper County	MO
+29099	29	099	Missouri	Jefferson County	MO
+29101	29	101	Missouri	Johnson County	MO
+29103	29	103	Missouri	Knox County	MO
+29105	29	105	Missouri	Laclede County	MO
+29107	29	107	Missouri	Lafayette County	MO
+29109	29	109	Missouri	Lawrence County	MO
+29111	29	111	Missouri	Lewis County	MO
+29113	29	113	Missouri	Lincoln County	MO
+29115	29	115	Missouri	Linn County	MO
+29117	29	117	Missouri	Livingston County	MO
+29119	29	119	Missouri	McDonald County	MO
+29121	29	121	Missouri	Macon County	MO
+29123	29	123	Missouri	Madison County	MO
+29125	29	125	Missouri	Maries County	MO
+29127	29	127	Missouri	Marion County	MO
+29129	29	129	Missouri	Mercer County	MO
+29131	29	131	Missouri	Miller County	MO
+29133	29	133	Missouri	Mississippi County	MO
+29135	29	135	Missouri	Moniteau County	MO
+29137	29	137	Missouri	Monroe County	MO
+29139	29	139	Missouri	Montgomery County	MO
+29141	29	141	Missouri	Morgan County	MO
+29143	29	143	Missouri	New Madrid County	MO
+29145	29	145	Missouri	Newton County	MO
+29147	29	147	Missouri	Nodaway County	MO
+29149	29	149	Missouri	Oregon County	MO
+29151	29	151	Missouri	Osage County	MO
+29153	29	153	Missouri	Ozark County	MO
+29155	29	155	Missouri	Pemiscot County	MO
+29157	29	157	Missouri	Perry County	MO
+29159	29	159	Missouri	Pettis County	MO
+29161	29	161	Missouri	Phelps County	MO
+29163	29	163	Missouri	Pike County	MO
+29165	29	165	Missouri	Platte County	MO
+29167	29	167	Missouri	Polk County	MO
+29169	29	169	Missouri	Pulaski County	MO
+29171	29	171	Missouri	Putnam County	MO
+29173	29	173	Missouri	Ralls County	MO
+29175	29	175	Missouri	Randolph County	MO
+29177	29	177	Missouri	Ray County	MO
+29179	29	179	Missouri	Reynolds County	MO
+29181	29	181	Missouri	Ripley County	MO
+29183	29	183	Missouri	St. Charles County	MO
+29185	29	185	Missouri	St. Clair County	MO
+29186	29	186	Missouri	Ste. Genevieve County	MO
+29187	29	187	Missouri	St. Francois County	MO
+29189	29	189	Missouri	St. Louis County	MO
+29195	29	195	Missouri	Saline County	MO
+29197	29	197	Missouri	Schuyler County	MO
+29199	29	199	Missouri	Scotland County	MO
+29201	29	201	Missouri	Scott County	MO
+29203	29	203	Missouri	Shannon County	MO
+29205	29	205	Missouri	Shelby County	MO
+29207	29	207	Missouri	Stoddard County	MO
+29209	29	209	Missouri	Stone County	MO
+29211	29	211	Missouri	Sullivan County	MO
+29213	29	213	Missouri	Taney County	MO
+29215	29	215	Missouri	Texas County	MO
+29217	29	217	Missouri	Vernon County	MO
+29219	29	219	Missouri	Warren County	MO
+29221	29	221	Missouri	Washington County	MO
+29223	29	223	Missouri	Wayne County	MO
+29225	29	225	Missouri	Webster County	MO
+29227	29	227	Missouri	Worth County	MO
+29229	29	229	Missouri	Wright County	MO
+29510	29	510	Missouri	St. Louis city	MO
+30001	30	001	Montana	Beaverhead County	MT
+30003	30	003	Montana	Big Horn County	MT
+30005	30	005	Montana	Blaine County	MT
+30007	30	007	Montana	Broadwater County	MT
+30009	30	009	Montana	Carbon County	MT
+30011	30	011	Montana	Carter County	MT
+30013	30	013	Montana	Cascade County	MT
+30015	30	015	Montana	Chouteau County	MT
+30017	30	017	Montana	Custer County	MT
+30019	30	019	Montana	Daniels County	MT
+30021	30	021	Montana	Dawson County	MT
+30023	30	023	Montana	Deer Lodge County	MT
+30025	30	025	Montana	Fallon County	MT
+30027	30	027	Montana	Fergus County	MT
+30029	30	029	Montana	Flathead County	MT
+30031	30	031	Montana	Gallatin County	MT
+30033	30	033	Montana	Garfield County	MT
+30035	30	035	Montana	Glacier County	MT
+30037	30	037	Montana	Golden Valley County	MT
+30039	30	039	Montana	Granite County	MT
+30041	30	041	Montana	Hill County	MT
+30043	30	043	Montana	Jefferson County	MT
+30045	30	045	Montana	Judith Basin County	MT
+30047	30	047	Montana	Lake County	MT
+30049	30	049	Montana	Lewis and Clark County	MT
+30051	30	051	Montana	Liberty County	MT
+30053	30	053	Montana	Lincoln County	MT
+30055	30	055	Montana	McCone County	MT
+30057	30	057	Montana	Madison County	MT
+30059	30	059	Montana	Meagher County	MT
+30061	30	061	Montana	Mineral County	MT
+30063	30	063	Montana	Missoula County	MT
+30065	30	065	Montana	Musselshell County	MT
+30067	30	067	Montana	Park County	MT
+30069	30	069	Montana	Petroleum County	MT
+30071	30	071	Montana	Phillips County	MT
+30073	30	073	Montana	Pondera County	MT
+30075	30	075	Montana	Powder River County	MT
+30077	30	077	Montana	Powell County	MT
+30079	30	079	Montana	Prairie County	MT
+30081	30	081	Montana	Ravalli County	MT
+30083	30	083	Montana	Richland County	MT
+30085	30	085	Montana	Roosevelt County	MT
+30087	30	087	Montana	Rosebud County	MT
+30089	30	089	Montana	Sanders County	MT
+30091	30	091	Montana	Sheridan County	MT
+30093	30	093	Montana	Silver Bow County	MT
+30095	30	095	Montana	Stillwater County	MT
+30097	30	097	Montana	Sweet Grass County	MT
+30099	30	099	Montana	Teton County	MT
+30101	30	101	Montana	Toole County	MT
+30103	30	103	Montana	Treasure County	MT
+30105	30	105	Montana	Valley County	MT
+30107	30	107	Montana	Wheatland County	MT
+30109	30	109	Montana	Wibaux County	MT
+30111	30	111	Montana	Yellowstone County	MT
+31001	31	001	Nebraska	Adams County	NE
+31003	31	003	Nebraska	Antelope County	NE
+31005	31	005	Nebraska	Arthur County	NE
+31007	31	007	Nebraska	Banner County	NE
+31009	31	009	Nebraska	Blaine County	NE
+31011	31	011	Nebraska	Boone County	NE
+31013	31	013	Nebraska	Box Butte County	NE
+31015	31	015	Nebraska	Boyd County	NE
+31017	31	017	Nebraska	Brown County	NE
+31019	31	019	Nebraska	Buffalo County	NE
+31021	31	021	Nebraska	Burt County	NE
+31023	31	023	Nebraska	Butler County	NE
+31025	31	025	Nebraska	Cass County	NE
+31027	31	027	Nebraska	Cedar County	NE
+31029	31	029	Nebraska	Chase County	NE
+31031	31	031	Nebraska	Cherry County	NE
+31033	31	033	Nebraska	Cheyenne County	NE
+31035	31	035	Nebraska	Clay County	NE
+31037	31	037	Nebraska	Colfax County	NE
+31039	31	039	Nebraska	Cuming County	NE
+31041	31	041	Nebraska	Custer County	NE
+31043	31	043	Nebraska	Dakota County	NE
+31045	31	045	Nebraska	Dawes County	NE
+31047	31	047	Nebraska	Dawson County	NE
+31049	31	049	Nebraska	Deuel County	NE
+31051	31	051	Nebraska	Dixon County	NE
+31053	31	053	Nebraska	Dodge County	NE
+31055	31	055	Nebraska	Douglas County	NE
+31057	31	057	Nebraska	Dundy County	NE
+31059	31	059	Nebraska	Fillmore County	NE
+31061	31	061	Nebraska	Franklin County	NE
+31063	31	063	Nebraska	Frontier County	NE
+31065	31	065	Nebraska	Furnas County	NE
+31067	31	067	Nebraska	Gage County	NE
+31069	31	069	Nebraska	Garden County	NE
+31071	31	071	Nebraska	Garfield County	NE
+31073	31	073	Nebraska	Gosper County	NE
+31075	31	075	Nebraska	Grant County	NE
+31077	31	077	Nebraska	Greeley County	NE
+31079	31	079	Nebraska	Hall County	NE
+31081	31	081	Nebraska	Hamilton County	NE
+31083	31	083	Nebraska	Harlan County	NE
+31085	31	085	Nebraska	Hayes County	NE
+31087	31	087	Nebraska	Hitchcock County	NE
+31089	31	089	Nebraska	Holt County	NE
+31091	31	091	Nebraska	Hooker County	NE
+31093	31	093	Nebraska	Howard County	NE
+31095	31	095	Nebraska	Jefferson County	NE
+31097	31	097	Nebraska	Johnson County	NE
+31099	31	099	Nebraska	Kearney County	NE
+31101	31	101	Nebraska	Keith County	NE
+31103	31	103	Nebraska	Keya Paha County	NE
+31105	31	105	Nebraska	Kimball County	NE
+31107	31	107	Nebraska	Knox County	NE
+31109	31	109	Nebraska	Lancaster County	NE
+31111	31	111	Nebraska	Lincoln County	NE
+31113	31	113	Nebraska	Logan County	NE
+31115	31	115	Nebraska	Loup County	NE
+31117	31	117	Nebraska	McPherson County	NE
+31119	31	119	Nebraska	Madison County	NE
+31121	31	121	Nebraska	Merrick County	NE
+31123	31	123	Nebraska	Morrill County	NE
+31125	31	125	Nebraska	Nance County	NE
+31127	31	127	Nebraska	Nemaha County	NE
+31129	31	129	Nebraska	Nuckolls County	NE
+31131	31	131	Nebraska	Otoe County	NE
+31133	31	133	Nebraska	Pawnee County	NE
+31135	31	135	Nebraska	Perkins County	NE
+31137	31	137	Nebraska	Phelps County	NE
+31139	31	139	Nebraska	Pierce County	NE
+31141	31	141	Nebraska	Platte County	NE
+31143	31	143	Nebraska	Polk County	NE
+31145	31	145	Nebraska	Red Willow County	NE
+31147	31	147	Nebraska	Richardson County	NE
+31149	31	149	Nebraska	Rock County	NE
+31151	31	151	Nebraska	Saline County	NE
+31153	31	153	Nebraska	Sarpy County	NE
+31155	31	155	Nebraska	Saunders County	NE
+31157	31	157	Nebraska	Scotts Bluff County	NE
+31159	31	159	Nebraska	Seward County	NE
+31161	31	161	Nebraska	Sheridan County	NE
+31163	31	163	Nebraska	Sherman County	NE
+31165	31	165	Nebraska	Sioux County	NE
+31167	31	167	Nebraska	Stanton County	NE
+31169	31	169	Nebraska	Thayer County	NE
+31171	31	171	Nebraska	Thomas County	NE
+31173	31	173	Nebraska	Thurston County	NE
+31175	31	175	Nebraska	Valley County	NE
+31177	31	177	Nebraska	Washington County	NE
+31179	31	179	Nebraska	Wayne County	NE
+31181	31	181	Nebraska	Webster County	NE
+31183	31	183	Nebraska	Wheeler County	NE
+31185	31	185	Nebraska	York County	NE
+32001	32	001	Nevada	Churchill County	NV
+32003	32	003	Nevada	Clark County	NV
+32005	32	005	Nevada	Douglas County	NV
+32007	32	007	Nevada	Elko County	NV
+32009	32	009	Nevada	Esmeralda County	NV
+32011	32	011	Nevada	Eureka County	NV
+32013	32	013	Nevada	Humboldt County	NV
+32015	32	015	Nevada	Lander County	NV
+32017	32	017	Nevada	Lincoln County	NV
+32019	32	019	Nevada	Lyon County	NV
+32021	32	021	Nevada	Mineral County	NV
+32023	32	023	Nevada	Nye County	NV
+32027	32	027	Nevada	Pershing County	NV
+32029	32	029	Nevada	Storey County	NV
+32031	32	031	Nevada	Washoe County	NV
+32033	32	033	Nevada	White Pine County	NV
+32510	32	510	Nevada	Carson City	NV
+33001	33	001	New Hampshire	Belknap County	NH
+33003	33	003	New Hampshire	Carroll County	NH
+33005	33	005	New Hampshire	Cheshire County	NH
+33007	33	007	New Hampshire	Coos County	NH
+33009	33	009	New Hampshire	Grafton County	NH
+33011	33	011	New Hampshire	Hillsborough County	NH
+33013	33	013	New Hampshire	Merrimack County	NH
+33015	33	015	New Hampshire	Rockingham County	NH
+33017	33	017	New Hampshire	Strafford County	NH
+33019	33	019	New Hampshire	Sullivan County	NH
+34001	34	001	New Jersey	Atlantic County	NJ
+34003	34	003	New Jersey	Bergen County	NJ
+34005	34	005	New Jersey	Burlington County	NJ
+34007	34	007	New Jersey	Camden County	NJ
+34009	34	009	New Jersey	Cape May County	NJ
+34011	34	011	New Jersey	Cumberland County	NJ
+34013	34	013	New Jersey	Essex County	NJ
+34015	34	015	New Jersey	Gloucester County	NJ
+34017	34	017	New Jersey	Hudson County	NJ
+34019	34	019	New Jersey	Hunterdon County	NJ
+34021	34	021	New Jersey	Mercer County	NJ
+34023	34	023	New Jersey	Middlesex County	NJ
+34025	34	025	New Jersey	Monmouth County	NJ
+34027	34	027	New Jersey	Morris County	NJ
+34029	34	029	New Jersey	Ocean County	NJ
+34031	34	031	New Jersey	Passaic County	NJ
+34033	34	033	New Jersey	Salem County	NJ
+34035	34	035	New Jersey	Somerset County	NJ
+34037	34	037	New Jersey	Sussex County	NJ
+34039	34	039	New Jersey	Union County	NJ
+34041	34	041	New Jersey	Warren County	NJ
+35001	35	001	New Mexico	Bernalillo County	NM
+35003	35	003	New Mexico	Catron County	NM
+35005	35	005	New Mexico	Chaves County	NM
+35006	35	006	New Mexico	Cibola County	NM
+35007	35	007	New Mexico	Colfax County	NM
+35009	35	009	New Mexico	Curry County	NM
+35011	35	011	New Mexico	De Baca County	NM
+35013	35	013	New Mexico	Dona Ana County	NM
+35015	35	015	New Mexico	Eddy County	NM
+35017	35	017	New Mexico	Grant County	NM
+35019	35	019	New Mexico	Guadalupe County	NM
+35021	35	021	New Mexico	Harding County	NM
+35023	35	023	New Mexico	Hidalgo County	NM
+35025	35	025	New Mexico	Lea County	NM
+35027	35	027	New Mexico	Lincoln County	NM
+35028	35	028	New Mexico	Los Alamos County	NM
+35029	35	029	New Mexico	Luna County	NM
+35031	35	031	New Mexico	McKinley County	NM
+35033	35	033	New Mexico	Mora County	NM
+35035	35	035	New Mexico	Otero County	NM
+35037	35	037	New Mexico	Quay County	NM
+35039	35	039	New Mexico	Rio Arriba County	NM
+35041	35	041	New Mexico	Roosevelt County	NM
+35043	35	043	New Mexico	Sandoval County	NM
+35045	35	045	New Mexico	San Juan County	NM
+35047	35	047	New Mexico	San Miguel County	NM
+35049	35	049	New Mexico	Santa Fe County	NM
+35051	35	051	New Mexico	Sierra County	NM
+35053	35	053	New Mexico	Socorro County	NM
+35055	35	055	New Mexico	Taos County	NM
+35057	35	057	New Mexico	Torrance County	NM
+35059	35	059	New Mexico	Union County	NM
+35061	35	061	New Mexico	Valencia County	NM
+36001	36	001	New York	Albany County	NY
+36003	36	003	New York	Allegany County	NY
+36005	36	005	New York	Bronx County	NY
+36007	36	007	New York	Broome County	NY
+36009	36	009	New York	Cattaraugus County	NY
+36011	36	011	New York	Cayuga County	NY
+36013	36	013	New York	Chautauqua County	NY
+36015	36	015	New York	Chemung County	NY
+36017	36	017	New York	Chenango County	NY
+36019	36	019	New York	Clinton County	NY
+36021	36	021	New York	Columbia County	NY
+36023	36	023	New York	Cortland County	NY
+36025	36	025	New York	Delaware County	NY
+36027	36	027	New York	Dutchess County	NY
+36029	36	029	New York	Erie County	NY
+36031	36	031	New York	Essex County	NY
+36033	36	033	New York	Franklin County	NY
+36035	36	035	New York	Fulton County	NY
+36037	36	037	New York	Genesee County	NY
+36039	36	039	New York	Greene County	NY
+36041	36	041	New York	Hamilton County	NY
+36043	36	043	New York	Herkimer County	NY
+36045	36	045	New York	Jefferson County	NY
+36047	36	047	New York	Kings County	NY
+36049	36	049	New York	Lewis County	NY
+36051	36	051	New York	Livingston County	NY
+36053	36	053	New York	Madison County	NY
+36055	36	055	New York	Monroe County	NY
+36057	36	057	New York	Montgomery County	NY
+36059	36	059	New York	Nassau County	NY
+36061	36	061	New York	New York County	NY
+36063	36	063	New York	Niagara County	NY
+36065	36	065	New York	Oneida County	NY
+36067	36	067	New York	Onondaga County	NY
+36069	36	069	New York	Ontario County	NY
+36071	36	071	New York	Orange County	NY
+36073	36	073	New York	Orleans County	NY
+36075	36	075	New York	Oswego County	NY
+36077	36	077	New York	Otsego County	NY
+36079	36	079	New York	Putnam County	NY
+36081	36	081	New York	Queens County	NY
+36083	36	083	New York	Rensselaer County	NY
+36085	36	085	New York	Richmond County	NY
+36087	36	087	New York	Rockland County	NY
+36089	36	089	New York	St. Lawrence County	NY
+36091	36	091	New York	Saratoga County	NY
+36093	36	093	New York	Schenectady County	NY
+36095	36	095	New York	Schoharie County	NY
+36097	36	097	New York	Schuyler County	NY
+36099	36	099	New York	Seneca County	NY
+36101	36	101	New York	Steuben County	NY
+36103	36	103	New York	Suffolk County	NY
+36105	36	105	New York	Sullivan County	NY
+36107	36	107	New York	Tioga County	NY
+36109	36	109	New York	Tompkins County	NY
+36111	36	111	New York	Ulster County	NY
+36113	36	113	New York	Warren County	NY
+36115	36	115	New York	Washington County	NY
+36117	36	117	New York	Wayne County	NY
+36119	36	119	New York	Westchester County	NY
+36121	36	121	New York	Wyoming County	NY
+36123	36	123	New York	Yates County	NY
+37001	37	001	North Carolina	Alamance County	NC
+37003	37	003	North Carolina	Alexander County	NC
+37005	37	005	North Carolina	Alleghany County	NC
+37007	37	007	North Carolina	Anson County	NC
+37009	37	009	North Carolina	Ashe County	NC
+37011	37	011	North Carolina	Avery County	NC
+37013	37	013	North Carolina	Beaufort County	NC
+37015	37	015	North Carolina	Bertie County	NC
+37017	37	017	North Carolina	Bladen County	NC
+37019	37	019	North Carolina	Brunswick County	NC
+37021	37	021	North Carolina	Buncombe County	NC
+37023	37	023	North Carolina	Burke County	NC
+37025	37	025	North Carolina	Cabarrus County	NC
+37027	37	027	North Carolina	Caldwell County	NC
+37029	37	029	North Carolina	Camden County	NC
+37031	37	031	North Carolina	Carteret County	NC
+37033	37	033	North Carolina	Caswell County	NC
+37035	37	035	North Carolina	Catawba County	NC
+37037	37	037	North Carolina	Chatham County	NC
+37039	37	039	North Carolina	Cherokee County	NC
+37041	37	041	North Carolina	Chowan County	NC
+37043	37	043	North Carolina	Clay County	NC
+37045	37	045	North Carolina	Cleveland County	NC
+37047	37	047	North Carolina	Columbus County	NC
+37049	37	049	North Carolina	Craven County	NC
+37051	37	051	North Carolina	Cumberland County	NC
+37053	37	053	North Carolina	Currituck County	NC
+37055	37	055	North Carolina	Dare County	NC
+37057	37	057	North Carolina	Davidson County	NC
+37059	37	059	North Carolina	Davie County	NC
+37061	37	061	North Carolina	Duplin County	NC
+37063	37	063	North Carolina	Durham County	NC
+37065	37	065	North Carolina	Edgecombe County	NC
+37067	37	067	North Carolina	Forsyth County	NC
+37069	37	069	North Carolina	Franklin County	NC
+37071	37	071	North Carolina	Gaston County	NC
+37073	37	073	North Carolina	Gates County	NC
+37075	37	075	North Carolina	Graham County	NC
+37077	37	077	North Carolina	Granville County	NC
+37079	37	079	North Carolina	Greene County	NC
+37081	37	081	North Carolina	Guilford County	NC
+37083	37	083	North Carolina	Halifax County	NC
+37085	37	085	North Carolina	Harnett County	NC
+37087	37	087	North Carolina	Haywood County	NC
+37089	37	089	North Carolina	Henderson County	NC
+37091	37	091	North Carolina	Hertford County	NC
+37093	37	093	North Carolina	Hoke County	NC
+37095	37	095	North Carolina	Hyde County	NC
+37097	37	097	North Carolina	Iredell County	NC
+37099	37	099	North Carolina	Jackson County	NC
+37101	37	101	North Carolina	Johnston County	NC
+37103	37	103	North Carolina	Jones County	NC
+37105	37	105	North Carolina	Lee County	NC
+37107	37	107	North Carolina	Lenoir County	NC
+37109	37	109	North Carolina	Lincoln County	NC
+37111	37	111	North Carolina	McDowell County	NC
+37113	37	113	North Carolina	Macon County	NC
+37115	37	115	North Carolina	Madison County	NC
+37117	37	117	North Carolina	Martin County	NC
+37119	37	119	North Carolina	Mecklenburg County	NC
+37121	37	121	North Carolina	Mitchell County	NC
+37123	37	123	North Carolina	Montgomery County	NC
+37125	37	125	North Carolina	Moore County	NC
+37127	37	127	North Carolina	Nash County	NC
+37129	37	129	North Carolina	New Hanover County	NC
+37131	37	131	North Carolina	Northampton County	NC
+37133	37	133	North Carolina	Onslow County	NC
+37135	37	135	North Carolina	Orange County	NC
+37137	37	137	North Carolina	Pamlico County	NC
+37139	37	139	North Carolina	Pasquotank County	NC
+37141	37	141	North Carolina	Pender County	NC
+37143	37	143	North Carolina	Perquimans County	NC
+37145	37	145	North Carolina	Person County	NC
+37147	37	147	North Carolina	Pitt County	NC
+37149	37	149	North Carolina	Polk County	NC
+37151	37	151	North Carolina	Randolph County	NC
+37153	37	153	North Carolina	Richmond County	NC
+37155	37	155	North Carolina	Robeson County	NC
+37157	37	157	North Carolina	Rockingham County	NC
+37159	37	159	North Carolina	Rowan County	NC
+37161	37	161	North Carolina	Rutherford County	NC
+37163	37	163	North Carolina	Sampson County	NC
+37165	37	165	North Carolina	Scotland County	NC
+37167	37	167	North Carolina	Stanly County	NC
+37169	37	169	North Carolina	Stokes County	NC
+37171	37	171	North Carolina	Surry County	NC
+37173	37	173	North Carolina	Swain County	NC
+37175	37	175	North Carolina	Transylvania County	NC
+37177	37	177	North Carolina	Tyrrell County	NC
+37179	37	179	North Carolina	Union County	NC
+37181	37	181	North Carolina	Vance County	NC
+37183	37	183	North Carolina	Wake County	NC
+37185	37	185	North Carolina	Warren County	NC
+37187	37	187	North Carolina	Washington County	NC
+37189	37	189	North Carolina	Watauga County	NC
+37191	37	191	North Carolina	Wayne County	NC
+37193	37	193	North Carolina	Wilkes County	NC
+37195	37	195	North Carolina	Wilson County	NC
+37197	37	197	North Carolina	Yadkin County	NC
+37199	37	199	North Carolina	Yancey County	NC
+38001	38	001	North Dakota	Adams County	ND
+38003	38	003	North Dakota	Barnes County	ND
+38005	38	005	North Dakota	Benson County	ND
+38007	38	007	North Dakota	Billings County	ND
+38009	38	009	North Dakota	Bottineau County	ND
+38011	38	011	North Dakota	Bowman County	ND
+38013	38	013	North Dakota	Burke County	ND
+38015	38	015	North Dakota	Burleigh County	ND
+38017	38	017	North Dakota	Cass County	ND
+38019	38	019	North Dakota	Cavalier County	ND
+38021	38	021	North Dakota	Dickey County	ND
+38023	38	023	North Dakota	Divide County	ND
+38025	38	025	North Dakota	Dunn County	ND
+38027	38	027	North Dakota	Eddy County	ND
+38029	38	029	North Dakota	Emmons County	ND
+38031	38	031	North Dakota	Foster County	ND
+38033	38	033	North Dakota	Golden Valley County	ND
+38035	38	035	North Dakota	Grand Forks County	ND
+38037	38	037	North Dakota	Grant County	ND
+38039	38	039	North Dakota	Griggs County	ND
+38041	38	041	North Dakota	Hettinger County	ND
+38043	38	043	North Dakota	Kidder County	ND
+38045	38	045	North Dakota	LaMoure County	ND
+38047	38	047	North Dakota	Logan County	ND
+38049	38	049	North Dakota	McHenry County	ND
+38051	38	051	North Dakota	McIntosh County	ND
+38053	38	053	North Dakota	McKenzie County	ND
+38055	38	055	North Dakota	McLean County	ND
+38057	38	057	North Dakota	Mercer County	ND
+38059	38	059	North Dakota	Morton County	ND
+38061	38	061	North Dakota	Mountrail County	ND
+38063	38	063	North Dakota	Nelson County	ND
+38065	38	065	North Dakota	Oliver County	ND
+38067	38	067	North Dakota	Pembina County	ND
+38069	38	069	North Dakota	Pierce County	ND
+38071	38	071	North Dakota	Ramsey County	ND
+38073	38	073	North Dakota	Ransom County	ND
+38075	38	075	North Dakota	Renville County	ND
+38077	38	077	North Dakota	Richland County	ND
+38079	38	079	North Dakota	Rolette County	ND
+38081	38	081	North Dakota	Sargent County	ND
+38083	38	083	North Dakota	Sheridan County	ND
+38085	38	085	North Dakota	Sioux County	ND
+38087	38	087	North Dakota	Slope County	ND
+38089	38	089	North Dakota	Stark County	ND
+38091	38	091	North Dakota	Steele County	ND
+38093	38	093	North Dakota	Stutsman County	ND
+38095	38	095	North Dakota	Towner County	ND
+38097	38	097	North Dakota	Traill County	ND
+38099	38	099	North Dakota	Walsh County	ND
+38101	38	101	North Dakota	Ward County	ND
+38103	38	103	North Dakota	Wells County	ND
+38105	38	105	North Dakota	Williams County	ND
+39001	39	001	Ohio	Adams County	OH
+39003	39	003	Ohio	Allen County	OH
+39005	39	005	Ohio	Ashland County	OH
+39007	39	007	Ohio	Ashtabula County	OH
+39009	39	009	Ohio	Athens County	OH
+39011	39	011	Ohio	Auglaize County	OH
+39013	39	013	Ohio	Belmont County	OH
+39015	39	015	Ohio	Brown County	OH
+39017	39	017	Ohio	Butler County	OH
+39019	39	019	Ohio	Carroll County	OH
+39021	39	021	Ohio	Champaign County	OH
+39023	39	023	Ohio	Clark County	OH
+39025	39	025	Ohio	Clermont County	OH
+39027	39	027	Ohio	Clinton County	OH
+39029	39	029	Ohio	Columbiana County	OH
+39031	39	031	Ohio	Coshocton County	OH
+39033	39	033	Ohio	Crawford County	OH
+39035	39	035	Ohio	Cuyahoga County	OH
+39037	39	037	Ohio	Darke County	OH
+39039	39	039	Ohio	Defiance County	OH
+39041	39	041	Ohio	Delaware County	OH
+39043	39	043	Ohio	Erie County	OH
+39045	39	045	Ohio	Fairfield County	OH
+39047	39	047	Ohio	Fayette County	OH
+39049	39	049	Ohio	Franklin County	OH
+39051	39	051	Ohio	Fulton County	OH
+39053	39	053	Ohio	Gallia County	OH
+39055	39	055	Ohio	Geauga County	OH
+39057	39	057	Ohio	Greene County	OH
+39059	39	059	Ohio	Guernsey County	OH
+39061	39	061	Ohio	Hamilton County	OH
+39063	39	063	Ohio	Hancock County	OH
+39065	39	065	Ohio	Hardin County	OH
+39067	39	067	Ohio	Harrison County	OH
+39069	39	069	Ohio	Henry County	OH
+39071	39	071	Ohio	Highland County	OH
+39073	39	073	Ohio	Hocking County	OH
+39075	39	075	Ohio	Holmes County	OH
+39077	39	077	Ohio	Huron County	OH
+39079	39	079	Ohio	Jackson County	OH
+39081	39	081	Ohio	Jefferson County	OH
+39083	39	083	Ohio	Knox County	OH
+39085	39	085	Ohio	Lake County	OH
+39087	39	087	Ohio	Lawrence County	OH
+39089	39	089	Ohio	Licking County	OH
+39091	39	091	Ohio	Logan County	OH
+39093	39	093	Ohio	Lorain County	OH
+39095	39	095	Ohio	Lucas County	OH
+39097	39	097	Ohio	Madison County	OH
+39099	39	099	Ohio	Mahoning County	OH
+39101	39	101	Ohio	Marion County	OH
+39103	39	103	Ohio	Medina County	OH
+39105	39	105	Ohio	Meigs County	OH
+39107	39	107	Ohio	Mercer County	OH
+39109	39	109	Ohio	Miami County	OH
+39111	39	111	Ohio	Monroe County	OH
+39113	39	113	Ohio	Montgomery County	OH
+39115	39	115	Ohio	Morgan County	OH
+39117	39	117	Ohio	Morrow County	OH
+39119	39	119	Ohio	Muskingum County	OH
+39121	39	121	Ohio	Noble County	OH
+39123	39	123	Ohio	Ottawa County	OH
+39125	39	125	Ohio	Paulding County	OH
+39127	39	127	Ohio	Perry County	OH
+39129	39	129	Ohio	Pickaway County	OH
+39131	39	131	Ohio	Pike County	OH
+39133	39	133	Ohio	Portage County	OH
+39135	39	135	Ohio	Preble County	OH
+39137	39	137	Ohio	Putnam County	OH
+39139	39	139	Ohio	Richland County	OH
+39141	39	141	Ohio	Ross County	OH
+39143	39	143	Ohio	Sandusky County	OH
+39145	39	145	Ohio	Scioto County	OH
+39147	39	147	Ohio	Seneca County	OH
+39149	39	149	Ohio	Shelby County	OH
+39151	39	151	Ohio	Stark County	OH
+39153	39	153	Ohio	Summit County	OH
+39155	39	155	Ohio	Trumbull County	OH
+39157	39	157	Ohio	Tuscarawas County	OH
+39159	39	159	Ohio	Union County	OH
+39161	39	161	Ohio	Van Wert County	OH
+39163	39	163	Ohio	Vinton County	OH
+39165	39	165	Ohio	Warren County	OH
+39167	39	167	Ohio	Washington County	OH
+39169	39	169	Ohio	Wayne County	OH
+39171	39	171	Ohio	Williams County	OH
+39173	39	173	Ohio	Wood County	OH
+39175	39	175	Ohio	Wyandot County	OH
+40001	40	001	Oklahoma	Adair County	OK
+40003	40	003	Oklahoma	Alfalfa County	OK
+40005	40	005	Oklahoma	Atoka County	OK
+40007	40	007	Oklahoma	Beaver County	OK
+40009	40	009	Oklahoma	Beckham County	OK
+40011	40	011	Oklahoma	Blaine County	OK
+40013	40	013	Oklahoma	Bryan County	OK
+40015	40	015	Oklahoma	Caddo County	OK
+40017	40	017	Oklahoma	Canadian County	OK
+40019	40	019	Oklahoma	Carter County	OK
+40021	40	021	Oklahoma	Cherokee County	OK
+40023	40	023	Oklahoma	Choctaw County	OK
+40025	40	025	Oklahoma	Cimarron County	OK
+40027	40	027	Oklahoma	Cleveland County	OK
+40029	40	029	Oklahoma	Coal County	OK
+40031	40	031	Oklahoma	Comanche County	OK
+40033	40	033	Oklahoma	Cotton County	OK
+40035	40	035	Oklahoma	Craig County	OK
+40037	40	037	Oklahoma	Creek County	OK
+40039	40	039	Oklahoma	Custer County	OK
+40041	40	041	Oklahoma	Delaware County	OK
+40043	40	043	Oklahoma	Dewey County	OK
+40045	40	045	Oklahoma	Ellis County	OK
+40047	40	047	Oklahoma	Garfield County	OK
+40049	40	049	Oklahoma	Garvin County	OK
+40051	40	051	Oklahoma	Grady County	OK
+40053	40	053	Oklahoma	Grant County	OK
+40055	40	055	Oklahoma	Greer County	OK
+40057	40	057	Oklahoma	Harmon County	OK
+40059	40	059	Oklahoma	Harper County	OK
+40061	40	061	Oklahoma	Haskell County	OK
+40063	40	063	Oklahoma	Hughes County	OK
+40065	40	065	Oklahoma	Jackson County	OK
+40067	40	067	Oklahoma	Jefferson County	OK
+40069	40	069	Oklahoma	Johnston County	OK
+40071	40	071	Oklahoma	Kay County	OK
+40073	40	073	Oklahoma	Kingfisher County	OK
+40075	40	075	Oklahoma	Kiowa County	OK
+40077	40	077	Oklahoma	Latimer County	OK
+40079	40	079	Oklahoma	Le Flore County	OK
+40081	40	081	Oklahoma	Lincoln County	OK
+40083	40	083	Oklahoma	Logan County	OK
+40085	40	085	Oklahoma	Love County	OK
+40087	40	087	Oklahoma	McClain County	OK
+40089	40	089	Oklahoma	McCurtain County	OK
+40091	40	091	Oklahoma	McIntosh County	OK
+40093	40	093	Oklahoma	Major County	OK
+40095	40	095	Oklahoma	Marshall County	OK
+40097	40	097	Oklahoma	Mayes County	OK
+40099	40	099	Oklahoma	Murray County	OK
+40101	40	101	Oklahoma	Muskogee County	OK
+40103	40	103	Oklahoma	Noble County	OK
+40105	40	105	Oklahoma	Nowata County	OK
+40107	40	107	Oklahoma	Okfuskee County	OK
+40109	40	109	Oklahoma	Oklahoma County	OK
+40111	40	111	Oklahoma	Okmulgee County	OK
+40113	40	113	Oklahoma	Osage County	OK
+40115	40	115	Oklahoma	Ottawa County	OK
+40117	40	117	Oklahoma	Pawnee County	OK
+40119	40	119	Oklahoma	Payne County	OK
+40121	40	121	Oklahoma	Pittsburg County	OK
+40123	40	123	Oklahoma	Pontotoc County	OK
+40125	40	125	Oklahoma	Pottawatomie County	OK
+40127	40	127	Oklahoma	Pushmataha County	OK
+40129	40	129	Oklahoma	Roger Mills County	OK
+40131	40	131	Oklahoma	Rogers County	OK
+40133	40	133	Oklahoma	Seminole County	OK
+40135	40	135	Oklahoma	Sequoyah County	OK
+40137	40	137	Oklahoma	Stephens County	OK
+40139	40	139	Oklahoma	Texas County	OK
+40141	40	141	Oklahoma	Tillman County	OK
+40143	40	143	Oklahoma	Tulsa County	OK
+40145	40	145	Oklahoma	Wagoner County	OK
+40147	40	147	Oklahoma	Washington County	OK
+40149	40	149	Oklahoma	Washita County	OK
+40151	40	151	Oklahoma	Woods County	OK
+40153	40	153	Oklahoma	Woodward County	OK
+41001	41	001	Oregon	Baker County	OR
+41003	41	003	Oregon	Benton County	OR
+41005	41	005	Oregon	Clackamas County	OR
+41007	41	007	Oregon	Clatsop County	OR
+41009	41	009	Oregon	Columbia County	OR
+41011	41	011	Oregon	Coos County	OR
+41013	41	013	Oregon	Crook County	OR
+41015	41	015	Oregon	Curry County	OR
+41017	41	017	Oregon	Deschutes County	OR
+41019	41	019	Oregon	Douglas County	OR
+41021	41	021	Oregon	Gilliam County	OR
+41023	41	023	Oregon	Grant County	OR
+41025	41	025	Oregon	Harney County	OR
+41027	41	027	Oregon	Hood River County	OR
+41029	41	029	Oregon	Jackson County	OR
+41031	41	031	Oregon	Jefferson County	OR
+41033	41	033	Oregon	Josephine County	OR
+41035	41	035	Oregon	Klamath County	OR
+41037	41	037	Oregon	Lake County	OR
+41039	41	039	Oregon	Lane County	OR
+41041	41	041	Oregon	Lincoln County	OR
+41043	41	043	Oregon	Linn County	OR
+41045	41	045	Oregon	Malheur County	OR
+41047	41	047	Oregon	Marion County	OR
+41049	41	049	Oregon	Morrow County	OR
+41051	41	051	Oregon	Multnomah County	OR
+41053	41	053	Oregon	Polk County	OR
+41055	41	055	Oregon	Sherman County	OR
+41057	41	057	Oregon	Tillamook County	OR
+41059	41	059	Oregon	Umatilla County	OR
+41061	41	061	Oregon	Union County	OR
+41063	41	063	Oregon	Wallowa County	OR
+41065	41	065	Oregon	Wasco County	OR
+41067	41	067	Oregon	Washington County	OR
+41069	41	069	Oregon	Wheeler County	OR
+41071	41	071	Oregon	Yamhill County	OR
+42001	42	001	Pennsylvania	Adams County	PA
+42003	42	003	Pennsylvania	Allegheny County	PA
+42005	42	005	Pennsylvania	Armstrong County	PA
+42007	42	007	Pennsylvania	Beaver County	PA
+42009	42	009	Pennsylvania	Bedford County	PA
+42011	42	011	Pennsylvania	Berks County	PA
+42013	42	013	Pennsylvania	Blair County	PA
+42015	42	015	Pennsylvania	Bradford County	PA
+42017	42	017	Pennsylvania	Bucks County	PA
+42019	42	019	Pennsylvania	Butler County	PA
+42021	42	021	Pennsylvania	Cambria County	PA
+42023	42	023	Pennsylvania	Cameron County	PA
+42025	42	025	Pennsylvania	Carbon County	PA
+42027	42	027	Pennsylvania	Centre County	PA
+42029	42	029	Pennsylvania	Chester County	PA
+42031	42	031	Pennsylvania	Clarion County	PA
+42033	42	033	Pennsylvania	Clearfield County	PA
+42035	42	035	Pennsylvania	Clinton County	PA
+42037	42	037	Pennsylvania	Columbia County	PA
+42039	42	039	Pennsylvania	Crawford County	PA
+42041	42	041	Pennsylvania	Cumberland County	PA
+42043	42	043	Pennsylvania	Dauphin County	PA
+42045	42	045	Pennsylvania	Delaware County	PA
+42047	42	047	Pennsylvania	Elk County	PA
+42049	42	049	Pennsylvania	Erie County	PA
+42051	42	051	Pennsylvania	Fayette County	PA
+42053	42	053	Pennsylvania	Forest County	PA
+42055	42	055	Pennsylvania	Franklin County	PA
+42057	42	057	Pennsylvania	Fulton County	PA
+42059	42	059	Pennsylvania	Greene County	PA
+42061	42	061	Pennsylvania	Huntingdon County	PA
+42063	42	063	Pennsylvania	Indiana County	PA
+42065	42	065	Pennsylvania	Jefferson County	PA
+42067	42	067	Pennsylvania	Juniata County	PA
+42069	42	069	Pennsylvania	Lackawanna County	PA
+42071	42	071	Pennsylvania	Lancaster County	PA
+42073	42	073	Pennsylvania	Lawrence County	PA
+42075	42	075	Pennsylvania	Lebanon County	PA
+42077	42	077	Pennsylvania	Lehigh County	PA
+42079	42	079	Pennsylvania	Luzerne County	PA
+42081	42	081	Pennsylvania	Lycoming County	PA
+42083	42	083	Pennsylvania	McKean County	PA
+42085	42	085	Pennsylvania	Mercer County	PA
+42087	42	087	Pennsylvania	Mifflin County	PA
+42089	42	089	Pennsylvania	Monroe County	PA
+42091	42	091	Pennsylvania	Montgomery County	PA
+42093	42	093	Pennsylvania	Montour County	PA
+42095	42	095	Pennsylvania	Northampton County	PA
+42097	42	097	Pennsylvania	Northumberland County	PA
+42099	42	099	Pennsylvania	Perry County	PA
+42101	42	101	Pennsylvania	Philadelphia County	PA
+42103	42	103	Pennsylvania	Pike County	PA
+42105	42	105	Pennsylvania	Potter County	PA
+42107	42	107	Pennsylvania	Schuylkill County	PA
+42109	42	109	Pennsylvania	Snyder County	PA
+42111	42	111	Pennsylvania	Somerset County	PA
+42113	42	113	Pennsylvania	Sullivan County	PA
+42115	42	115	Pennsylvania	Susquehanna County	PA
+42117	42	117	Pennsylvania	Tioga County	PA
+42119	42	119	Pennsylvania	Union County	PA
+42121	42	121	Pennsylvania	Venango County	PA
+42123	42	123	Pennsylvania	Warren County	PA
+42125	42	125	Pennsylvania	Washington County	PA
+42127	42	127	Pennsylvania	Wayne County	PA
+42129	42	129	Pennsylvania	Westmoreland County	PA
+42131	42	131	Pennsylvania	Wyoming County	PA
+42133	42	133	Pennsylvania	York County	PA
+44001	44	001	Rhode Island	Bristol County	RI
+44003	44	003	Rhode Island	Kent County	RI
+44005	44	005	Rhode Island	Newport County	RI
+44007	44	007	Rhode Island	Providence County	RI
+44009	44	009	Rhode Island	Washington County	RI
+45001	45	001	South Carolina	Abbeville County	SC
+45003	45	003	South Carolina	Aiken County	SC
+45005	45	005	South Carolina	Allendale County	SC
+45007	45	007	South Carolina	Anderson County	SC
+45009	45	009	South Carolina	Bamberg County	SC
+45011	45	011	South Carolina	Barnwell County	SC
+45013	45	013	South Carolina	Beaufort County	SC
+45015	45	015	South Carolina	Berkeley County	SC
+45017	45	017	South Carolina	Calhoun County	SC
+45019	45	019	South Carolina	Charleston County	SC
+45021	45	021	South Carolina	Cherokee County	SC
+45023	45	023	South Carolina	Chester County	SC
+45025	45	025	South Carolina	Chesterfield County	SC
+45027	45	027	South Carolina	Clarendon County	SC
+45029	45	029	South Carolina	Colleton County	SC
+45031	45	031	South Carolina	Darlington County	SC
+45033	45	033	South Carolina	Dillon County	SC
+45035	45	035	South Carolina	Dorchester County	SC
+45037	45	037	South Carolina	Edgefield County	SC
+45039	45	039	South Carolina	Fairfield County	SC
+45041	45	041	South Carolina	Florence County	SC
+45043	45	043	South Carolina	Georgetown County	SC
+45045	45	045	South Carolina	Greenville County	SC
+45047	45	047	South Carolina	Greenwood County	SC
+45049	45	049	South Carolina	Hampton County	SC
+45051	45	051	South Carolina	Horry County	SC
+45053	45	053	South Carolina	Jasper County	SC
+45055	45	055	South Carolina	Kershaw County	SC
+45057	45	057	South Carolina	Lancaster County	SC
+45059	45	059	South Carolina	Laurens County	SC
+45061	45	061	South Carolina	Lee County	SC
+45063	45	063	South Carolina	Lexington County	SC
+45065	45	065	South Carolina	McCormick County	SC
+45067	45	067	South Carolina	Marion County	SC
+45069	45	069	South Carolina	Marlboro County	SC
+45071	45	071	South Carolina	Newberry County	SC
+45073	45	073	South Carolina	Oconee County	SC
+45075	45	075	South Carolina	Orangeburg County	SC
+45077	45	077	South Carolina	Pickens County	SC
+45079	45	079	South Carolina	Richland County	SC
+45081	45	081	South Carolina	Saluda County	SC
+45083	45	083	South Carolina	Spartanburg County	SC
+45085	45	085	South Carolina	Sumter County	SC
+45087	45	087	South Carolina	Union County	SC
+45089	45	089	South Carolina	Williamsburg County	SC
+45091	45	091	South Carolina	York County	SC
+46003	46	003	South Dakota	Aurora County	SD
+46005	46	005	South Dakota	Beadle County	SD
+46007	46	007	South Dakota	Bennett County	SD
+46009	46	009	South Dakota	Bon Homme County	SD
+46011	46	011	South Dakota	Brookings County	SD
+46013	46	013	South Dakota	Brown County	SD
+46015	46	015	South Dakota	Brule County	SD
+46017	46	017	South Dakota	Buffalo County	SD
+46019	46	019	South Dakota	Butte County	SD
+46021	46	021	South Dakota	Campbell County	SD
+46023	46	023	South Dakota	Charles Mix County	SD
+46025	46	025	South Dakota	Clark County	SD
+46027	46	027	South Dakota	Clay County	SD
+46029	46	029	South Dakota	Codington County	SD
+46031	46	031	South Dakota	Corson County	SD
+46033	46	033	South Dakota	Custer County	SD
+46035	46	035	South Dakota	Davison County	SD
+46037	46	037	South Dakota	Day County	SD
+46039	46	039	South Dakota	Deuel County	SD
+46041	46	041	South Dakota	Dewey County	SD
+46043	46	043	South Dakota	Douglas County	SD
+46045	46	045	South Dakota	Edmunds County	SD
+46047	46	047	South Dakota	Fall River County	SD
+46049	46	049	South Dakota	Faulk County	SD
+46051	46	051	South Dakota	Grant County	SD
+46053	46	053	South Dakota	Gregory County	SD
+46055	46	055	South Dakota	Haakon County	SD
+46057	46	057	South Dakota	Hamlin County	SD
+46059	46	059	South Dakota	Hand County	SD
+46061	46	061	South Dakota	Hanson County	SD
+46063	46	063	South Dakota	Harding County	SD
+46065	46	065	South Dakota	Hughes County	SD
+46067	46	067	South Dakota	Hutchinson County	SD
+46069	46	069	South Dakota	Hyde County	SD
+46071	46	071	South Dakota	Jackson County	SD
+46073	46	073	South Dakota	Jerauld County	SD
+46075	46	075	South Dakota	Jones County	SD
+46077	46	077	South Dakota	Kingsbury County	SD
+46079	46	079	South Dakota	Lake County	SD
+46081	46	081	South Dakota	Lawrence County	SD
+46083	46	083	South Dakota	Lincoln County	SD
+46085	46	085	South Dakota	Lyman County	SD
+46087	46	087	South Dakota	McCook County	SD
+46089	46	089	South Dakota	McPherson County	SD
+46091	46	091	South Dakota	Marshall County	SD
+46093	46	093	South Dakota	Meade County	SD
+46095	46	095	South Dakota	Mellette County	SD
+46097	46	097	South Dakota	Miner County	SD
+46099	46	099	South Dakota	Minnehaha County	SD
+46101	46	101	South Dakota	Moody County	SD
+46103	46	103	South Dakota	Pennington County	SD
+46105	46	105	South Dakota	Perkins County	SD
+46107	46	107	South Dakota	Potter County	SD
+46109	46	109	South Dakota	Roberts County	SD
+46111	46	111	South Dakota	Sanborn County	SD
+46113	46	113	South Dakota	Shannon County	SD
+46115	46	115	South Dakota	Spink County	SD
+46117	46	117	South Dakota	Stanley County	SD
+46119	46	119	South Dakota	Sully County	SD
+46121	46	121	South Dakota	Todd County	SD
+46123	46	123	South Dakota	Tripp County	SD
+46125	46	125	South Dakota	Turner County	SD
+46127	46	127	South Dakota	Union County	SD
+46129	46	129	South Dakota	Walworth County	SD
+46135	46	135	South Dakota	Yankton County	SD
+46137	46	137	South Dakota	Ziebach County	SD
+47001	47	001	Tennessee	Anderson County	TN
+47003	47	003	Tennessee	Bedford County	TN
+47005	47	005	Tennessee	Benton County	TN
+47007	47	007	Tennessee	Bledsoe County	TN
+47009	47	009	Tennessee	Blount County	TN
+47011	47	011	Tennessee	Bradley County	TN
+47013	47	013	Tennessee	Campbell County	TN
+47015	47	015	Tennessee	Cannon County	TN
+47017	47	017	Tennessee	Carroll County	TN
+47019	47	019	Tennessee	Carter County	TN
+47021	47	021	Tennessee	Cheatham County	TN
+47023	47	023	Tennessee	Chester County	TN
+47025	47	025	Tennessee	Claiborne County	TN
+47027	47	027	Tennessee	Clay County	TN
+47029	47	029	Tennessee	Cocke County	TN
+47031	47	031	Tennessee	Coffee County	TN
+47033	47	033	Tennessee	Crockett County	TN
+47035	47	035	Tennessee	Cumberland County	TN
+47037	47	037	Tennessee	Davidson County	TN
+47039	47	039	Tennessee	Decatur County	TN
+47041	47	041	Tennessee	DeKalb County	TN
+47043	47	043	Tennessee	Dickson County	TN
+47045	47	045	Tennessee	Dyer County	TN
+47047	47	047	Tennessee	Fayette County	TN
+47049	47	049	Tennessee	Fentress County	TN
+47051	47	051	Tennessee	Franklin County	TN
+47053	47	053	Tennessee	Gibson County	TN
+47055	47	055	Tennessee	Giles County	TN
+47057	47	057	Tennessee	Grainger County	TN
+47059	47	059	Tennessee	Greene County	TN
+47061	47	061	Tennessee	Grundy County	TN
+47063	47	063	Tennessee	Hamblen County	TN
+47065	47	065	Tennessee	Hamilton County	TN
+47067	47	067	Tennessee	Hancock County	TN
+47069	47	069	Tennessee	Hardeman County	TN
+47071	47	071	Tennessee	Hardin County	TN
+47073	47	073	Tennessee	Hawkins County	TN
+47075	47	075	Tennessee	Haywood County	TN
+47077	47	077	Tennessee	Henderson County	TN
+47079	47	079	Tennessee	Henry County	TN
+47081	47	081	Tennessee	Hickman County	TN
+47083	47	083	Tennessee	Houston County	TN
+47085	47	085	Tennessee	Humphreys County	TN
+47087	47	087	Tennessee	Jackson County	TN
+47089	47	089	Tennessee	Jefferson County	TN
+47091	47	091	Tennessee	Johnson County	TN
+47093	47	093	Tennessee	Knox County	TN
+47095	47	095	Tennessee	Lake County	TN
+47097	47	097	Tennessee	Lauderdale County	TN
+47099	47	099	Tennessee	Lawrence County	TN
+47101	47	101	Tennessee	Lewis County	TN
+47103	47	103	Tennessee	Lincoln County	TN
+47105	47	105	Tennessee	Loudon County	TN
+47107	47	107	Tennessee	McMinn County	TN
+47109	47	109	Tennessee	McNairy County	TN
+47111	47	111	Tennessee	Macon County	TN
+47113	47	113	Tennessee	Madison County	TN
+47115	47	115	Tennessee	Marion County	TN
+47117	47	117	Tennessee	Marshall County	TN
+47119	47	119	Tennessee	Maury County	TN
+47121	47	121	Tennessee	Meigs County	TN
+47123	47	123	Tennessee	Monroe County	TN
+47125	47	125	Tennessee	Montgomery County	TN
+47127	47	127	Tennessee	Moore County	TN
+47129	47	129	Tennessee	Morgan County	TN
+47131	47	131	Tennessee	Obion County	TN
+47133	47	133	Tennessee	Overton County	TN
+47135	47	135	Tennessee	Perry County	TN
+47137	47	137	Tennessee	Pickett County	TN
+47139	47	139	Tennessee	Polk County	TN
+47141	47	141	Tennessee	Putnam County	TN
+47143	47	143	Tennessee	Rhea County	TN
+47145	47	145	Tennessee	Roane County	TN
+47147	47	147	Tennessee	Robertson County	TN
+47149	47	149	Tennessee	Rutherford County	TN
+47151	47	151	Tennessee	Scott County	TN
+47153	47	153	Tennessee	Sequatchie County	TN
+47155	47	155	Tennessee	Sevier County	TN
+47157	47	157	Tennessee	Shelby County	TN
+47159	47	159	Tennessee	Smith County	TN
+47161	47	161	Tennessee	Stewart County	TN
+47163	47	163	Tennessee	Sullivan County	TN
+47165	47	165	Tennessee	Sumner County	TN
+47167	47	167	Tennessee	Tipton County	TN
+47169	47	169	Tennessee	Trousdale County	TN
+47171	47	171	Tennessee	Unicoi County	TN
+47173	47	173	Tennessee	Union County	TN
+47175	47	175	Tennessee	Van Buren County	TN
+47177	47	177	Tennessee	Warren County	TN
+47179	47	179	Tennessee	Washington County	TN
+47181	47	181	Tennessee	Wayne County	TN
+47183	47	183	Tennessee	Weakley County	TN
+47185	47	185	Tennessee	White County	TN
+47187	47	187	Tennessee	Williamson County	TN
+47189	47	189	Tennessee	Wilson County	TN
+48001	48	001	Texas	Anderson County	TX
+48003	48	003	Texas	Andrews County	TX
+48005	48	005	Texas	Angelina County	TX
+48007	48	007	Texas	Aransas County	TX
+48009	48	009	Texas	Archer County	TX
+48011	48	011	Texas	Armstrong County	TX
+48013	48	013	Texas	Atascosa County	TX
+48015	48	015	Texas	Austin County	TX
+48017	48	017	Texas	Bailey County	TX
+48019	48	019	Texas	Bandera County	TX
+48021	48	021	Texas	Bastrop County	TX
+48023	48	023	Texas	Baylor County	TX
+48025	48	025	Texas	Bee County	TX
+48027	48	027	Texas	Bell County	TX
+48029	48	029	Texas	Bexar County	TX
+48031	48	031	Texas	Blanco County	TX
+48033	48	033	Texas	Borden County	TX
+48035	48	035	Texas	Bosque County	TX
+48037	48	037	Texas	Bowie County	TX
+48039	48	039	Texas	Brazoria County	TX
+48041	48	041	Texas	Brazos County	TX
+48043	48	043	Texas	Brewster County	TX
+48045	48	045	Texas	Briscoe County	TX
+48047	48	047	Texas	Brooks County	TX
+48049	48	049	Texas	Brown County	TX
+48051	48	051	Texas	Burleson County	TX
+48053	48	053	Texas	Burnet County	TX
+48055	48	055	Texas	Caldwell County	TX
+48057	48	057	Texas	Calhoun County	TX
+48059	48	059	Texas	Callahan County	TX
+48061	48	061	Texas	Cameron County	TX
+48063	48	063	Texas	Camp County	TX
+48065	48	065	Texas	Carson County	TX
+48067	48	067	Texas	Cass County	TX
+48069	48	069	Texas	Castro County	TX
+48071	48	071	Texas	Chambers County	TX
+48073	48	073	Texas	Cherokee County	TX
+48075	48	075	Texas	Childress County	TX
+48077	48	077	Texas	Clay County	TX
+48079	48	079	Texas	Cochran County	TX
+48081	48	081	Texas	Coke County	TX
+48083	48	083	Texas	Coleman County	TX
+48085	48	085	Texas	Collin County	TX
+48087	48	087	Texas	Collingsworth County	TX
+48089	48	089	Texas	Colorado County	TX
+48091	48	091	Texas	Comal County	TX
+48093	48	093	Texas	Comanche County	TX
+48095	48	095	Texas	Concho County	TX
+48097	48	097	Texas	Cooke County	TX
+48099	48	099	Texas	Coryell County	TX
+48101	48	101	Texas	Cottle County	TX
+48103	48	103	Texas	Crane County	TX
+48105	48	105	Texas	Crockett County	TX
+48107	48	107	Texas	Crosby County	TX
+48109	48	109	Texas	Culberson County	TX
+48111	48	111	Texas	Dallam County	TX
+48113	48	113	Texas	Dallas County	TX
+48115	48	115	Texas	Dawson County	TX
+48117	48	117	Texas	Deaf Smith County	TX
+48119	48	119	Texas	Delta County	TX
+48121	48	121	Texas	Denton County	TX
+48123	48	123	Texas	DeWitt County	TX
+48125	48	125	Texas	Dickens County	TX
+48127	48	127	Texas	Dimmit County	TX
+48129	48	129	Texas	Donley County	TX
+48131	48	131	Texas	Duval County	TX
+48133	48	133	Texas	Eastland County	TX
+48135	48	135	Texas	Ector County	TX
+48137	48	137	Texas	Edwards County	TX
+48139	48	139	Texas	Ellis County	TX
+48141	48	141	Texas	El Paso County	TX
+48143	48	143	Texas	Erath County	TX
+48145	48	145	Texas	Falls County	TX
+48147	48	147	Texas	Fannin County	TX
+48149	48	149	Texas	Fayette County	TX
+48151	48	151	Texas	Fisher County	TX
+48153	48	153	Texas	Floyd County	TX
+48155	48	155	Texas	Foard County	TX
+48157	48	157	Texas	Fort Bend County	TX
+48159	48	159	Texas	Franklin County	TX
+48161	48	161	Texas	Freestone County	TX
+48163	48	163	Texas	Frio County	TX
+48165	48	165	Texas	Gaines County	TX
+48167	48	167	Texas	Galveston County	TX
+48169	48	169	Texas	Garza County	TX
+48171	48	171	Texas	Gillespie County	TX
+48173	48	173	Texas	Glasscock County	TX
+48175	48	175	Texas	Goliad County	TX
+48177	48	177	Texas	Gonzales County	TX
+48179	48	179	Texas	Gray County	TX
+48181	48	181	Texas	Grayson County	TX
+48183	48	183	Texas	Gregg County	TX
+48185	48	185	Texas	Grimes County	TX
+48187	48	187	Texas	Guadalupe County	TX
+48189	48	189	Texas	Hale County	TX
+48191	48	191	Texas	Hall County	TX
+48193	48	193	Texas	Hamilton County	TX
+48195	48	195	Texas	Hansford County	TX
+48197	48	197	Texas	Hardeman County	TX
+48199	48	199	Texas	Hardin County	TX
+48201	48	201	Texas	Harris County	TX
+48203	48	203	Texas	Harrison County	TX
+48205	48	205	Texas	Hartley County	TX
+48207	48	207	Texas	Haskell County	TX
+48209	48	209	Texas	Hays County	TX
+48211	48	211	Texas	Hemphill County	TX
+48213	48	213	Texas	Henderson County	TX
+48215	48	215	Texas	Hidalgo County	TX
+48217	48	217	Texas	Hill County	TX
+48219	48	219	Texas	Hockley County	TX
+48221	48	221	Texas	Hood County	TX
+48223	48	223	Texas	Hopkins County	TX
+48225	48	225	Texas	Houston County	TX
+48227	48	227	Texas	Howard County	TX
+48229	48	229	Texas	Hudspeth County	TX
+48231	48	231	Texas	Hunt County	TX
+48233	48	233	Texas	Hutchinson County	TX
+48235	48	235	Texas	Irion County	TX
+48237	48	237	Texas	Jack County	TX
+48239	48	239	Texas	Jackson County	TX
+48241	48	241	Texas	Jasper County	TX
+48243	48	243	Texas	Jeff Davis County	TX
+48245	48	245	Texas	Jefferson County	TX
+48247	48	247	Texas	Jim Hogg County	TX
+48249	48	249	Texas	Jim Wells County	TX
+48251	48	251	Texas	Johnson County	TX
+48253	48	253	Texas	Jones County	TX
+48255	48	255	Texas	Karnes County	TX
+48257	48	257	Texas	Kaufman County	TX
+48259	48	259	Texas	Kendall County	TX
+48261	48	261	Texas	Kenedy County	TX
+48263	48	263	Texas	Kent County	TX
+48265	48	265	Texas	Kerr County	TX
+48267	48	267	Texas	Kimble County	TX
+48269	48	269	Texas	King County	TX
+48271	48	271	Texas	Kinney County	TX
+48273	48	273	Texas	Kleberg County	TX
+48275	48	275	Texas	Knox County	TX
+48277	48	277	Texas	Lamar County	TX
+48279	48	279	Texas	Lamb County	TX
+48281	48	281	Texas	Lampasas County	TX
+48283	48	283	Texas	La Salle County	TX
+48285	48	285	Texas	Lavaca County	TX
+48287	48	287	Texas	Lee County	TX
+48289	48	289	Texas	Leon County	TX
+48291	48	291	Texas	Liberty County	TX
+48293	48	293	Texas	Limestone County	TX
+48295	48	295	Texas	Lipscomb County	TX
+48297	48	297	Texas	Live Oak County	TX
+48299	48	299	Texas	Llano County	TX
+48301	48	301	Texas	Loving County	TX
+48303	48	303	Texas	Lubbock County	TX
+48305	48	305	Texas	Lynn County	TX
+48307	48	307	Texas	McCulloch County	TX
+48309	48	309	Texas	McLennan County	TX
+48311	48	311	Texas	McMullen County	TX
+48313	48	313	Texas	Madison County	TX
+48315	48	315	Texas	Marion County	TX
+48317	48	317	Texas	Martin County	TX
+48319	48	319	Texas	Mason County	TX
+48321	48	321	Texas	Matagorda County	TX
+48323	48	323	Texas	Maverick County	TX
+48325	48	325	Texas	Medina County	TX
+48327	48	327	Texas	Menard County	TX
+48329	48	329	Texas	Midland County	TX
+48331	48	331	Texas	Milam County	TX
+48333	48	333	Texas	Mills County	TX
+48335	48	335	Texas	Mitchell County	TX
+48337	48	337	Texas	Montague County	TX
+48339	48	339	Texas	Montgomery County	TX
+48341	48	341	Texas	Moore County	TX
+48343	48	343	Texas	Morris County	TX
+48345	48	345	Texas	Motley County	TX
+48347	48	347	Texas	Nacogdoches County	TX
+48349	48	349	Texas	Navarro County	TX
+48351	48	351	Texas	Newton County	TX
+48353	48	353	Texas	Nolan County	TX
+48355	48	355	Texas	Nueces County	TX
+48357	48	357	Texas	Ochiltree County	TX
+48359	48	359	Texas	Oldham County	TX
+48361	48	361	Texas	Orange County	TX
+48363	48	363	Texas	Palo Pinto County	TX
+48365	48	365	Texas	Panola County	TX
+48367	48	367	Texas	Parker County	TX
+48369	48	369	Texas	Parmer County	TX
+48371	48	371	Texas	Pecos County	TX
+48373	48	373	Texas	Polk County	TX
+48375	48	375	Texas	Potter County	TX
+48377	48	377	Texas	Presidio County	TX
+48379	48	379	Texas	Rains County	TX
+48381	48	381	Texas	Randall County	TX
+48383	48	383	Texas	Reagan County	TX
+48385	48	385	Texas	Real County	TX
+48387	48	387	Texas	Red River County	TX
+48389	48	389	Texas	Reeves County	TX
+48391	48	391	Texas	Refugio County	TX
+48393	48	393	Texas	Roberts County	TX
+48395	48	395	Texas	Robertson County	TX
+48397	48	397	Texas	Rockwall County	TX
+48399	48	399	Texas	Runnels County	TX
+48401	48	401	Texas	Rusk County	TX
+48403	48	403	Texas	Sabine County	TX
+48405	48	405	Texas	San Augustine County	TX
+48407	48	407	Texas	San Jacinto County	TX
+48409	48	409	Texas	San Patricio County	TX
+48411	48	411	Texas	San Saba County	TX
+48413	48	413	Texas	Schleicher County	TX
+48415	48	415	Texas	Scurry County	TX
+48417	48	417	Texas	Shackelford County	TX
+48419	48	419	Texas	Shelby County	TX
+48421	48	421	Texas	Sherman County	TX
+48423	48	423	Texas	Smith County	TX
+48425	48	425	Texas	Somervell County	TX
+48427	48	427	Texas	Starr County	TX
+48429	48	429	Texas	Stephens County	TX
+48431	48	431	Texas	Sterling County	TX
+48433	48	433	Texas	Stonewall County	TX
+48435	48	435	Texas	Sutton County	TX
+48437	48	437	Texas	Swisher County	TX
+48439	48	439	Texas	Tarrant County	TX
+48441	48	441	Texas	Taylor County	TX
+48443	48	443	Texas	Terrell County	TX
+48445	48	445	Texas	Terry County	TX
+48447	48	447	Texas	Throckmorton County	TX
+48449	48	449	Texas	Titus County	TX
+48451	48	451	Texas	Tom Green County	TX
+48453	48	453	Texas	Travis County	TX
+48455	48	455	Texas	Trinity County	TX
+48457	48	457	Texas	Tyler County	TX
+48459	48	459	Texas	Upshur County	TX
+48461	48	461	Texas	Upton County	TX
+48463	48	463	Texas	Uvalde County	TX
+48465	48	465	Texas	Val Verde County	TX
+48467	48	467	Texas	Van Zandt County	TX
+48469	48	469	Texas	Victoria County	TX
+48471	48	471	Texas	Walker County	TX
+48473	48	473	Texas	Waller County	TX
+48475	48	475	Texas	Ward County	TX
+48477	48	477	Texas	Washington County	TX
+48479	48	479	Texas	Webb County	TX
+48481	48	481	Texas	Wharton County	TX
+48483	48	483	Texas	Wheeler County	TX
+48485	48	485	Texas	Wichita County	TX
+48487	48	487	Texas	Wilbarger County	TX
+48489	48	489	Texas	Willacy County	TX
+48491	48	491	Texas	Williamson County	TX
+48493	48	493	Texas	Wilson County	TX
+48495	48	495	Texas	Winkler County	TX
+48497	48	497	Texas	Wise County	TX
+48499	48	499	Texas	Wood County	TX
+48501	48	501	Texas	Yoakum County	TX
+48503	48	503	Texas	Young County	TX
+48505	48	505	Texas	Zapata County	TX
+48507	48	507	Texas	Zavala County	TX
+49001	49	001	Utah	Beaver County	UT
+49003	49	003	Utah	Box Elder County	UT
+49005	49	005	Utah	Cache County	UT
+49007	49	007	Utah	Carbon County	UT
+49009	49	009	Utah	Daggett County	UT
+49011	49	011	Utah	Davis County	UT
+49013	49	013	Utah	Duchesne County	UT
+49015	49	015	Utah	Emery County	UT
+49017	49	017	Utah	Garfield County	UT
+49019	49	019	Utah	Grand County	UT
+49021	49	021	Utah	Iron County	UT
+49023	49	023	Utah	Juab County	UT
+49025	49	025	Utah	Kane County	UT
+49027	49	027	Utah	Millard County	UT
+49029	49	029	Utah	Morgan County	UT
+49031	49	031	Utah	Piute County	UT
+49033	49	033	Utah	Rich County	UT
+49035	49	035	Utah	Salt Lake County	UT
+49037	49	037	Utah	San Juan County	UT
+49039	49	039	Utah	Sanpete County	UT
+49041	49	041	Utah	Sevier County	UT
+49043	49	043	Utah	Summit County	UT
+49045	49	045	Utah	Tooele County	UT
+49047	49	047	Utah	Uintah County	UT
+49049	49	049	Utah	Utah County	UT
+49051	49	051	Utah	Wasatch County	UT
+49053	49	053	Utah	Washington County	UT
+49055	49	055	Utah	Wayne County	UT
+49057	49	057	Utah	Weber County	UT
+50001	50	001	Vermont	Addison County	VT
+50003	50	003	Vermont	Bennington County	VT
+50005	50	005	Vermont	Caledonia County	VT
+50007	50	007	Vermont	Chittenden County	VT
+50009	50	009	Vermont	Essex County	VT
+50011	50	011	Vermont	Franklin County	VT
+50013	50	013	Vermont	Grand Isle County	VT
+50015	50	015	Vermont	Lamoille County	VT
+50017	50	017	Vermont	Orange County	VT
+50019	50	019	Vermont	Orleans County	VT
+50021	50	021	Vermont	Rutland County	VT
+50023	50	023	Vermont	Washington County	VT
+50025	50	025	Vermont	Windham County	VT
+50027	50	027	Vermont	Windsor County	VT
+51001	51	001	Virginia	Accomack County	VA
+51003	51	003	Virginia	Albemarle County	VA
+51005	51	005	Virginia	Alleghany County	VA
+51007	51	007	Virginia	Amelia County	VA
+51009	51	009	Virginia	Amherst County	VA
+51011	51	011	Virginia	Appomattox County	VA
+51013	51	013	Virginia	Arlington County	VA
+51015	51	015	Virginia	Augusta County	VA
+51017	51	017	Virginia	Bath County	VA
+51019	51	019	Virginia	Bedford County	VA
+51021	51	021	Virginia	Bland County	VA
+51023	51	023	Virginia	Botetourt County	VA
+51025	51	025	Virginia	Brunswick County	VA
+51027	51	027	Virginia	Buchanan County	VA
+51029	51	029	Virginia	Buckingham County	VA
+51031	51	031	Virginia	Campbell County	VA
+51033	51	033	Virginia	Caroline County	VA
+51035	51	035	Virginia	Carroll County	VA
+51036	51	036	Virginia	Charles City County	VA
+51037	51	037	Virginia	Charlotte County	VA
+51041	51	041	Virginia	Chesterfield County	VA
+51043	51	043	Virginia	Clarke County	VA
+51045	51	045	Virginia	Craig County	VA
+51047	51	047	Virginia	Culpeper County	VA
+51049	51	049	Virginia	Cumberland County	VA
+51051	51	051	Virginia	Dickenson County	VA
+51053	51	053	Virginia	Dinwiddie County	VA
+51057	51	057	Virginia	Essex County	VA
+51059	51	059	Virginia	Fairfax County	VA
+51061	51	061	Virginia	Fauquier County	VA
+51063	51	063	Virginia	Floyd County	VA
+51065	51	065	Virginia	Fluvanna County	VA
+51067	51	067	Virginia	Franklin County	VA
+51069	51	069	Virginia	Frederick County	VA
+51071	51	071	Virginia	Giles County	VA
+51073	51	073	Virginia	Gloucester County	VA
+51075	51	075	Virginia	Goochland County	VA
+51077	51	077	Virginia	Grayson County	VA
+51079	51	079	Virginia	Greene County	VA
+51081	51	081	Virginia	Greensville County	VA
+51083	51	083	Virginia	Halifax County	VA
+51085	51	085	Virginia	Hanover County	VA
+51087	51	087	Virginia	Henrico County	VA
+51089	51	089	Virginia	Henry County	VA
+51091	51	091	Virginia	Highland County	VA
+51093	51	093	Virginia	Isle of Wight County	VA
+51095	51	095	Virginia	James City County	VA
+51097	51	097	Virginia	King and Queen County	VA
+51099	51	099	Virginia	King George County	VA
+51101	51	101	Virginia	King William County	VA
+51103	51	103	Virginia	Lancaster County	VA
+51105	51	105	Virginia	Lee County	VA
+51107	51	107	Virginia	Loudoun County	VA
+51109	51	109	Virginia	Louisa County	VA
+51111	51	111	Virginia	Lunenburg County	VA
+51113	51	113	Virginia	Madison County	VA
+51115	51	115	Virginia	Mathews County	VA
+51117	51	117	Virginia	Mecklenburg County	VA
+51119	51	119	Virginia	Middlesex County	VA
+51121	51	121	Virginia	Montgomery County	VA
+51125	51	125	Virginia	Nelson County	VA
+51127	51	127	Virginia	New Kent County	VA
+51131	51	131	Virginia	Northampton County	VA
+51133	51	133	Virginia	Northumberland County	VA
+51135	51	135	Virginia	Nottoway County	VA
+51137	51	137	Virginia	Orange County	VA
+51139	51	139	Virginia	Page County	VA
+51141	51	141	Virginia	Patrick County	VA
+51143	51	143	Virginia	Pittsylvania County	VA
+51145	51	145	Virginia	Powhatan County	VA
+51147	51	147	Virginia	Prince Edward County	VA
+51149	51	149	Virginia	Prince George County	VA
+51153	51	153	Virginia	Prince William County	VA
+51155	51	155	Virginia	Pulaski County	VA
+51157	51	157	Virginia	Rappahannock County	VA
+51159	51	159	Virginia	Richmond County	VA
+51161	51	161	Virginia	Roanoke County	VA
+51163	51	163	Virginia	Rockbridge County	VA
+51165	51	165	Virginia	Rockingham County	VA
+51167	51	167	Virginia	Russell County	VA
+51169	51	169	Virginia	Scott County	VA
+51171	51	171	Virginia	Shenandoah County	VA
+51173	51	173	Virginia	Smyth County	VA
+51175	51	175	Virginia	Southampton County	VA
+51177	51	177	Virginia	Spotsylvania County	VA
+51179	51	179	Virginia	Stafford County	VA
+51181	51	181	Virginia	Surry County	VA
+51183	51	183	Virginia	Sussex County	VA
+51185	51	185	Virginia	Tazewell County	VA
+51187	51	187	Virginia	Warren County	VA
+51191	51	191	Virginia	Washington County	VA
+51193	51	193	Virginia	Westmoreland County	VA
+51195	51	195	Virginia	Wise County	VA
+51197	51	197	Virginia	Wythe County	VA
+51199	51	199	Virginia	York County	VA
+51510	51	510	Virginia	Alexandria city	VA
+51515	51	515	Virginia	Bedford city	VA
+51520	51	520	Virginia	Bristol city	VA
+51530	51	530	Virginia	Buena Vista city	VA
+51540	51	540	Virginia	Charlottesville city	VA
+51550	51	550	Virginia	Chesapeake city	VA
+51570	51	570	Virginia	Colonial Heights city	VA
+51580	51	580	Virginia	Covington city	VA
+51590	51	590	Virginia	Danville city	VA
+51595	51	595	Virginia	Emporia city	VA
+51600	51	600	Virginia	Fairfax city	VA
+51610	51	610	Virginia	Falls Church city	VA
+51620	51	620	Virginia	Franklin city	VA
+51630	51	630	Virginia	Fredericksburg city	VA
+51640	51	640	Virginia	Galax city	VA
+51650	51	650	Virginia	Hampton city	VA
+51660	51	660	Virginia	Harrisonburg city	VA
+51670	51	670	Virginia	Hopewell city	VA
+51678	51	678	Virginia	Lexington city	VA
+51680	51	680	Virginia	Lynchburg city	VA
+51683	51	683	Virginia	Manassas city	VA
+51685	51	685	Virginia	Manassas Park city	VA
+51690	51	690	Virginia	Martinsville city	VA
+51700	51	700	Virginia	Newport News city	VA
+51710	51	710	Virginia	Norfolk city	VA
+51720	51	720	Virginia	Norton city	VA
+51730	51	730	Virginia	Petersburg city	VA
+51735	51	735	Virginia	Poquoson city	VA
+51740	51	740	Virginia	Portsmouth city	VA
+51750	51	750	Virginia	Radford city	VA
+51760	51	760	Virginia	Richmond city	VA
+51770	51	770	Virginia	Roanoke city	VA
+51775	51	775	Virginia	Salem city	VA
+51790	51	790	Virginia	Staunton city	VA
+51800	51	800	Virginia	Suffolk city	VA
+51810	51	810	Virginia	Virginia Beach city	VA
+51820	51	820	Virginia	Waynesboro city	VA
+51830	51	830	Virginia	Williamsburg city	VA
+51840	51	840	Virginia	Winchester city	VA
+53001	53	001	Washington	Adams County	WA
+53003	53	003	Washington	Asotin County	WA
+53005	53	005	Washington	Benton County	WA
+53007	53	007	Washington	Chelan County	WA
+53009	53	009	Washington	Clallam County	WA
+53011	53	011	Washington	Clark County	WA
+53013	53	013	Washington	Columbia County	WA
+53015	53	015	Washington	Cowlitz County	WA
+53017	53	017	Washington	Douglas County	WA
+53019	53	019	Washington	Ferry County	WA
+53021	53	021	Washington	Franklin County	WA
+53023	53	023	Washington	Garfield County	WA
+53025	53	025	Washington	Grant County	WA
+53027	53	027	Washington	Grays Harbor County	WA
+53029	53	029	Washington	Island County	WA
+53031	53	031	Washington	Jefferson County	WA
+53033	53	033	Washington	King County	WA
+53035	53	035	Washington	Kitsap County	WA
+53037	53	037	Washington	Kittitas County	WA
+53039	53	039	Washington	Klickitat County	WA
+53041	53	041	Washington	Lewis County	WA
+53043	53	043	Washington	Lincoln County	WA
+53045	53	045	Washington	Mason County	WA
+53047	53	047	Washington	Okanogan County	WA
+53049	53	049	Washington	Pacific County	WA
+53051	53	051	Washington	Pend Oreille County	WA
+53053	53	053	Washington	Pierce County	WA
+53055	53	055	Washington	San Juan County	WA
+53057	53	057	Washington	Skagit County	WA
+53059	53	059	Washington	Skamania County	WA
+53061	53	061	Washington	Snohomish County	WA
+53063	53	063	Washington	Spokane County	WA
+53065	53	065	Washington	Stevens County	WA
+53067	53	067	Washington	Thurston County	WA
+53069	53	069	Washington	Wahkiakum County	WA
+53071	53	071	Washington	Walla Walla County	WA
+53073	53	073	Washington	Whatcom County	WA
+53075	53	075	Washington	Whitman County	WA
+53077	53	077	Washington	Yakima County	WA
+54001	54	001	West Virginia	Barbour County	WV
+54003	54	003	West Virginia	Berkeley County	WV
+54005	54	005	West Virginia	Boone County	WV
+54007	54	007	West Virginia	Braxton County	WV
+54009	54	009	West Virginia	Brooke County	WV
+54011	54	011	West Virginia	Cabell County	WV
+54013	54	013	West Virginia	Calhoun County	WV
+54015	54	015	West Virginia	Clay County	WV
+54017	54	017	West Virginia	Doddridge County	WV
+54019	54	019	West Virginia	Fayette County	WV
+54021	54	021	West Virginia	Gilmer County	WV
+54023	54	023	West Virginia	Grant County	WV
+54025	54	025	West Virginia	Greenbrier County	WV
+54027	54	027	West Virginia	Hampshire County	WV
+54029	54	029	West Virginia	Hancock County	WV
+54031	54	031	West Virginia	Hardy County	WV
+54033	54	033	West Virginia	Harrison County	WV
+54035	54	035	West Virginia	Jackson County	WV
+54037	54	037	West Virginia	Jefferson County	WV
+54039	54	039	West Virginia	Kanawha County	WV
+54041	54	041	West Virginia	Lewis County	WV
+54043	54	043	West Virginia	Lincoln County	WV
+54045	54	045	West Virginia	Logan County	WV
+54047	54	047	West Virginia	McDowell County	WV
+54049	54	049	West Virginia	Marion County	WV
+54051	54	051	West Virginia	Marshall County	WV
+54053	54	053	West Virginia	Mason County	WV
+54055	54	055	West Virginia	Mercer County	WV
+54057	54	057	West Virginia	Mineral County	WV
+54059	54	059	West Virginia	Mingo County	WV
+54061	54	061	West Virginia	Monongalia County	WV
+54063	54	063	West Virginia	Monroe County	WV
+54065	54	065	West Virginia	Morgan County	WV
+54067	54	067	West Virginia	Nicholas County	WV
+54069	54	069	West Virginia	Ohio County	WV
+54071	54	071	West Virginia	Pendleton County	WV
+54073	54	073	West Virginia	Pleasants County	WV
+54075	54	075	West Virginia	Pocahontas County	WV
+54077	54	077	West Virginia	Preston County	WV
+54079	54	079	West Virginia	Putnam County	WV
+54081	54	081	West Virginia	Raleigh County	WV
+54083	54	083	West Virginia	Randolph County	WV
+54085	54	085	West Virginia	Ritchie County	WV
+54087	54	087	West Virginia	Roane County	WV
+54089	54	089	West Virginia	Summers County	WV
+54091	54	091	West Virginia	Taylor County	WV
+54093	54	093	West Virginia	Tucker County	WV
+54095	54	095	West Virginia	Tyler County	WV
+54097	54	097	West Virginia	Upshur County	WV
+54099	54	099	West Virginia	Wayne County	WV
+54101	54	101	West Virginia	Webster County	WV
+54103	54	103	West Virginia	Wetzel County	WV
+54105	54	105	West Virginia	Wirt County	WV
+54107	54	107	West Virginia	Wood County	WV
+54109	54	109	West Virginia	Wyoming County	WV
+55001	55	001	Wisconsin	Adams County	WI
+55003	55	003	Wisconsin	Ashland County	WI
+55005	55	005	Wisconsin	Barron County	WI
+55007	55	007	Wisconsin	Bayfield County	WI
+55009	55	009	Wisconsin	Brown County	WI
+55011	55	011	Wisconsin	Buffalo County	WI
+55013	55	013	Wisconsin	Burnett County	WI
+55015	55	015	Wisconsin	Calumet County	WI
+55017	55	017	Wisconsin	Chippewa County	WI
+55019	55	019	Wisconsin	Clark County	WI
+55021	55	021	Wisconsin	Columbia County	WI
+55023	55	023	Wisconsin	Crawford County	WI
+55025	55	025	Wisconsin	Dane County	WI
+55027	55	027	Wisconsin	Dodge County	WI
+55029	55	029	Wisconsin	Door County	WI
+55031	55	031	Wisconsin	Douglas County	WI
+55033	55	033	Wisconsin	Dunn County	WI
+55035	55	035	Wisconsin	Eau Claire County	WI
+55037	55	037	Wisconsin	Florence County	WI
+55039	55	039	Wisconsin	Fond du Lac County	WI
+55041	55	041	Wisconsin	Forest County	WI
+55043	55	043	Wisconsin	Grant County	WI
+55045	55	045	Wisconsin	Green County	WI
+55047	55	047	Wisconsin	Green Lake County	WI
+55049	55	049	Wisconsin	Iowa County	WI
+55051	55	051	Wisconsin	Iron County	WI
+55053	55	053	Wisconsin	Jackson County	WI
+55055	55	055	Wisconsin	Jefferson County	WI
+55057	55	057	Wisconsin	Juneau County	WI
+55059	55	059	Wisconsin	Kenosha County	WI
+55061	55	061	Wisconsin	Kewaunee County	WI
+55063	55	063	Wisconsin	La Crosse County	WI
+55065	55	065	Wisconsin	Lafayette County	WI
+55067	55	067	Wisconsin	Langlade County	WI
+55069	55	069	Wisconsin	Lincoln County	WI
+55071	55	071	Wisconsin	Manitowoc County	WI
+55073	55	073	Wisconsin	Marathon County	WI
+55075	55	075	Wisconsin	Marinette County	WI
+55077	55	077	Wisconsin	Marquette County	WI
+55078	55	078	Wisconsin	Menominee County	WI
+55079	55	079	Wisconsin	Milwaukee County	WI
+55081	55	081	Wisconsin	Monroe County	WI
+55083	55	083	Wisconsin	Oconto County	WI
+55085	55	085	Wisconsin	Oneida County	WI
+55087	55	087	Wisconsin	Outagamie County	WI
+55089	55	089	Wisconsin	Ozaukee County	WI
+55091	55	091	Wisconsin	Pepin County	WI
+55093	55	093	Wisconsin	Pierce County	WI
+55095	55	095	Wisconsin	Polk County	WI
+55097	55	097	Wisconsin	Portage County	WI
+55099	55	099	Wisconsin	Price County	WI
+55101	55	101	Wisconsin	Racine County	WI
+55103	55	103	Wisconsin	Richland County	WI
+55105	55	105	Wisconsin	Rock County	WI
+55107	55	107	Wisconsin	Rusk County	WI
+55109	55	109	Wisconsin	St. Croix County	WI
+55111	55	111	Wisconsin	Sauk County	WI
+55113	55	113	Wisconsin	Sawyer County	WI
+55115	55	115	Wisconsin	Shawano County	WI
+55117	55	117	Wisconsin	Sheboygan County	WI
+55119	55	119	Wisconsin	Taylor County	WI
+55121	55	121	Wisconsin	Trempealeau County	WI
+55123	55	123	Wisconsin	Vernon County	WI
+55125	55	125	Wisconsin	Vilas County	WI
+55127	55	127	Wisconsin	Walworth County	WI
+55129	55	129	Wisconsin	Washburn County	WI
+55131	55	131	Wisconsin	Washington County	WI
+55133	55	133	Wisconsin	Waukesha County	WI
+55135	55	135	Wisconsin	Waupaca County	WI
+55137	55	137	Wisconsin	Waushara County	WI
+55139	55	139	Wisconsin	Winnebago County	WI
+55141	55	141	Wisconsin	Wood County	WI
+56001	56	001	Wyoming	Albany County	WY
+56003	56	003	Wyoming	Big Horn County	WY
+56005	56	005	Wyoming	Campbell County	WY
+56007	56	007	Wyoming	Carbon County	WY
+56009	56	009	Wyoming	Converse County	WY
+56011	56	011	Wyoming	Crook County	WY
+56013	56	013	Wyoming	Fremont County	WY
+56015	56	015	Wyoming	Goshen County	WY
+56017	56	017	Wyoming	Hot Springs County	WY
+56019	56	019	Wyoming	Johnson County	WY
+56021	56	021	Wyoming	Laramie County	WY
+56023	56	023	Wyoming	Lincoln County	WY
+56025	56	025	Wyoming	Natrona County	WY
+56027	56	027	Wyoming	Niobrara County	WY
+56029	56	029	Wyoming	Park County	WY
+56031	56	031	Wyoming	Platte County	WY
+56033	56	033	Wyoming	Sheridan County	WY
+56035	56	035	Wyoming	Sublette County	WY
+56037	56	037	Wyoming	Sweetwater County	WY
+56039	56	039	Wyoming	Teton County	WY
+56041	56	041	Wyoming	Uinta County	WY
+56043	56	043	Wyoming	Washakie County	WY
+56045	56	045	Wyoming	Weston County	WY
+60010	60	010	American Samoa	Eastern District	AS
+60020	60	020	American Samoa	Manu'a District	AS
+60030	60	030	American Samoa	Rose Island	AS
+60040	60	040	American Samoa	Swains Island	AS
+60050	60	050	American Samoa	Western District	AS
+66010	66	010	Guam	Guam	GU
+69085	69	085	Northern Mariana Islands	Northern Islands Municipality	MP
+69100	69	100	Northern Mariana Islands	Rota Municipality	MP
+69110	69	110	Northern Mariana Islands	Saipan Municipality	MP
+69120	69	120	Northern Mariana Islands	Tinian Municipality	MP
+72001	72	001	Puerto Rico	Adjuntas Municipio	PR
+72003	72	003	Puerto Rico	Aguada Municipio	PR
+72005	72	005	Puerto Rico	Aguadilla Municipio	PR
+72007	72	007	Puerto Rico	Aguas Buenas Municipio	PR
+72009	72	009	Puerto Rico	Aibonito Municipio	PR
+72011	72	011	Puerto Rico	Anasco Municipio	PR
+72013	72	013	Puerto Rico	Arecibo Municipio	PR
+72015	72	015	Puerto Rico	Arroyo Municipio	PR
+72017	72	017	Puerto Rico	Barceloneta Municipio	PR
+72019	72	019	Puerto Rico	Barranquitas Municipio	PR
+72021	72	021	Puerto Rico	Bayamon Municipio	PR
+72023	72	023	Puerto Rico	Cabo Rojo Municipio	PR
+72025	72	025	Puerto Rico	Caguas Municipio	PR
+72027	72	027	Puerto Rico	Camuy Municipio	PR
+72029	72	029	Puerto Rico	Canovanas Municipio	PR
+72031	72	031	Puerto Rico	Carolina Municipio	PR
+72033	72	033	Puerto Rico	Catano Municipio	PR
+72035	72	035	Puerto Rico	Cayey Municipio	PR
+72037	72	037	Puerto Rico	Ceiba Municipio	PR
+72039	72	039	Puerto Rico	Ciales Municipio	PR
+72041	72	041	Puerto Rico	Cidra Municipio	PR
+72043	72	043	Puerto Rico	Coamo Municipio	PR
+72045	72	045	Puerto Rico	Comerio Municipio	PR
+72047	72	047	Puerto Rico	Corozal Municipio	PR
+72049	72	049	Puerto Rico	Culebra Municipio	PR
+72051	72	051	Puerto Rico	Dorado Municipio	PR
+72053	72	053	Puerto Rico	Fajardo Municipio	PR
+72054	72	054	Puerto Rico	Florida Municipio	PR
+72055	72	055	Puerto Rico	Guanica Municipio	PR
+72057	72	057	Puerto Rico	Guayama Municipio	PR
+72059	72	059	Puerto Rico	Guayanilla Municipio	PR
+72061	72	061	Puerto Rico	Guaynabo Municipio	PR
+72063	72	063	Puerto Rico	Gurabo Municipio	PR
+72065	72	065	Puerto Rico	Hatillo Municipio	PR
+72067	72	067	Puerto Rico	Hormigueros Municipio	PR
+72069	72	069	Puerto Rico	Humacao Municipio	PR
+72071	72	071	Puerto Rico	Isabela Municipio	PR
+72073	72	073	Puerto Rico	Jayuya Municipio	PR
+72075	72	075	Puerto Rico	Juana Diaz Municipio	PR
+72077	72	077	Puerto Rico	Juncos Municipio	PR
+72079	72	079	Puerto Rico	Lajas Municipio	PR
+72081	72	081	Puerto Rico	Lares Municipio	PR
+72083	72	083	Puerto Rico	Las Marias Municipio	PR
+72085	72	085	Puerto Rico	Las Piedras Municipio	PR
+72087	72	087	Puerto Rico	Loiza Municipio	PR
+72089	72	089	Puerto Rico	Luquillo Municipio	PR
+72091	72	091	Puerto Rico	Manati Municipio	PR
+72093	72	093	Puerto Rico	Maricao Municipio	PR
+72095	72	095	Puerto Rico	Maunabo Municipio	PR
+72097	72	097	Puerto Rico	Mayaguez Municipio	PR
+72099	72	099	Puerto Rico	Moca Municipio	PR
+72101	72	101	Puerto Rico	Morovis Municipio	PR
+72103	72	103	Puerto Rico	Naguabo Municipio	PR
+72105	72	105	Puerto Rico	Naranjito Municipio	PR
+72107	72	107	Puerto Rico	Orocovis Municipio	PR
+72109	72	109	Puerto Rico	Patillas Municipio	PR
+72111	72	111	Puerto Rico	Penuelas Municipio	PR
+72113	72	113	Puerto Rico	Ponce Municipio	PR
+72115	72	115	Puerto Rico	Quebradillas Municipio	PR
+72117	72	117	Puerto Rico	Rincon Municipio	PR
+72119	72	119	Puerto Rico	Rio Grande Municipio	PR
+72121	72	121	Puerto Rico	Sabana Grande Municipio	PR
+72123	72	123	Puerto Rico	Salinas Municipio	PR
+72125	72	125	Puerto Rico	San German Municipio	PR
+72127	72	127	Puerto Rico	San Juan Municipio	PR
+72129	72	129	Puerto Rico	San Lorenzo Municipio	PR
+72131	72	131	Puerto Rico	San Sebastian Municipio	PR
+72133	72	133	Puerto Rico	Santa Isabel Municipio	PR
+72135	72	135	Puerto Rico	Toa Alta Municipio	PR
+72137	72	137	Puerto Rico	Toa Baja Municipio	PR
+72139	72	139	Puerto Rico	Trujillo Alto Municipio	PR
+72141	72	141	Puerto Rico	Utuado Municipio	PR
+72143	72	143	Puerto Rico	Vega Alta Municipio	PR
+72145	72	145	Puerto Rico	Vega Baja Municipio	PR
+72147	72	147	Puerto Rico	Vieques Municipio	PR
+72149	72	149	Puerto Rico	Villalba Municipio	PR
+72151	72	151	Puerto Rico	Yabucoa Municipio	PR
+72153	72	153	Puerto Rico	Yauco Municipio	PR
+74300	74	300	NA	Midway Islands	UM
+78010	78	010	U.S. Virgin Islands	St. Croix Island	VI
+78020	78	020	U.S. Virgin Islands	St. John Island	VI
+78030	78	030	U.S. Virgin Islands	St. Thomas Island	VI

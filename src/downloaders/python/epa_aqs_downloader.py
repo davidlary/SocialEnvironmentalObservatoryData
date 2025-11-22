@@ -146,8 +146,8 @@ class EPAAQSDownloader(BaseDownloader):
         # API configuration
         self.base_url = "https://aqs.epa.gov/data/api"
         self.endpoints = {
-            "annual_summary": f"{self.base_url}/annualData/byCounty",
-            "monitors": f"{self.base_url}/monitors/byCounty",
+            "annual_summary": f"{self.base_url}/annualData/byState",
+            "monitors": f"{self.base_url}/monitors/byState",
         }
 
         # Cache directory for this source
