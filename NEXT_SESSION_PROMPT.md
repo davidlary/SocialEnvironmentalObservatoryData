@@ -1,280 +1,403 @@
-# Next Session Continuation Prompt
+# Next Session Prompt - US County-Level Observatory Data Download System
 
-## Context
+**Date Created**: 2025-11-22  
+**Session Context**: Continuation after IPUMS NHGIS fixes and EPA AQS completion  
+**Current Branch**: phase1-core-framework  
+**Last Commit**: 7b5b2a2
 
-You are continuing development of the **US County-Level Observatory Data Download System**, a comprehensive system to download, process, and visualize 43,000+ variables from 200+ data sources for 3,234 US counties.
+---
 
-**Current Status:** Phase 1 (Core Framework) is COMPLETE. EPA AQS downloader is implemented but NOT YET RUN with real data.
+## 🚨 IMMEDIATE TASKS - AUTONOMOUS EXECUTION REQUIRED
 
-## What Has Been Completed
+### Task 1: Fix EPA AQS TSV Processing (PRIORITY 1)
 
-### ✅ Phase 1: Core Framework (100% Complete)
-- All core modules implemented and tested (logger, cache_manager, progress_tracker, metadata_manager, etc.)
-- Setup scripts working (00_setup_environment.py, 01_download_metadata.py)
-- Metadata downloaded: 3,234 US counties with boundaries
-- Base downloader abstract class ready for all sources
+**Status**: EPA download COMPLETED (243 files), but TSV processing FAILED
 
-### ✅ EPA AQS Implementation (95% Complete)
-- **Downloader**: `src/downloaders/python/epa_aqs_downloader.py` - FULLY IMPLEMENTED
-  - Supports 6 criteria pollutants: PM2.5, PM10, O3, NO2, SO2, CO
-  - Years: 1980-2024 (varies by pollutant)
-  - API integration with rate limiting and retry logic
-- **Processor**: `src/processors/epa_aqs_processor.py` - FULLY IMPLEMENTED
-  - Converts API responses to standardized TSV files
-  - County-level aggregation with FIPS metadata
-- **Scripts**:
-  - `scripts/03_download_source.py` - Main downloader orchestrator
-  - `scripts/04_process_cached_data.py` - TSV processor
-  - `scripts/05_generate_maps.py` - Map generator
-- **Testing**: End-to-end pipeline test passes for TSV generation
+**What Happened**:
+- EPA AQS downloader successfully downloaded 243 cache files covering:
+  - 6 pollutants: PM2.5, PM10, O3, NO2, SO2, CO
+  - Years: 1980-2024 (45 years)
+  - All US counties with data
+- Automatic TSV processing failed at 22:24:40 on 2025-11-21
 
-### ⚠️ Known Issue
-- Map generator has minor FIPS/GEOID type mismatch (line 152 in `src/core/map_generator.py`)
-- Easy fix: Ensure GEOID is converted to zero-padded string before merge
+**Your Task**:
+1. Check the error log: `cat logs/epa_autoprocess_20251121_220308.log`
+2. Identify the specific error (likely: FIPS joining, data parsing, or file format issue)
+3. Debug and fix the issue in `scripts/04_process_cached_data.py` or `src/core/tsv_generator.py`
+4. Run manual processing: `python scripts/04_process_cached_data.py --source epa_aqs`
+5. Verify success: Check for ~243-270 TSV files in `data/tsv/01_AIR_ATMOSPHERE/`
+6. Generate maps: `python scripts/05_generate_maps.py --category 01_AIR_ATMOSPHERE`
+7. Verify maps: Check for PNG files in `data/maps/01_AIR_ATMOSPHERE/`
 
-### 🚫 Blocker: NO REAL DATA DOWNLOADED YET
-- EPA AQS downloader is implemented but **NOT RUN**
-- Requires API credentials (free signup at https://aqs.epa.gov/data/api/signup)
+**Expected Output**:
+- ~243-270 TSV files (one per pollutant per year)
+- ~243-270 PNG choropleth maps
+- All files with standardized FIPS metadata columns
 
-## Critical Requirements for This Session
+**Common Issues to Check**:
+- FIPS code type mismatch (string vs int)
+- Missing FIPS metadata file
+- Data format parsing errors (CSV headers, delimiters)
+- Empty dataframes causing joins to fail
 
-### MANDATORY RULES (from user):
-1. **NO SYNTHETIC DATA** - Only real data downloads
-2. **FULL DOWNLOADS ONLY** - Every variable, every year available
-3. **COMPLETE EACH DOWNLOADER** before moving to next:
-   - Download ALL data
-   - Process ALL to TSVs
-   - Generate ALL maps
-   - Verify completeness
-   - Then and ONLY then move to next downloader
-4. **Follow CPF v4.7.1** completely (Context-Preserving Framework rules in this directory)
-5. **Parallel processing** for years within each variable
+---
 
-## Your Tasks for This Session
+### Task 2: Monitor/Fix/Run IPUMS NHGIS Downloader (PRIORITY 2)
 
-### TASK 1: Fix Map Generator (5 minutes)
-**File**: `src/core/map_generator.py` line ~152
+**Status**: Autonomous downloader was running (PID 9184), but status unknown
 
-**Problem**: Type mismatch between FIPS (string) and GEOID (int64)
+**What Happened**:
+- IPUMS NHGIS downloader started autonomously at 10:20:32 on 2025-11-22
+- Two critical bugs were fixed:
+  1. Table limit: Reduced from 1432 to 50 tables per extract
+  2. URL extraction: Fixed dict handling for download links
+- Log shows Batch 1 started, Batch 2 started, then log stopped at line 13
+- Unknown if process is still running, completed, or failed
 
-**Fix**: In `_load_county_boundaries()` method, convert GEOID to string when loading:
+**Your Task**:
+1. **Check Process Status**:
+   ```bash
+   ps aux | grep 9184
+   ps aux | grep "97_autonomous_ipums"
+   ```
+
+2. **Check Log Files**:
+   ```bash
+   tail -100 logs/ipums_autonomous_master.log
+   ls -lh logs/nhgis_batch*.log
+   tail -100 logs/nhgis_batch1_*.log
+   tail -100 logs/nhgis_batch2_*.log
+   ```
+
+3. **Count Downloaded Files**:
+   ```bash
+   find data/cache/02_DEMOGRAPHICS_SOCIAL/ipums_nhgis -name "*.zip" | wc -l
+   ls -lh data/cache/02_DEMOGRAPHICS_SOCIAL/ipums_nhgis/
+   ```
+
+4. **Determine Next Action**:
+   - If process still running: Monitor and wait
+   - If process completed: Verify 266 files downloaded, proceed to processing
+   - If process failed: Review logs, fix errors, restart from failed batch
+
+5. **Restart If Needed**:
+   ```bash
+   nohup bash scripts/97_autonomous_ipums_downloader.sh > logs/ipums_restart_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+   echo $! # Note the PID
+   ```
+
+**Expected Output**:
+- 266 ZIP files in `data/cache/02_DEMOGRAPHICS_SOCIAL/ipums_nhgis/`
+- 5 batch log files showing success/failure counts
+- Master log showing completion status
+
+---
+
+### Task 3: Process IPUMS NHGIS Data to TSV Format (PRIORITY 3)
+
+**Status**: Not yet started, depends on Task 2 completion
+
+**What to Do**:
+1. **Understand NHGIS Data Format**:
+   - Each ZIP contains: CSV data file + codebook + GIS files
+   - CSV has county-level rows with FIPS codes (GISJOIN or GEOID format)
+   - Multiple variables per file
+   - Need to extract, parse, and standardize
+
+2. **Implement NHGIS Processor**:
+   - Create `scripts/04b_process_nhgis_data.py` (similar to EPA processor)
+   - Or add NHGIS support to existing `scripts/04_process_cached_data.py`
+   - Key steps:
+     a. Extract ZIP files
+     b. Parse NHGIS CSV format
+     c. Convert GISJOIN to standard FIPS codes
+     d. Split by variable and year
+     e. Create standardized TSV files (with FIPS metadata columns)
+
+3. **Run Processing**:
+   ```bash
+   python scripts/04_process_cached_data.py --source ipums_nhgis
+   ```
+
+4. **Generate Maps**:
+   ```bash
+   python scripts/05_generate_maps.py --category 02_DEMOGRAPHICS_SOCIAL
+   ```
+
+**Expected Output**:
+- Thousands of TSV files (266 datasets × multiple variables × multiple years)
+- Thousands of PNG choropleth maps
+- All files in `data/tsv/02_DEMOGRAPHICS_SOCIAL/` and `data/maps/02_DEMOGRAPHICS_SOCIAL/`
+
+---
+
+## 📊 CURRENT DATA STATUS
+
+### Downloaded Cache Files
+
+| Source | Category | Files | Size | Status |
+|--------|----------|-------|------|--------|
+| EPA AQS | 01_AIR_ATMOSPHERE | 243 | ~50 MB | ✅ COMPLETE |
+| IPUMS NHGIS | 02_DEMOGRAPHICS_SOCIAL | ??? | ??? MB | ⚠️ UNKNOWN |
+
+### Processed TSV Files
+
+| Source | TSV Files | Maps | Status |
+|--------|-----------|------|--------|
+| EPA AQS | 0 | 0 | ❌ PROCESSING FAILED |
+| IPUMS NHGIS | 0 | 0 | ⏳ NOT STARTED |
+
+---
+
+## 🔧 CRITICAL FIXES APPLIED IN PREVIOUS SESSION
+
+### Fix 1: IPUMS Table Limit (src/downloaders/python/ipums_nhgis_downloader.py:273-285)
+
+**Problem**: Requesting all 1432 tables overwhelmed NHGIS server  
+**Solution**: Limit to 50 tables per extract  
+**Test**: 2023_ACS1 downloaded successfully (1.1 MB)
+
 ```python
-def _load_county_boundaries(self) -> gpd.GeoDataFrame:
-    if self.county_boundaries is None:
-        logger.info("Loading county boundaries for mapping")
-        self.county_boundaries = get_county_boundaries()
+MAX_TABLES_PER_EXTRACT = 50
 
-        # Convert GEOID to zero-padded string for merging with FIPS
-        self.county_boundaries['GEOID'] = (
-            self.county_boundaries['GEOID']
-            .astype(str)
-            .str.zfill(5)
-        )
-
-        if self.county_boundaries.crs != CRS_US_ALBERS:
-            self.county_boundaries = self.county_boundaries.to_crs(CRS_US_ALBERS)
-
-    return self.county_boundaries
+if len(data_tables) > MAX_TABLES_PER_EXTRACT:
+    logger.warning(
+        f"Dataset {dataset} has {len(data_tables)} tables, "
+        f"limiting to first {MAX_TABLES_PER_EXTRACT} tables"
+    )
+    data_tables = data_tables[:MAX_TABLES_PER_EXTRACT]
 ```
 
-Then remove the temporary fix at line 152-153.
+### Fix 2: IPUMS URL Extraction (src/downloaders/python/ipums_nhgis_downloader.py:369-382)
 
-**Test**: Run `python tests/test_epa_aqs_pipeline.py` - should pass 100%
+**Problem**: Download link returned as dict, not string  
+**Solution**: Extract 'url' field from dict  
+**Test**: Download succeeded after fix
 
-### TASK 2: Get EPA AQS API Credentials
-**Action**: User must provide or you must prompt for:
-1. EPA_AQS_API_KEY (from https://aqs.epa.gov/data/api/signup)
-2. EPA_AQS_EMAIL (email used for signup)
-
-**Set environment variables**:
-```bash
-export EPA_AQS_API_KEY="key_from_user"
-export EPA_AQS_EMAIL="user.email@example.com"
+```python
+if isinstance(data_link_info, dict):
+    data_url = data_link_info.get("url")
+    if data_url:
+        logger.info(f"Extract #{extract_number} complete!")
+        return data_url
 ```
 
-### TASK 3: Download FULL EPA AQS Dataset
-**Command**:
+---
+
+## 📁 CRITICAL FILE LOCATIONS
+
+### Logs to Check
+- `logs/epa_autoprocess_20251121_220308.log` - EPA processing error details
+- `logs/ipums_autonomous_master.log` - IPUMS master process log
+- `logs/nhgis_batch1_*.log` through `logs/nhgis_batch5_*.log` - Batch-specific logs
+- `logs/main.log` - General system log
+- `logs/errors.log` - All errors
+
+### Cache Directories
+- `data/cache/01_AIR_ATMOSPHERE/epa_aqs/` - EPA AQS downloaded files (243 files)
+- `data/cache/02_DEMOGRAPHICS_SOCIAL/ipums_nhgis/` - IPUMS NHGIS ZIP files (??? files)
+
+### Output Directories
+- `data/tsv/01_AIR_ATMOSPHERE/` - EPA TSV files (currently empty)
+- `data/tsv/02_DEMOGRAPHICS_SOCIAL/` - IPUMS TSV files (currently empty)
+- `data/maps/01_AIR_ATMOSPHERE/` - EPA maps (currently empty)
+- `data/maps/02_DEMOGRAPHICS_SOCIAL/` - IPUMS maps (currently empty)
+
+### Metadata Files
+- `data/metadata/fips_codes.csv` - 3,234 US counties with FIPS codes
+- `data/metadata/county_boundaries_2020.gpkg` - County shapefiles (127 MB, not in git)
+- `data/metadata/nhgis_download_batches.json` - 266 NHGIS datasets organized into 5 batches
+
+---
+
+## ✅ SUCCESS CRITERIA
+
+### Task 1 Success (EPA Processing)
+- [ ] Error identified and fixed
+- [ ] ~243-270 TSV files created in `data/tsv/01_AIR_ATMOSPHERE/`
+- [ ] All TSV files have standardized columns: FIPS, County, State, Year, Value, Variable
+- [ ] ~243-270 PNG maps created in `data/maps/01_AIR_ATMOSPHERE/`
+- [ ] No errors in logs
+- [ ] Commit changes with message: "FIX: EPA AQS TSV processing - [description of fix]"
+
+### Task 2 Success (IPUMS Monitoring)
+- [ ] Process status determined (running/completed/failed)
+- [ ] 266 ZIP files downloaded (or progress documented)
+- [ ] All batch logs reviewed
+- [ ] Any errors identified and fixed
+- [ ] If restarted, new PID documented
+
+### Task 3 Success (IPUMS Processing)
+- [ ] Processor implemented and tested
+- [ ] Thousands of TSV files created in `data/tsv/02_DEMOGRAPHICS_SOCIAL/`
+- [ ] All TSV files have standardized columns
+- [ ] Thousands of PNG maps created
+- [ ] No errors in logs
+- [ ] Commit changes with message: "ADD: IPUMS NHGIS TSV processing and map generation"
+
+---
+
+## 🎯 NEXT STEPS AFTER IMMEDIATE TASKS
+
+### Phase 1 Completion
+1. Verify all Phase 1 sources working:
+   - ✅ EPA AQS (air quality)
+   - ✅ IPUMS NHGIS (demographics)
+   - ⏳ CDC WONDER (mortality) - not yet started
+   - ⏳ USGS NWIS (water quality) - not yet started
+
+2. Update documentation:
+   - README.md with completion status
+   - AUTONOMOUS_OPERATIONS_STATUS.md with final results
+   - Create PHASE1_COMPLETION_SUMMARY.md
+
+3. Git commit and push:
+   - Commit all fixes and processing code
+   - Push to GitHub (no large files)
+   - Tag release: `git tag v1.1.0-phase1-complete`
+
+### Phase 2: Additional Sources
+4. CDC WONDER Mortality (Priority 1):
+   - Implement downloader for mortality data
+   - Category: 03_HEALTH_DISEASE
+
+5. USGS NWIS Water Quality (Priority 2):
+   - Implement downloader for water quality data
+   - Category: 04_WATER_HYDROLOGY
+
+6. ERA5 Climate Reanalysis (Priority 3):
+   - Implement downloader for climate data
+   - Category: 05_CLIMATE_WEATHER
+
+### Phase 3: Data Integration
+7. Master TSV compilation:
+   - Combine all sources into master county-level database
+   - Create DuckDB database for efficient querying
+   - Generate summary statistics
+
+8. Quality control:
+   - Check for missing data
+   - Validate FIPS codes
+   - Generate data coverage reports
+
+9. Documentation:
+   - Data dictionary
+   - User guide
+   - API documentation (if needed)
+
+---
+
+## 🐛 COMMON DEBUGGING TIPS
+
+### FIPS Code Issues
+- FIPS codes must be 5-digit strings with leading zeros: "01001" not "1001"
+- County FIPS = State FIPS (2 digits) + County FIPS (3 digits)
+- Some territories have non-standard FIPS codes
+- Check for type mismatches: string vs int
+
+### API Issues
+- EPA AQS: Check API key in environment or config file
+- IPUMS NHGIS: Check API key in environment or config file
+- Rate limiting: EPA allows 10 req/sec, IPUMS allows 100 req/min
+- Timeouts: Increase for large datasets
+
+### Processing Issues
+- Empty dataframes: Check if data was actually downloaded
+- Join failures: Verify FIPS code formats match
+- Memory issues: Process in batches for large datasets
+- File format issues: Check CSV headers, delimiters, encoding
+
+### Git Issues
+- Large files (>100MB): Add to .gitignore, use git filter-branch if already committed
+- Push failures: Check file sizes with `git ls-files -z | xargs -0 du -h | sort -h`
+
+---
+
+## 📝 MONITORING COMMANDS
+
+### Check Running Processes
 ```bash
-python scripts/03_download_source.py --source epa_aqs
+ps aux | grep python
+ps aux | grep autonomous
 ```
 
-**This will download**:
-- PM2.5: 1999-2024 (26 years) × 56 states = ~1,456 files
-- PM10: 1988-2024 (37 years) × 56 states = ~2,072 files
-- O3: 1980-2024 (45 years) × 56 states = ~2,520 files
-- NO2: 1980-2024 (45 years) × 56 states = ~2,520 files
-- SO2: 1980-2024 (45 years) × 56 states = ~2,520 files
-- CO: 1980-2024 (45 years) × 56 states = ~2,520 files
-- **Total: ~13,608 API calls, ~2-4 hours with rate limiting**
-
-**Monitor**: Watch for errors, handle retries, ensure ALL data downloads
-
-### TASK 4: Process ALL EPA AQS Data to TSVs
-**Command**:
+### Check Recent Logs
 ```bash
+tail -100 logs/main.log
+tail -100 logs/errors.log
+tail -100 logs/ipums_autonomous_master.log
+```
+
+### Count Downloaded Files
+```bash
+find data/cache -name "*.json" | wc -l  # EPA files
+find data/cache -name "*.zip" | wc -l   # IPUMS files
+```
+
+### Count Processed Files
+```bash
+find data/tsv -name "*.tsv" | wc -l
+find data/maps -name "*.png" | wc -l
+```
+
+### Check Disk Space
+```bash
+du -sh data/cache/
+du -sh data/tsv/
+du -sh data/maps/
+df -h .
+```
+
+---
+
+## 🚀 QUICK START COMMANDS FOR NEXT SESSION
+
+```bash
+# Navigate to project
+cd /Users/davidlary/Dropbox/Environments/Code/GetData/SocialEnvironmentalObservatoryData
+
+# Check git status
+git status
+git log --oneline -5
+
+# Task 1: Fix EPA processing
+cat logs/epa_autoprocess_20251121_220308.log
+# [Fix the error]
 python scripts/04_process_cached_data.py --source epa_aqs
-```
+python scripts/05_generate_maps.py --category 01_AIR_ATMOSPHERE
 
-**Expected output**:
-- ~270 TSV files (6 pollutants × ~40-45 years each)
-- Each TSV: county-level data with FIPS metadata
-- Location: `data/processed/01_AIR_ATMOSPHERE/{pollutant}/`
+# Task 2: Check IPUMS status
+ps aux | grep 9184
+tail -100 logs/ipums_autonomous_master.log
+find data/cache/02_DEMOGRAPHICS_SOCIAL/ipums_nhgis -name "*.zip" | wc -l
 
-### TASK 5: Generate ALL EPA AQS Maps
-**Command**:
-```bash
-python scripts/05_generate_maps.py --all
-```
+# Task 3: Process IPUMS (after downloads complete)
+python scripts/04_process_cached_data.py --source ipums_nhgis
+python scripts/05_generate_maps.py --category 02_DEMOGRAPHICS_SOCIAL
 
-**Expected output**:
-- ~270 PNG maps (one per TSV file)
-- 300 DPI, choropleth with quantile classification
-- Same location as TSV files
+# Verify results
+find data/tsv -name "*.tsv" | wc -l
+find data/maps -name "*.png" | wc -l
 
-### TASK 6: Verify EPA AQS Completion
-**Check**:
-```bash
-# Count files
-find data/processed/01_AIR_ATMOSPHERE -name "*.tsv" | wc -l
-find data/processed/01_AIR_ATMOSPHERE -name "*.png" | wc -l
-
-# Check one example
-ls -lh data/processed/01_AIR_ATMOSPHERE/PM25/
-```
-
-**Expected**: All files present, reasonable sizes, no errors
-
-### TASK 7: Commit EPA AQS Work
-**After verification**:
-```bash
+# Commit and push
 git add -A
-git commit -m "DATA: Complete EPA AQS dataset downloaded and processed
-
-Downloaded and processed FULL EPA AQS dataset:
-- 6 pollutants (PM2.5, PM10, O3, NO2, SO2, CO)
-- All available years (1980-2024, varies by pollutant)
-- All 56 US states/territories
-- Total: ~13,608 API calls completed
-
-Output:
-- ~270 TSV files with county-level data
-- ~270 choropleth maps (300 DPI PNG)
-- All data validated and verified
-
-Next: Implement next downloader
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-Co-Authored-By: Claude <noreply@anthropic.com>"
+git commit -m "FIX: [description]"
+git push origin phase1-core-framework
 ```
 
-### TASK 8: Implement Next Downloader
-**Priority order** (from `IMPLEMENTATION_PLAN.md`):
-1. ✅ EPA AQS (DONE in this session)
-2. **NEXT: USGS NWIS** (water quality)
-   - API-based, no account needed
-   - 1,300+ parameters
-   - Station-level data → requires county aggregation
-3. Then: CDC WONDER mortality
-4. Then: Census ACS demographics
-5. Continue through all 200+ sources
+---
 
-**For USGS NWIS**:
-- Create `src/downloaders/python/usgs_nwis_downloader.py`
-- Inherits from `BaseDownloader`
-- API: https://waterservices.usgs.gov/rest/
-- Download ALL parameters, ALL available years
-- Process to TSVs, generate ALL maps
-- Only then move to next source
+## 📖 REFERENCE DOCUMENTATION
 
-## Important Notes
+- **README.md**: Main project documentation
+- **config/sources_registry.json**: List of all 100+ data sources
+- **docs/sources/epa_aqs.md**: EPA AQS documentation
+- **docs/sources/ipums_nhgis.md**: IPUMS NHGIS documentation
+- **AUTONOMOUS_OPERATIONS_STATUS.md**: Operational status guide
+- **SESSION_HANDOFF_2025-11-21.md**: Previous session notes
 
-### Context-Preserving Framework v4.7.1
-- Follow ALL rules in `docs/core/PROTOCOL_CORE_RULES.md`
-- Use TodoWrite tool to track progress
-- Update todos as you complete tasks
-- Display checkpoint after every operation
+---
 
-### Data Philosophy
-- **NO placeholders** - full implementations only
-- **NO synthetic data** - real data or nothing
-- **COMPLETE before proceeding** - verify all files generated
-- **Parallel where possible** - process years in parallel
+**END OF NEXT SESSION PROMPT**
 
-### File Locations
-- Cache: `data/cache/{category}/{source}/`
-- Processed: `data/processed/{category}/{variable}/`
-- Each variable directory contains: `{year}_{variable}.tsv` and `{year}_{variable}.png`
-
-### Progress Tracking
-All progress is tracked in `progress/*.json` files for resumability.
-
-### Code Quality
-- Comprehensive docstrings
-- Type hints throughout
-- Error handling at every level
-- Logging for all operations
-- Tests for each component
-
-## Session Checklist
-
-- [ ] Fix map generator GEOID type issue
-- [ ] Test pipeline end-to-end (should pass 100%)
-- [ ] Get EPA AQS API credentials from user
-- [ ] Download FULL EPA AQS dataset (~2-4 hours)
-- [ ] Process ALL cached EPA AQS data to TSVs
-- [ ] Generate ALL EPA AQS maps
-- [ ] Verify completeness (count files, check samples)
-- [ ] Commit EPA AQS completion
-- [ ] Implement USGS NWIS downloader (full implementation)
-- [ ] Download FULL USGS NWIS dataset
-- [ ] Process and map USGS NWIS data
-- [ ] Continue with next source...
-
-## Starting Commands
-
-```bash
-# 1. Fix map generator
-# (Edit src/core/map_generator.py as described above)
-
-# 2. Test fix
-python tests/test_epa_aqs_pipeline.py
-
-# 3. Set credentials (user must provide)
-export EPA_AQS_API_KEY="..."
-export EPA_AQS_EMAIL="..."
-
-# 4. Download EPA AQS data (THIS IS THE MAIN TASK)
-python scripts/03_download_source.py --source epa_aqs
-
-# 5. Process to TSVs
-python scripts/04_process_cached_data.py --source epa_aqs
-
-# 6. Generate maps
-python scripts/05_generate_maps.py --all
-
-# 7. Verify
-find data/processed/01_AIR_ATMOSPHERE -type f | wc -l
-```
-
-## Success Criteria
-
-This session is successful when:
-1. ✅ Map generator type issue fixed
-2. ✅ EPA AQS: ALL 6 pollutants downloaded (all years, all states)
-3. ✅ EPA AQS: ALL TSV files generated (~270 files)
-4. ✅ EPA AQS: ALL maps generated (~270 maps)
-5. ✅ EPA AQS: Work committed to git
-6. ✅ Next downloader (USGS NWIS) fully implemented
-7. ✅ USGS NWIS: ALL data downloaded
-8. ✅ USGS NWIS: ALL TSVs and maps generated
-9. Ready to continue with downloader #3
-
-## Remember
-
-- **REAL DATA ONLY** - no synthetic, no samples, no tests with fake data
-- **COMPLETE EACH SOURCE** before moving to next
-- **VERIFY COMPLETENESS** - count files, check samples
-- **PARALLEL PROCESSING** - use all available CPU cores for years
-- **FOLLOW CPF v4.7.1** - all rules apply
-
-Good luck! The foundation is solid. Now it's time to download the real data.
+**Autonomous Execution**: Read this entire document, execute Tasks 1-3 in order, verify success criteria, commit changes, and provide status update.
