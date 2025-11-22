@@ -1,0 +1,134 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-11-21",
+  "description": "Registry of all data sources for the US County-Level Observatory",
+  "sources": [
+    {
+      "id": "nhgis",
+      "name": "IPUMS NHGIS",
+      "priority": 1,
+      "category": "15_DEMOGRAPHICS",
+      "description": "Pre-harmonized demographic, social, economic, housing data from US Census",
+      "access_method": "r_package",
+      "requires_account": true,
+      "base_url": "https://data2.nhgis.org/",
+      "temporal_coverage": {
+        "start": 1790,
+        "end": 2024,
+        "frequency": "varies"
+      },
+      "geographic_level": "county",
+      "estimated_variables": 10000,
+      "downloader_module": "r/nhgis_downloader.R",
+      "r_package": "ipumsr",
+      "notes": "Requires manual extract definition; 389 time series tables + 1,300+ ACS tables",
+      "status": "planned"
+    },
+    {
+      "id": "epa_aqs",
+      "name": "EPA Air Quality System",
+      "priority": 2,
+      "category": "01_AIR_ATMOSPHERE",
+      "description": "Criteria air pollutants monitoring data",
+      "access_method": "api",
+      "requires_account": true,
+      "base_url": "https://aqs.epa.gov/data/api/",
+      "api_endpoints": {
+        "annual_summary": "/annualData/byCounty"
+      },
+      "rate_limit": {
+        "requests_per_second": 5,
+        "requests_per_hour": 500
+      },
+      "temporal_coverage": {
+        "start": 1980,
+        "end": 2024,
+        "frequency": "annual"
+      },
+      "geographic_level": "county",
+      "estimated_variables": 200,
+      "downloader_module": "python/epa_aqs_downloader.py",
+      "parameters": [
+        {
+          "code": "88101",
+          "name": "PM25_Annual",
+          "description": "Fine particulate matter (PM2.5)",
+          "unit": "μg/m³"
+        },
+        {
+          "code": "81102",
+          "name": "PM10_Annual",
+          "description": "Coarse particulate matter (PM10)",
+          "unit": "μg/m³"
+        },
+        {
+          "code": "44201",
+          "name": "Ozone_8hr",
+          "description": "Ozone 8-hour average",
+          "unit": "ppm"
+        },
+        {
+          "code": "42602",
+          "name": "NO2_Annual",
+          "description": "Nitrogen dioxide",
+          "unit": "ppb"
+        },
+        {
+          "code": "42401",
+          "name": "SO2_Annual",
+          "description": "Sulfur dioxide",
+          "unit": "ppb"
+        },
+        {
+          "code": "42101",
+          "name": "CO_8hr",
+          "description": "Carbon monoxide 8-hour average",
+          "unit": "ppm"
+        }
+      ],
+      "notes": "Requires API key from https://aqs.epa.gov/data/api/signup",
+      "status": "planned"
+    },
+    {
+      "id": "cdc_wonder_mortality",
+      "name": "CDC WONDER Mortality Database",
+      "priority": 3,
+      "category": "12_MORTALITY_DISEASE",
+      "description": "Mortality data by cause of death, demographics, and geography",
+      "access_method": "api",
+      "requires_account": false,
+      "base_url": "https://wonder.cdc.gov/",
+      "temporal_coverage": {
+        "start": 1999,
+        "end": 2023,
+        "frequency": "annual"
+      },
+      "geographic_level": "county",
+      "estimated_variables": 1000,
+      "downloader_module": "python/cdc_wonder_downloader.py",
+      "notes": "Multiple databases available (Detailed Mortality, Underlying Cause of Death, etc.)",
+      "status": "planned"
+    },
+    {
+      "id": "usgs_nwis",
+      "name": "USGS National Water Information System",
+      "priority": 4,
+      "category": "02_WATER",
+      "description": "Water quality and quantity data from monitoring stations",
+      "access_method": "api",
+      "requires_account": false,
+      "base_url": "https://waterservices.usgs.gov/rest/",
+      "temporal_coverage": {
+        "start": 1901,
+        "end": 2024,
+        "frequency": "varies"
+      },
+      "geographic_level": "station",
+      "aggregation_required": true,
+      "estimated_variables": 1300,
+      "downloader_module": "python/usgs_nwis_downloader.py",
+      "notes": "Station-level data requires spatial aggregation to counties",
+      "status": "planned"
+    }
+  ]
+}
