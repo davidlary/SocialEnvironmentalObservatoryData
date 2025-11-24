@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2025-11-21",
+  "last_updated": "2025-11-24",
   "description": "Registry of all data sources for the US County-Level Observatory",
   "sources": [
     {
@@ -95,19 +95,34 @@
       "priority": 3,
       "category": "12_MORTALITY_DISEASE",
       "description": "Mortality data by cause of death, demographics, and geography",
-      "access_method": "api",
+      "access_method": "restricted",
       "requires_account": false,
       "base_url": "https://wonder.cdc.gov/",
       "temporal_coverage": {
         "start": 1999,
-        "end": 2023,
-        "frequency": "annual"
+        "end": 2016,
+        "frequency": "annual",
+        "note": "Public county-level data ends 2016; 2017+ requires restricted access or web scraping"
       },
       "geographic_level": "county",
-      "estimated_variables": 1000,
-      "downloader_module": "python/cdc_wonder_downloader.py",
-      "notes": "Multiple databases available (Detailed Mortality, Underlying Cause of Death, etc.)",
-      "status": "planned"
+      "estimated_variables": 114,
+      "downloader_module": "python/cdc_mortality_downloader.py",
+      "implementation_challenges": {
+        "api_limitation": "CDC WONDER API does not support county-level queries (national only)",
+        "cmf_files": "Compressed Mortality Files public access ends at 2016",
+        "nber_limitation": "NBER repository removed county codes from 2005+ files",
+        "web_scraping": "CDC WONDER web interface supports county-level but requires scraping (~17 hours with rate limits)",
+        "restricted_data": "Current county-level data requires NCHS application (4-6 weeks approval)"
+      },
+      "notes": "DEPRIORITIZED: County-level data not easily accessible for recent years. See docs/CDC_WONDER_IMPLEMENTATION_NOTES.md for full analysis",
+      "status": "blocked",
+      "blocked_reason": "Public county-level data unavailable for recent years (2017+)",
+      "resolution_options": [
+        "Apply for NCHS restricted data access (requires institutional support)",
+        "Wait for CDC CMF update (may release 2017-2020 eventually)",
+        "Implement CDC WONDER web scraping (high complexity, 3-4 days development)",
+        "Use national-level data only (not suitable for county observatory)"
+      ]
     },
     {
       "id": "usgs_nwis",

@@ -1,20 +1,27 @@
 # CDC WONDER / CDC Mortality Data Implementation Notes
 
 **Date:** 2025-11-24
-**Status:** Implementation blocked - API limitations discovered
+**Status:** Deprioritized - County-level data unavailable for recent years
 **Priority:** 3 (per sources_registry.json)
+**Decision:** Skip this source for now; move to NHGIS (Priority 1)
 
 ---
 
 ## Executive Summary
 
-**CRITICAL FINDING**: CDC WONDER API does NOT support county-level mortality data queries. The API is restricted to national-level data only for privacy reasons.
+**CRITICAL FINDING**: County-level CDC mortality data is NOT available through simple public access methods for recent years (2017+).
 
-**Available Alternatives**:
-1. **Compressed Mortality Files (CMF)** - County-level data 1968-2016 via FTP
-2. **CDC WONDER Web Interface** - County-level data via manual/automated queries (2017-2023)
-3. **NBER Repository** - County-level mortality 1968-2004
-4. **Restricted-Use Data** - Requires NCHS application (2005-2023 with county codes)
+**Key Limitations Discovered**:
+1. **CDC WONDER API** - No county-level access (national only)
+2. **Compressed Mortality Files** - Public files end at 2016 (7 years outdated)
+3. **NBER Repository** - County codes removed from 2005+ files
+4. **CDC WONDER Web** - County access requires web scraping (~17 hours with rate limits)
+5. **Restricted Data** - Requires formal NCHS application (4-6 weeks approval)
+
+**RECOMMENDATION**: **Deprioritize this source**
+- Rationale: Public county-level data ends at 2016, automated access very difficult
+- Alternative: Focus on Priority 1 sources (EPA AQS, NHGIS) that have complete modern data
+- Future: Revisit if project gains institutional support for restricted data access
 
 ---
 
@@ -382,6 +389,53 @@ Priority 3: CDC WONDER Mortality Database
 
 ---
 
-**Last Updated**: 2025-11-24 03:20 AM
-**Status**: Implementation in progress - CMF parser development
-**Next Action**: Complete fixed-width file parser and test with 1999 data
+## Final Decision and Next Steps
+
+**Date**: 2025-11-24
+**Decision**: **Skip CDC mortality data for current phase**
+
+### Rationale
+
+1. **Data Recency Issues**:
+   - Public CMF files only available through 2016 (7 years outdated)
+   - Newer data requires restricted access or complex web scraping
+   - Other priority sources have current data through 2023-2024
+
+2. **Implementation Complexity vs. Value**:
+   - CMF parser would take 1-2 days to complete
+   - Web scraping would add 3-4 days + 17 hours download time
+   - Limited value given outdated endpoint (2016)
+
+3. **Project Goals Priority**:
+   - Goal: 200+ current environmental/social indicators
+   - Focus resources on high-value sources with modern data
+   - EPA AQS and NHGIS (Priority 1) provide current data easily
+
+4. **Future Path Forward**:
+   - If mortality data becomes critical, three options exist:
+     a. Apply for NCHS restricted data (institutional project)
+     b. Wait for updated CMF release (CDC may update 2017-2020)
+     c. Implement CDC WONDER web scraping (last resort)
+   - Revisit decision after completing Priority 1-2 sources
+
+### Status Update
+
+- ✅ Research complete: All options evaluated
+- ✅ Downloader skeleton created: `src/downloaders/python/cdc_mortality_downloader.py`
+- ✅ Documentation complete: This file documents all findings
+- ❌ Parser incomplete: Not worth completing for 2016 endpoint
+- ❌ Full implementation: Deprioritized pending data access resolution
+
+### Next Action
+
+**Move to Priority 1 source: NHGIS (census/demographic data)**
+- NHGIS has county-level data through 2022
+- Well-documented API with modern access methods
+- Higher priority per sources_registry.json
+- Better return on implementation effort
+
+---
+
+**Last Updated**: 2025-11-24 04:00 AM
+**Status**: Research complete - Source deprioritized
+**Next Action**: Begin NHGIS implementation (Priority 1)
