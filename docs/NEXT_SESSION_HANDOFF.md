@@ -374,6 +374,14 @@ IMPLEMENTATION APPROACH:
 - Priority order from config/sources_registry.json (NO OPTIONS - following documented plan)
 - Each source: implement → test → debug → fix → run → document → commit/push to GitHub
 - Each step backed up to local git and remote GitHub before moving to next
+- **Context-Preserving Framework v4.7.1**: MUST follow all 22 rules from docs/core/PROTOCOL_CORE_RULES.md and rules/CLAUDE.md
+  - RULE 10: Context management (65% threshold, emergency at 75%)
+  - RULE 14-15: State tracking after every operation (logs, master_state.json, context_tracking.json)
+  - RULE 16: Git commit with HEREDOC format
+  - RULE 17: Next steps at end of EVERY response
+  - RULE 18: Mandatory testing (>80% coverage, 100% passing before checkpoint)
+  - RULE 19: Auto-documentation (README, API, ARCHITECTURE, CHANGELOG)
+  - RULE 22: Advanced context compression (JIT loading, tool filtering, context editing)
 
 CURRENT STATUS:
 - EPA AQS (Priority 2): 243 TSVs + 243 maps (100% COMPLETE) ✅
@@ -411,17 +419,28 @@ KEY FILES TO REVIEW FIRST:
 
 AUTONOMOUSLY:
 - Read docs/NEXT_SESSION_HANDOFF.md first
+- **MUST** read docs/core/PROTOCOL_CORE_RULES.md and rules/CLAUDE.md (Context-Preserving Framework v4.7.1)
 - Check current IPUMS map count
 - Complete remaining maps (debug if process fails again)
 - DO NOT ASK for user preference on next source - it's CDC WONDER per systematic plan
 - Begin CDC WONDER implementation only after IPUMS 100% complete and committed
+- **FOLLOW ALL 22 FRAMEWORK RULES**: State tracking, context management, testing, documentation, git commits
+- Display checkpoint box (RULE 15) and next steps (RULE 17) in EVERY response
 
-Please proceed with systematic implementation per the documented plan.
+CRITICAL FRAMEWORK COMPLIANCE:
+- After EVERY tool use: Update state files (RULE 14)
+- Before completing ANY response: Display checkpoint box (RULE 15)
+- At END of EVERY response: Display next steps block (RULE 17)
+- Context threshold: 65% (normal checkpoint), 75% (emergency checkpoint) - RULE 10
+- Testing required: >80% coverage, 100% passing before checkpoint - RULE 18
+- Git commits: Use HEREDOC format with Co-Authored-By - RULE 16
+
+Please proceed with systematic implementation per the documented plan while maintaining 100% compliance with Context-Preserving Framework v4.7.1.
 ```
 
 ---
 
 **End of Handoff Document**
 
-**Last Updated:** 2025-11-24 11:05 PM
-**Next Session Start:** Read this document first, verify current state, then proceed
+**Last Updated:** 2025-11-24 02:57 AM
+**Next Session Start:** Read this document first, then read docs/core/PROTOCOL_CORE_RULES.md and rules/CLAUDE.md for Context-Preserving Framework v4.7.1 compliance
