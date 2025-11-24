@@ -120,12 +120,15 @@ class IPUMSNHGISProcessor:
                     # Row 1: Column names (GISJOIN, YEAR, etc.)
                     # Row 2: Descriptions ("GIS Join Match Code", "Data File Year", etc.)
                     # Row 3+: Actual data
-                    # IPUMS uses "." for missing values
+                    # IPUMS uses multiple null markers: ".", "##", "####", "N", etc.
+                    # Strategy: Read all columns as strings first, then handle nulls flexibly
                     with zf.open(csv_file) as f:
                         df = pl.read_csv(
                             f,
                             skip_rows_after_header=1,
-                            null_values=["."]
+                            null_values=[".", "##", "####", "######", "N", "NA", "null", "NULL", ""],
+                            infer_schema_length=10000,  # Scan more rows for type inference
+                            try_parse_dates=False  # Don't auto-parse dates to avoid errors
                         )
 
                     # Convert GISJOIN to FIPS
@@ -158,7 +161,7 @@ class IPUMSNHGISProcessor:
 
                     logger.info(f"Found {len(variable_cols)} variables in {csv_file}")
 
-                    for var_col in variable_cols[:10]:  # LIMIT to first 10 for now
+                    for var_col in variable_cols:  # Process ALL variables
                         try:
                             var_df = self._create_variable_tsv(
                                 df, var_col, year, force_refresh
