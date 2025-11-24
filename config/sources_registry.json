@@ -1,149 +1,4298 @@
 {
-  "version": "1.0",
-  "last_updated": "2025-11-24",
-  "description": "Registry of all data sources for the US County-Level Observatory",
   "sources": [
     {
-      "id": "nhgis",
-      "name": "IPUMS NHGIS",
-      "priority": 1,
-      "category": "15_DEMOGRAPHICS",
-      "description": "Pre-harmonized demographic, social, economic, housing data from US Census",
-      "access_method": "r_package",
-      "requires_account": true,
-      "base_url": "https://data2.nhgis.org/",
-      "temporal_coverage": {
-        "start": 1790,
-        "end": 2024,
-        "frequency": "varies"
-      },
-      "geographic_level": "county",
-      "estimated_variables": 10000,
-      "downloader_module": "r/nhgis_downloader.R",
-      "r_package": "ipumsr",
-      "notes": "Requires manual extract definition; 389 time series tables + 1,300+ ACS tables",
-      "status": "planned"
-    },
-    {
-      "id": "epa_aqs",
-      "name": "EPA Air Quality System",
+      "source_id": "05_CDC_ENVIRONMENTAL_HEALTH_TRACK",
+      "name": "CDC Environmental Health Tracking Network - Radon Testing",
+      "official_name": "Environmental Public Health Tracking Network - Radon Testing Indicator",
+      "agency": "Centers for Disease Control and Prevention (CDC)",
+      "category": "05_RADIATION",
+      "status": "operational",
       "priority": 2,
-      "category": "01_AIR_ATMOSPHERE",
-      "description": "Criteria air pollutants monitoring data",
-      "access_method": "api",
-      "requires_account": true,
-      "base_url": "https://aqs.epa.gov/data/api/",
-      "api_endpoints": {
-        "annual_summary": "/annualData/byCounty"
-      },
-      "rate_limit": {
-        "requests_per_second": 5,
-        "requests_per_hour": 500
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "46 states + DC (county-level data where available)"
       },
       "temporal_coverage": {
-        "start": 1980,
-        "end": 2024,
-        "frequency": "annual"
+        "start_year": 2013,
+        "end_year": 2025,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
       },
-      "geographic_level": "county",
-      "estimated_variables": 200,
-      "downloader_module": "python/epa_aqs_downloader.py",
-      "parameters": [
-        {
-          "code": "88101",
-          "name": "PM25_Annual",
-          "description": "Fine particulate matter (PM2.5)",
-          "unit": "μg/m³"
-        },
-        {
-          "code": "81102",
-          "name": "PM10_Annual",
-          "description": "Coarse particulate matter (PM10)",
-          "unit": "μg/m³"
-        },
-        {
-          "code": "44201",
-          "name": "Ozone_8hr",
-          "description": "Ozone 8-hour average",
-          "unit": "ppm"
-        },
-        {
-          "code": "42602",
-          "name": "NO2_Annual",
-          "description": "Nitrogen dioxide",
-          "unit": "ppb"
-        },
-        {
-          "code": "42401",
-          "name": "SO2_Annual",
-          "description": "Sulfur dioxide",
-          "unit": "ppb"
-        },
-        {
-          "code": "42101",
-          "name": "CO_8hr",
-          "description": "Carbon monoxide 8-hour average",
-          "unit": "ppm"
-        }
-      ],
-      "notes": "Requires API key from https://aqs.epa.gov/data/api/signup",
-      "status": "planned"
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: CDC Environmental Health Tracking Network - Radon Testing",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
     },
     {
-      "id": "cdc_wonder_mortality",
-      "name": "CDC WONDER Mortality Database",
+      "source_id": "05_BUREAU_OF_LAND_MANAGEMENT_BLM_",
+      "name": "Bureau of Land Management (BLM) Oil and Gas Leases",
+      "official_name": "BLM National Mineral and Land Record System (MLRS) Oil and Gas Leases",
+      "agency": "U.S. Department of the Interior, Bureau of Land Management",
+      "category": "05_RADIATION",
+      "status": "operational",
       "priority": 3,
-      "category": "12_MORTALITY_DISEASE",
-      "description": "Mortality data by cause of death, demographics, and geography",
-      "access_method": "restricted",
-      "requires_account": false,
-      "base_url": "https://wonder.cdc.gov/",
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "Federal lands (BLM-administered)"
+      },
       "temporal_coverage": {
-        "start": 1999,
-        "end": 2016,
-        "frequency": "annual",
-        "note": "Public county-level data ends 2016; 2017+ requires restricted access or web scraping"
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
       },
-      "geographic_level": "county",
-      "estimated_variables": 114,
-      "downloader_module": "python/cdc_mortality_downloader.py",
-      "implementation_challenges": {
-        "api_limitation": "CDC WONDER API does not support county-level queries (national only)",
-        "cmf_files": "Compressed Mortality Files public access ends at 2016",
-        "nber_limitation": "NBER repository removed county codes from 2005+ files",
-        "web_scraping": "CDC WONDER web interface supports county-level but requires scraping (~17 hours with rate limits)",
-        "restricted_data": "Current county-level data requires NCHS application (4-6 weeks approval)"
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
       },
-      "notes": "DEPRIORITIZED: County-level data not easily accessible for recent years. See docs/CDC_WONDER_IMPLEMENTATION_NOTES.md for full analysis",
-      "status": "blocked",
-      "blocked_reason": "Public county-level data unavailable for recent years (2017+)",
-      "resolution_options": [
-        "Apply for NCHS restricted data access (requires institutional support)",
-        "Wait for CDC CMF update (may release 2017-2020 eventually)",
-        "Implement CDC WONDER web scraping (high complexity, 3-4 days development)",
-        "Use national-level data only (not suitable for county observatory)"
-      ]
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Bureau of Land Management (BLM) Oil and Gas Leases",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
     },
     {
-      "id": "usgs_nwis",
-      "name": "USGS National Water Information System",
-      "priority": 4,
-      "category": "02_WATER",
-      "description": "Water quality and quantity data from monitoring stations",
-      "access_method": "api",
-      "requires_account": false,
-      "base_url": "https://waterservices.usgs.gov/rest/",
-      "temporal_coverage": {
-        "start": 1901,
-        "end": 2024,
-        "frequency": "varies"
+      "source_id": "01_CASTNET_CLEAN_AIR_STATUS_AND_T",
+      "name": "CASTNET (Clean Air Status and Trends Network)",
+      "official_name": "Clean Air Status and Trends Network",
+      "agency": "EPA, managed by EPA Office of Atmospheric Programs",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
       },
-      "geographic_level": "station",
-      "aggregation_required": true,
-      "estimated_variables": 1300,
-      "downloader_module": "python/usgs_nwis_downloader.py",
-      "notes": "Station-level data requires spatial aggregation to counties",
-      "status": "planned"
+      "temporal_coverage": {
+        "start_year": 1987,
+        "end_year": 2025,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: CASTNET (Clean Air Status and Trends Network)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_CHEMICAL_SPECIATION_NETWORK_CS",
+      "name": "Chemical Speciation Network (CSN)",
+      "official_name": "EPA Chemical Speciation Network (CSN)",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "Major urban areas (aggregable to county)"
+      },
+      "temporal_coverage": {
+        "start_year": 2000,
+        "end_year": 2025,
+        "frequency": "daily",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: Chemical Speciation Network (CSN)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_EIA_COAL_PRODUCTION_BY_COUNTY",
+      "name": "EIA Coal Production by County",
+      "official_name": "Annual Coal Report - Table 2: Production and Number of Mines by State, County, and Mine Type",
+      "agency": "U.S. Energy Information Administration",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All coal-producing counties"
+      },
+      "temporal_coverage": {
+        "start_year": 2001,
+        "end_year": 2023,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: EIA Coal Production by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_EIA_HYDROELECTRIC_FACILITIES",
+      "name": "EIA Hydroelectric Facilities",
+      "official_name": "EIA Electricity Data - Power Plants",
+      "agency": "U.S. Energy Information Administration",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All utility-scale power plants in US (>1 MW)"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: EIA Hydroelectric Facilities",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB",
+      "name": "EPA AQS (Air Quality System) - Ambient Concentrations",
+      "official_name": "Air Quality System (AQS)",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "national",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "~4,000 monitoring sites nationally"
+      },
+      "temporal_coverage": {
+        "start_year": 1980,
+        "end_year": 2025,
+        "frequency": "daily",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "api_key",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA AQS (Air Quality System) - Ambient Concentrations",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_EPA_CLEAN_AIR_MARKETS_PROGRAM_",
+      "name": "EPA Clean Air Markets Program Data (CEMS/AMPD)",
+      "official_name": "Air Markets Program Data (AMPD) / Continuous Emissions Monitoring System (CEMS)",
+      "agency": "U.S. Environmental Protection Agency (EPA), Clean Air Markets Division",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "~1,700 power plants (~5,000 individual units) across US"
+      },
+      "temporal_coverage": {
+        "start_year": 1995,
+        "end_year": 2025,
+        "frequency": "hourly",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "api_key",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Clean Air Markets Program Data (CEMS/AMPD)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_EPA_GREENHOUSE_GAS_REPORTING_P",
+      "name": "EPA Greenhouse Gas Reporting Program (GHGRP)",
+      "official_name": "Greenhouse Gas Reporting Program - Petroleum and Natural Gas Systems (Subpart W)",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All US facilities meeting threshold"
+      },
+      "temporal_coverage": {
+        "start_year": 2011,
+        "end_year": 2023,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Greenhouse Gas Reporting Program (GHGRP)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_EPA_MOVES_MODEL_MOTOR_VEHICLE_",
+      "name": "EPA MOVES Model (Motor Vehicle Emission Simulator)",
+      "official_name": "MOVES (Motor Vehicle Emission Simulator)",
+      "agency": "U.S. Environmental Protection Agency, Office of Transportation and Air Quality",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All 3,143 counties"
+      },
+      "temporal_coverage": {
+        "start_year": 1990,
+        "end_year": 2060,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA MOVES Model (Motor Vehicle Emission Simulator)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_EPA_MAP_OF_RADON_ZONES",
+      "name": "EPA Map of Radon Zones",
+      "official_name": "EPA Map of Radon Zones",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All 3,141 US counties"
+      },
+      "temporal_coverage": {
+        "start_year": 1993,
+        "end_year": 1990,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Map of Radon Zones",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_EPA_NATIONAL_EMISSIONS_INVENTO",
+      "name": "EPA National Emissions Inventory",
+      "official_name": "National Emissions Inventory (NEI)",
+      "agency": "U.S. Environmental Protection Agency (EPA), Office of Air Quality Planning and Standards",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All 3,143 US counties + territories"
+      },
+      "temporal_coverage": {
+        "start_year": 1990,
+        "end_year": 1996,
+        "frequency": "triennial",
+        "update_schedule": "Released ~2 years after inventory year",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA National Emissions Inventory",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_EPA_UNDERGROUND_INJECTION_CONT",
+      "name": "EPA Underground Injection Control (UIC) Program",
+      "official_name": "UIC Injection Well Inventory",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All states with UIC program"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Underground Injection Control (UIC) Program",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_FRACFOCUS_CHEMICAL_DISCLOSURE_",
+      "name": "FracFocus Chemical Disclosure Registry",
+      "official_name": "FracFocus Chemical Disclosure Registry",
+      "agency": "Ground Water Protection Council (GWPC) & Interstate Oil and Gas Compact Commission (IOGCC)",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All states with hydraulic fracturing"
+      },
+      "temporal_coverage": {
+        "start_year": 2011,
+        "end_year": 2025,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: FracFocus Chemical Disclosure Registry",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_IMPROVE_NETWORK_INTERAGENCY_MO",
+      "name": "IMPROVE Network (Interagency Monitoring of Protected Visual Environments)",
+      "official_name": "IMPROVE (Interagency Monitoring of Protected Visual Environments) Network",
+      "agency": "Multiple agencies (EPA, NPS, FWS, FS, BLM, state agencies)",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "Not all counties; rural/remote sites"
+      },
+      "temporal_coverage": {
+        "start_year": 1988,
+        "end_year": 2025,
+        "frequency": "daily",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: IMPROVE Network (Interagency Monitoring of Protected Visual Environments)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_MSHA_MINE_DATA_COAL_METAL_NONM",
+      "name": "MSHA Mine Data (Coal, Metal, Nonmetal)",
+      "official_name": "Mine Safety and Health Administration Data",
+      "agency": "U.S. Department of Labor, MSHA",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All US mines"
+      },
+      "temporal_coverage": {
+        "start_year": 1983,
+        "end_year": 2000,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: MSHA Mine Data (Coal, Metal, Nonmetal)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_NADP_NATIONAL_ATMOSPHERIC_DEPO",
+      "name": "NADP (National Atmospheric Deposition Program)",
+      "official_name": "National Atmospheric Deposition Program (NADP)",
+      "agency": "Multi-agency program coordinated by University of Illinois",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All 50 states + territories, ~250-300 total sites across networks"
+      },
+      "temporal_coverage": {
+        "start_year": 1978,
+        "end_year": 2025,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: NADP (National Atmospheric Deposition Program)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_NCORE_NATIONAL_CORE_MULTIPOLLU",
+      "name": "NCore (National Core) Multi-Pollutant Monitoring",
+      "official_name": "National Core (NCore) Multi-Pollutant Monitoring Network",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "~75 NCore sites (originally ~80), at least one per state"
+      },
+      "temporal_coverage": {
+        "start_year": 2009,
+        "end_year": 2025,
+        "frequency": "daily",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: NCore (National Core) Multi-Pollutant Monitoring",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_NRELLBNL_SOLAR_INSTALLATION_TR",
+      "name": "NREL/LBNL Solar Installation Tracking",
+      "official_name": "Tracking the Sun (Lawrence Berkeley National Laboratory)",
+      "agency": "LBNL with support from DOE, collaboration with NREL",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All US states (coverage varies)"
+      },
+      "temporal_coverage": {
+        "start_year": 2000,
+        "end_year": 2023,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: NREL/LBNL Solar Installation Tracking",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_NATURAL_GAS_PROCESSING_PLANTS",
+      "name": "Natural Gas Processing Plants",
+      "official_name": "EIA Natural Gas Processing Plants",
+      "agency": "U.S. Energy Information Administration",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All natural gas processing plants in US"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Natural Gas Processing Plants",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_ORPHANEDABANDONED_WELLS",
+      "name": "Orphaned/Abandoned Wells",
+      "official_name": "United States Documented Unplugged Orphaned Oil and Gas Well (DOW) Dataset",
+      "agency": "U.S. Geological Survey (compilation from state sources)",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All states with documented orphaned wells"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Orphaned/Abandoned Wells",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_PAMS_PHOTOCHEMICAL_ASSESSMENT_",
+      "name": "PAMS (Photochemical Assessment Monitoring Stations)",
+      "official_name": "Photochemical Assessment Monitoring Stations",
+      "agency": "U.S. Environmental Protection Agency",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "~75 PAMS sites in ozone nonattainment or near-nonattainment areas"
+      },
+      "temporal_coverage": {
+        "start_year": 1993,
+        "end_year": 2017,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: PAMS (Photochemical Assessment Monitoring Stations)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_PHMSA_PIPELINE_DATA",
+      "name": "PHMSA Pipeline Data",
+      "official_name": "Pipeline and Hazardous Materials Safety Administration (PHMSA) Data",
+      "agency": "U.S. Department of Transportation, PHMSA",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All US pipelines under PHMSA jurisdiction"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: PHMSA Pipeline Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_STATE_OIL_GAS_COMMISSIONS_PRIM",
+      "name": "State Oil & Gas Commissions - Primary Databases",
+      "official_name": "Variable by state (e.g., Texas Railroad Commission, Oklahoma Corporation Commission)",
+      "agency": "State regulatory agencies",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "https://www.emnrd.nm.gov/ocd/",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: State Oil & Gas Commissions - Primary Databases",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_USGS_AGGREGATED_OIL_AND_GAS_DR",
+      "name": "USGS Aggregated Oil and Gas Drilling and Production History",
+      "official_name": "Aggregated Oil and Natural Gas Drilling and Production History of the United States",
+      "agency": "U.S. Geological Survey, Energy Resources Program",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "Entire United States"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Aggregated Oil and Gas Drilling and Production History",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_USGS_GEOLOGIC_RADON_POTENTIAL",
+      "name": "USGS Geologic Radon Potential",
+      "official_name": "Geologic Radon Potential of the United States",
+      "agency": "U.S. Geological Survey",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All US counties"
+      },
+      "temporal_coverage": {
+        "start_year": 1993,
+        "end_year": 1995,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Geologic Radon Potential",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_USGS_WIND_TURBINE_DATABASE",
+      "name": "USGS Wind Turbine Database",
+      "official_name": "United States Wind Turbine Database (USWTDB)",
+      "agency": "U.S. Geological Survey",
+      "category": "05_RADIATION",
+      "status": "operational",
+      "priority": 3,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "All land-based and offshore wind turbines in US"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Wind Turbine Database",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_USDA_ERS_COUNTYLEVEL_OIL_AND_G",
+      "name": "USDA ERS County-Level Oil and Gas Production Database",
+      "official_name": "County-Level Oil and Gas Production in the United States",
+      "agency": "USDA Economic Research Service (ERS)",
+      "category": "05_RADIATION",
+      "status": "planned",
+      "priority": 4,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "Lower 48 states, onshore production only"
+      },
+      "temporal_coverage": {
+        "start_year": 2000,
+        "end_year": 2011,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: USDA ERS County-Level Oil and Gas Production Database",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_AHA_ANNUAL_SURVEY_HOSPITAL_CHA",
+      "name": "AHA Annual Survey - Hospital Characteristics",
+      "official_name": "AHA Annual Survey - Hospital Characteristics",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: AHA Annual Survey - Hospital Characteristics",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_AHA_ANNUAL_SURVEY_HOSPITAL_CHA",
+      "name": "AHA Annual Survey - Hospital Characteristics",
+      "official_name": "AHA Annual Survey - Hospital Characteristics",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: AHA Annual Survey - Hospital Characteristics",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_AHA_ANNUAL_SURVEY_HOSPITAL_CHA",
+      "name": "AHA Annual Survey - Hospital Characteristics",
+      "official_name": "AHA Annual Survey - Hospital Characteristics",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: AHA Annual Survey - Hospital Characteristics",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_ASARB_US_RELIGION_CENSUS_CONGR",
+      "name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "official_name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: ASARB U.S. Religion Census - Congregations & Adherents",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_ASARB_US_RELIGION_CENSUS_CONGR",
+      "name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "official_name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: ASARB U.S. Religion Census - Congregations & Adherents",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_ASARB_US_RELIGION_CENSUS_CONGR",
+      "name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "official_name": "ASARB U.S. Religion Census - Congregations & Adherents",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: ASARB U.S. Religion Census - Congregations & Adherents",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_ATF_FEDERAL_FIREARMS_LICENSEES",
+      "name": "ATF Federal Firearms Licensees (FFLs)",
+      "official_name": "ATF Federal Firearms Licensees (FFLs)",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: ATF Federal Firearms Licensees (FFLs)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_ACADEMIC_RESEARCH_DATASETS",
+      "name": "Academic Research Datasets",
+      "official_name": "Various university/research institution radon compilations",
+      "agency": "Unknown",
+      "category": "05_RADIATION",
+      "status": "blocked",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Academic Research Datasets",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_BUREAU_OF_TRANSPORTATION_STATI",
+      "name": "Bureau of Transportation Statistics - National Transportation Noise Map",
+      "official_name": "Bureau of Transportation Statistics - National Transportation Noise Map",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: Bureau of Transportation Statistics - National Transportation Noise Map",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CDC_ARBONET_ARBOVIRAL_DISEASE_",
+      "name": "CDC ArboNET - Arboviral Disease Surveillance",
+      "official_name": "CDC ArboNET - Arboviral Disease Surveillance",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: CDC ArboNET - Arboviral Disease Surveillance",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_CDC_ATLASPLUS_STI_TUBERCULOSIS",
+      "name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "official_name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_CDC_ATLASPLUS_STI_TUBERCULOSIS",
+      "name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "official_name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_CDC_ATLASPLUS_STI_TUBERCULOSIS",
+      "name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "official_name": "CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC AtlasPlus - STI, Tuberculosis, Viral Hepatitis, HIV",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_CDC_COVID19_VACCINATION_DATA_B",
+      "name": "CDC COVID-19 Vaccination Data by County",
+      "official_name": "CDC COVID-19 Vaccination Data by County",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC COVID-19 Vaccination Data by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_CDC_COVID19_VACCINATION_DATA_B",
+      "name": "CDC COVID-19 Vaccination Data by County",
+      "official_name": "CDC COVID-19 Vaccination Data by County",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC COVID-19 Vaccination Data by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_CDC_COVID19_VACCINATION_DATA_B",
+      "name": "CDC COVID-19 Vaccination Data by County",
+      "official_name": "CDC COVID-19 Vaccination Data by County",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC COVID-19 Vaccination Data by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CDC_LYME_DISEASE_SURVEILLANCE",
+      "name": "CDC Lyme Disease Surveillance",
+      "official_name": "CDC Lyme Disease Surveillance",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: CDC Lyme Disease Surveillance",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CDC_TICKBORNE_DISEASE_SURVEILL",
+      "name": "CDC Tickborne Disease Surveillance",
+      "official_name": "CDC Tickborne Disease Surveillance",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: CDC Tickborne Disease Surveillance",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_CDC_WONDER_NATALITY_COMPREHENS",
+      "name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "official_name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC WONDER Natality - Comprehensive Birth Outcomes",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_CDC_WONDER_NATALITY_COMPREHENS",
+      "name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "official_name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC WONDER Natality - Comprehensive Birth Outcomes",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_CDC_WONDER_NATALITY_COMPREHENS",
+      "name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "official_name": "CDC WONDER Natality - Comprehensive Birth Outcomes",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CDC WONDER Natality - Comprehensive Birth Outcomes",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_CDCNOAA_HEATRISK_SYSTEM_2024_L",
+      "name": "CDC/NOAA HeatRisk System (2024 Launch)",
+      "official_name": "CDC/NOAA HeatRisk System (2024 Launch)",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: CDC/NOAA HeatRisk System (2024 Launch)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_CMS_NURSING_HOME_COMPARE_CARE_",
+      "name": "CMS Nursing Home Compare / Care Compare",
+      "official_name": "CMS Nursing Home Compare / Care Compare",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CMS Nursing Home Compare / Care Compare",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_CMS_NURSING_HOME_COMPARE_CARE_",
+      "name": "CMS Nursing Home Compare / Care Compare",
+      "official_name": "CMS Nursing Home Compare / Care Compare",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CMS Nursing Home Compare / Care Compare",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_CMS_NURSING_HOME_COMPARE_CARE_",
+      "name": "CMS Nursing Home Compare / Care Compare",
+      "official_name": "CMS Nursing Home Compare / Care Compare",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: CMS Nursing Home Compare / Care Compare",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_CENSUS_BUILDING_PERMITS_BY_COU",
+      "name": "Census Building Permits by County",
+      "official_name": "Census Building Permits by County",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Census Building Permits by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_CENSUS_BUILDING_PERMITS_BY_COU",
+      "name": "Census Building Permits by County",
+      "official_name": "Census Building Permits by County",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Census Building Permits by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_CENSUS_BUILDING_PERMITS_BY_COU",
+      "name": "Census Building Permits by County",
+      "official_name": "Census Building Permits by County",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Census Building Permits by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CENSUS_COUNTY_BUSINESS_PATTERN_1",
+      "name": "Census County Business Patterns - Alcohol Outlets",
+      "official_name": "Census County Business Patterns - Alcohol Outlets",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: Census County Business Patterns - Alcohol Outlets",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CENSUS_COUNTY_BUSINESS_PATTERN",
+      "name": "Census County Business Patterns - Industry Employment (Proxy)",
+      "official_name": "Census County Business Patterns - Industry Employment (Proxy)",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: Census County Business Patterns - Industry Employment (Proxy)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_CENSUS_COUNTY_BUSINESS_PATTERN_2",
+      "name": "Census County Business Patterns - Recreation Facilities",
+      "official_name": "Census County Business Patterns - Recreation Facilities",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: Census County Business Patterns - Recreation Facilities",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_EPA_ACRES_BROWNFIELDS_PROPERTI",
+      "name": "EPA ACRES Brownfields Properties",
+      "official_name": "EPA ACRES Brownfields Properties",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: EPA ACRES Brownfields Properties",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_EPA_AGRICULTURAL_EMISSIONS_NEI",
+      "name": "EPA Agricultural Emissions (NEI Agricultural Sector)",
+      "official_name": "EPA Agricultural Emissions (NEI Agricultural Sector)",
+      "agency": "Unknown",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Agricultural Emissions (NEI Agricultural Sector)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_EPA_EJSCREEN_PROXIMITY_TO_NPL_",
+      "name": "EPA EJSCREEN Proximity to NPL Sites",
+      "official_name": "EPA EJSCREEN Proximity to NPL Sites",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: EPA EJSCREEN Proximity to NPL Sites",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_EPA_NATIONAL_PRIORITIES_LIST_N",
+      "name": "EPA National Priorities List (NPL) Superfund Sites",
+      "official_name": "EPA National Priorities List (NPL) Superfund Sites",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: EPA National Priorities List (NPL) Superfund Sites",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_EPA_SAFE_DRINKING_WATER_INFORM",
+      "name": "EPA Safe Drinking Water Information System (SDWIS)",
+      "official_name": "EPA Safe Drinking Water Information System (SDWIS)",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: EPA Safe Drinking Water Information System (SDWIS)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_FAA_AIRPORT_NOISE_EXPOSURE_MAP",
+      "name": "FAA Airport Noise Exposure Maps",
+      "official_name": "FAA Airport Noise Exposure Maps",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: FAA Airport Noise Exposure Maps",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_FEDERAL_COURT_BANKRUPTCY_FILIN",
+      "name": "Federal Court Bankruptcy Filings by County",
+      "official_name": "Federal Court Bankruptcy Filings by County",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Court Bankruptcy Filings by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_FEDERAL_COURT_BANKRUPTCY_FILIN",
+      "name": "Federal Court Bankruptcy Filings by County",
+      "official_name": "Federal Court Bankruptcy Filings by County",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Court Bankruptcy Filings by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_FEDERAL_COURT_BANKRUPTCY_FILIN",
+      "name": "Federal Court Bankruptcy Filings by County",
+      "official_name": "Federal Court Bankruptcy Filings by County",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Court Bankruptcy Filings by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_FEDERAL_RESERVE_HOUSEHOLD_DEBT",
+      "name": "Federal Reserve Household Debt by County",
+      "official_name": "Federal Reserve Household Debt by County",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Reserve Household Debt by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_FEDERAL_RESERVE_HOUSEHOLD_DEBT",
+      "name": "Federal Reserve Household Debt by County",
+      "official_name": "Federal Reserve Household Debt by County",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Reserve Household Debt by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_FEDERAL_RESERVE_HOUSEHOLD_DEBT",
+      "name": "Federal Reserve Household Debt by County",
+      "official_name": "Federal Reserve Household Debt by County",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: Federal Reserve Household Debt by County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_HARMONIZED_DMSPVIIRS_NIGHTTIME",
+      "name": "Harmonized DMSP-VIIRS Nighttime Lights Dataset",
+      "official_name": "Harmonized DMSP-VIIRS Nighttime Lights Dataset",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: Harmonized DMSP-VIIRS Nighttime Lights Dataset",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_IMLS_PUBLIC_LIBRARIES_SURVEY_P",
+      "name": "IMLS Public Libraries Survey (PLS)",
+      "official_name": "IMLS Public Libraries Survey (PLS)",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IMLS Public Libraries Survey (PLS)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_IMLS_PUBLIC_LIBRARIES_SURVEY_P",
+      "name": "IMLS Public Libraries Survey (PLS)",
+      "official_name": "IMLS Public Libraries Survey (PLS)",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IMLS Public Libraries Survey (PLS)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_IMLS_PUBLIC_LIBRARIES_SURVEY_P",
+      "name": "IMLS Public Libraries Survey (PLS)",
+      "official_name": "IMLS Public Libraries Survey (PLS)",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IMLS Public Libraries Survey (PLS)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_IRS_COUNTYTOCOUNTY_MIGRATION_D",
+      "name": "IRS County-to-County Migration Data",
+      "official_name": "IRS County-to-County Migration Data",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS County-to-County Migration Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_IRS_COUNTYTOCOUNTY_MIGRATION_D",
+      "name": "IRS County-to-County Migration Data",
+      "official_name": "IRS County-to-County Migration Data",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS County-to-County Migration Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_IRS_COUNTYTOCOUNTY_MIGRATION_D",
+      "name": "IRS County-to-County Migration Data",
+      "official_name": "IRS County-to-County Migration Data",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS County-to-County Migration Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_IRS_STATISTICS_OF_INCOME_SOI_C",
+      "name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "official_name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS Statistics of Income (SOI) - County Tax Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_IRS_STATISTICS_OF_INCOME_SOI_C",
+      "name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "official_name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS Statistics of Income (SOI) - County Tax Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_IRS_STATISTICS_OF_INCOME_SOI_C",
+      "name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "official_name": "IRS Statistics of Income (SOI) - County Tax Data",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: IRS Statistics of Income (SOI) - County Tax Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_LAWRENCE_BERKELEY_NATIONAL_LAB",
+      "name": "Lawrence Berkeley National Laboratory (LBNL) Radon Model",
+      "official_name": "Bayesian Prediction of Mean Indoor Radon Concentrations (LBNL Model)",
+      "agency": "Lawrence Berkeley National Laboratory (US Department of Energy)",
+      "category": "05_RADIATION",
+      "status": "blocked",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "county",
+        "county_native": true,
+        "requires_aggregation": false,
+        "coverage_description": "All US counties (county-level predictions)"
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Lawrence Berkeley National Laboratory (LBNL) Radon Model",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_NASA_HARMONIZED_LANDSAT_SENTIN",
+      "name": "NASA Harmonized Landsat Sentinel-2 (HLS) - Vegetation Indices",
+      "official_name": "NASA Harmonized Landsat Sentinel-2 (HLS) - Vegetation Indices",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: NASA Harmonized Landsat Sentinel-2 (HLS) - Vegetation Indices",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_NASACDC_UV_IRRADIANCE_DATASET",
+      "name": "NASA/CDC UV Irradiance Dataset",
+      "official_name": "NASA/CDC UV Irradiance Dataset",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "geotiff"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: NASA/CDC UV Irradiance Dataset",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_NCICDC_COUNTYLEVEL_UV_EXPOSURE",
+      "name": "NCI/CDC County-Level UV Exposure Data",
+      "official_name": "NCI/CDC County-Level UV Exposure Data",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: NCI/CDC County-Level UV Exposure Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_NEI_BIOGENIC_EMISSIONS",
+      "name": "NEI Biogenic Emissions",
+      "official_name": "NEI Biogenic Emissions",
+      "agency": "Unknown",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: NEI Biogenic Emissions",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_NEI_WILDFIRE_EMISSIONS",
+      "name": "NEI Wildfire Emissions",
+      "official_name": "NEI Wildfire Emissions",
+      "agency": "Unknown",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: NEI Wildfire Emissions",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_NOAA_NATIONAL_CENTERS_FOR_ENVI",
+      "name": "NOAA National Centers for Environmental Information (NCEI) - Climate Data",
+      "official_name": "NOAA National Centers for Environmental Information (NCEI) - Climate Data",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "api",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: NOAA National Centers for Environmental Information (NCEI) - Climate Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_NOAA_URBAN_HEAT_ISLAND_MAPPING",
+      "name": "NOAA Urban Heat Island Mapping Campaign",
+      "official_name": "NOAA Urban Heat Island Mapping Campaign",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: NOAA Urban Heat Island Mapping Campaign",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_NREL_NATIONAL_SOLAR_RADIATION_",
+      "name": "NREL National Solar Radiation Database (NSRDB)",
+      "official_name": "NREL National Solar Radiation Database (NSRDB)",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: NREL National Solar Radiation Database (NSRDB)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_OSHA_INJURY_TRACKING_APPLICATI",
+      "name": "OSHA Injury Tracking Application (ITA) Data",
+      "official_name": "OSHA Injury Tracking Application (ITA) Data",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: OSHA Injury Tracking Application (ITA) Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_REAL_ESTATE_RADON_TESTING_DATA",
+      "name": "Real Estate Radon Testing Data",
+      "official_name": "Real Estate Transaction Radon Testing (aggregated)",
+      "agency": "Unknown",
+      "category": "05_RADIATION",
+      "status": "blocked",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: Real Estate Radon Testing Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "01_SATELLITE_ATMOSPHERIC_COMPOSIT",
+      "name": "Satellite Atmospheric Composition Data",
+      "official_name": "Satellite Atmospheric Composition Data",
+      "agency": "Unknown",
+      "category": "01_AIR_ATMOSPHERE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "netcdf"
+      },
+      "documentation": {
+        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "source_section": "Source: Satellite Atmospheric Composition Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_STATE_RADON_PROGRAMS",
+      "name": "State Radon Programs",
+      "official_name": "State Radon Offices / State Indoor Radon Programs",
+      "agency": "Variable by state (state health/environmental departments)",
+      "category": "05_RADIATION",
+      "status": "blocked",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: State Radon Programs",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_TRUST_FOR_PUBLIC_LAND_PARKSERV",
+      "name": "Trust for Public Land - ParkServe / ParkScore",
+      "official_name": "Trust for Public Land - ParkServe / ParkScore",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "manual",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: Trust for Public Land - ParkServe / ParkScore",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_USDA_FOREST_SERVICE_TREE_CANOP",
+      "name": "USDA Forest Service - Tree Canopy Cover (NLCD TCC)",
+      "official_name": "USDA Forest Service - Tree Canopy Cover (NLCD TCC)",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: USDA Forest Service - Tree Canopy Cover (NLCD TCC)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "02_USGS_GROUNDWATER_QUALITY_DATA",
+      "name": "USGS Groundwater Quality Data",
+      "official_name": "USGS Groundwater Quality Data",
+      "agency": "Unknown",
+      "category": "02_WATER",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "bulk_download",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "02_WATER/UV_WATER_SUPERFUND_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Groundwater Quality Data",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "05_USGS_MINERALS_STATELEVEL_PRIMA",
+      "name": "USGS Minerals (State-Level Primarily)",
+      "official_name": "USGS Mineral Commodity Summaries / Minerals Yearbook",
+      "agency": "U.S. Geological Survey, National Minerals Information Center",
+      "category": "05_RADIATION",
+      "status": "blocked",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "state",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": "State-level (US and international)"
+      },
+      "temporal_coverage": {
+        "start_year": 1900,
+        "end_year": 2025,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Minerals (State-Level Primarily)",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "04_USGS_PESTICIDE_NATIONAL_SYNTHE",
+      "name": "USGS Pesticide National Synthesis Project (PNSP) - County Estimates",
+      "official_name": "USGS Pesticide National Synthesis Project (PNSP) - County Estimates",
+      "agency": "Unknown",
+      "category": "04_TOXIC_CHEMICALS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": ""
+      },
+      "documentation": {
+        "file_path": "04_TOXIC_CHEMICALS/GREEN_PEST_OCC_VECTOR_SOCIAL_COMPREHENSIVE.md",
+        "source_section": "Source: USGS Pesticide National Synthesis Project (PNSP) - County Estimates",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "09_USPTO_PATENT_DATA_BY_INVENTOR_",
+      "name": "USPTO Patent Data by Inventor County",
+      "official_name": "USPTO Patent Data by Inventor County",
+      "agency": "Unknown",
+      "category": "09_OCCUPATIONAL",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "09_OCCUPATIONAL/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: USPTO Patent Data by Inventor County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "11_USPTO_PATENT_DATA_BY_INVENTOR_",
+      "name": "USPTO Patent Data by Inventor County",
+      "official_name": "USPTO Patent Data by Inventor County",
+      "agency": "Unknown",
+      "category": "11_INFECTIOUS_DISEASE",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "11_INFECTIOUS_DISEASE/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: USPTO Patent Data by Inventor County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "19_USPTO_PATENT_DATA_BY_INVENTOR_",
+      "name": "USPTO Patent Data by Inventor County",
+      "official_name": "USPTO Patent Data by Inventor County",
+      "agency": "Unknown",
+      "category": "19_ECONOMIC_INDICATORS",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "json"
+      },
+      "documentation": {
+        "file_path": "19_ECONOMIC_INDICATORS/ECONOMIC_FINANCE_HEALTH_FACILITIES_COMPREHENSIVE.md",
+        "source_section": "Source: USPTO Patent Data by Inventor County",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_UNIVERSITY_OF_WASHINGTON_NATIO",
+      "name": "University of Washington - National Transportation Noise Exposure Map",
+      "official_name": "University of Washington - National Transportation Noise Exposure Map",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "unknown",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "none",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: University of Washington - National Transportation Noise Exposure Map",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
+    },
+    {
+      "source_id": "07_VIIRS_DAYNIGHT_BAND_DNB_NIGHTT",
+      "name": "VIIRS Day/Night Band (DNB) Nighttime Lights - NASA Black Marble",
+      "official_name": "VIIRS Day/Night Band (DNB) Nighttime Lights - NASA Black Marble",
+      "agency": "Unknown",
+      "category": "07_BUILT_ENVIRONMENT",
+      "status": "unknown",
+      "priority": 5,
+      "geographic_coverage": {
+        "level": "unknown",
+        "county_native": false,
+        "requires_aggregation": false,
+        "coverage_description": ""
+      },
+      "temporal_coverage": {
+        "start_year": null,
+        "end_year": null,
+        "frequency": "unknown",
+        "update_schedule": "",
+        "last_updated": ""
+      },
+      "access_method": {
+        "type": "raster",
+        "url": "",
+        "api_endpoint": "",
+        "authentication": "unknown",
+        "format": "csv"
+      },
+      "documentation": {
+        "file_path": "07_BUILT_ENVIRONMENT/NOISE_LIGHT_TEMPERATURE_COMPREHENSIVE.md",
+        "source_section": "Source: VIIRS Day/Night Band (DNB) Nighttime Lights - NASA Black Marble",
+        "notes": ""
+      },
+      "implementation": {
+        "downloader_class": null,
+        "implemented": false,
+        "script": "scripts/03_download_source.py",
+        "test_status": "not_tested"
+      },
+      "variable_count": 0
     }
-  ]
+  ],
+  "metadata": {
+    "generated_date": "2025-11-24T03:48:08.322550",
+    "total_sources": 104,
+    "script_version": "2.0",
+    "companion_repo_path": "SocialEnvironmentalObservatoryDataList",
+    "source_counts_by_priority": {
+      "1": 0,
+      "2": 1,
+      "3": 26,
+      "4": 1,
+      "5": 76
+    },
+    "source_counts_by_status": {
+      "operational": 27,
+      "planned": 1,
+      "blocked": 5,
+      "restricted": 0,
+      "unknown": 71
+    },
+    "source_counts_by_category": {
+      "01_AIR_ATMOSPHERE": 14,
+      "02_WATER": 8,
+      "04_TOXIC_CHEMICALS": 12,
+      "05_RADIATION": 23,
+      "07_BUILT_ENVIRONMENT": 8,
+      "09_OCCUPATIONAL": 13,
+      "11_INFECTIOUS_DISEASE": 13,
+      "19_ECONOMIC_INDICATORS": 13
+    }
+  }
 }

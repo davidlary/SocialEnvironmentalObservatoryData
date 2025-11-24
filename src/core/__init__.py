@@ -12,6 +12,6 @@ This package provides the foundational components:
 - retry_handler: Exponential backoff retry logic
 """
 
-import core.logger as logger
+from . import logger
 
 __all__ = ["logger"]

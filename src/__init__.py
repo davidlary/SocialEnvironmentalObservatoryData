@@ -15,7 +15,7 @@ __version__ = "1.0.0"
 __author__ = "David Lary"
 
 # Make core modules easily accessible
-import core
-import utils
+from . import core
+from . import utils
 
 __all__ = ["core", "utils"]
