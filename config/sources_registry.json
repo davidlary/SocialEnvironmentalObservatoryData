@@ -6,40 +6,62 @@
       "official_name": "Environmental Public Health Tracking Network - Radon Testing Indicator",
       "agency": "Centers for Disease Control and Prevention (CDC)",
       "category": "05_RADIATION",
-      "status": "operational",
+      "status": "ready_for_implementation",
       "priority": 2,
       "geographic_coverage": {
         "level": "county",
         "county_native": true,
         "requires_aggregation": false,
-        "coverage_description": "46 states + DC (county-level data where available)"
+        "coverage_description": "46 states + DC; 21 contributing states (AK, CO, CT, FL, IL, KS, LA, MN, MO, NE, NJ, NY, NC, OR, PA, RI, TN, UT, VT, WA, WI); counties with <10 tests suppressed"
       },
       "temporal_coverage": {
         "start_year": 2013,
-        "end_year": 2025,
-        "frequency": "unknown",
-        "update_schedule": "",
-        "last_updated": ""
+        "end_year": 2022,
+        "frequency": "annual",
+        "update_schedule": "Annual updates with 1-2 year lag",
+        "last_updated": "2024"
       },
       "access_method": {
         "type": "api",
-        "url": "",
-        "api_endpoint": "",
-        "authentication": "none",
-        "format": "csv"
+        "url": "https://ephtracking.cdc.gov/",
+        "api_endpoint": "https://ephtracking.cdc.gov/apigateway/api/v1/getCoreHolder/479/{stateId}/{countyId}",
+        "authentication": "api_key",
+        "authentication_notes": "Free API key required via email to trackingsupport@cdc.gov",
+        "format": "json",
+        "rate_limiting": "Unknown - TBD during implementation"
+      },
+      "variables": {
+        "num_tests": "Total radon tests conducted in county (count)",
+        "mean_radon_pci_l": "Average radon concentration (pCi/L)",
+        "median_radon_pci_l": "Median radon concentration (pCi/L)",
+        "pct_above_4_pci_l": "Percent exceeding EPA action level 4 pCi/L (%)",
+        "pct_above_2_7_pci_l": "Percent exceeding WHO guideline 2.7 pCi/L (%)",
+        "test_type": "Short-term (<90 days) vs long-term (≥90 days)",
+        "test_location": "Basement, first floor, living area",
+        "test_year": "Year of testing"
+      },
+      "data_sources": "CDC Tracking Program-funded states (21 states, 11.9M tests 1988-2022) + 6 national radon testing laboratories (AccuStar Labs, Air Chek Inc, Kansas State University, PRO-LAB, Radon.com, University Analytical Laboratories)",
+      "data_quality": {
+        "strengths": "Actual test results (not modeled), large sample size (6M+ tests 1993-2021), standardized across laboratories, recent data, nationally consistent",
+        "limitations": "Selection bias (voluntary testing), not representative sample, privacy suppression (<10 tests), variable coverage by county, 1-2 year lag, mixed test types"
       },
       "documentation": {
         "file_path": "05_RADIATION/RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md",
-        "source_section": "Source: CDC Environmental Health Tracking Network - Radon Testing",
-        "notes": ""
+        "source_section": "Source 3: CDC Environmental Health Tracking Network - Radon Testing (lines 213-308)",
+        "implementation_notes": "docs/CDC_EPHT_RADON_IMPLEMENTATION_NOTES.md",
+        "notes": "Research complete 2025-11-24. API requires free key. Measure ID 479 confirmed. Ready for implementation."
       },
       "implementation": {
-        "downloader_class": null,
+        "downloader_class": "CDCEPHTRadonDownloader",
         "implemented": false,
         "script": "scripts/03_download_source.py",
-        "test_status": "not_tested"
+        "test_status": "not_tested",
+        "blockers": "Need API key from trackingsupport@cdc.gov",
+        "next_steps": "1. Request API key 2. Implement downloader class 3. Test with single state 4. Full download"
       },
-      "variable_count": 0
+      "variable_count": 8,
+      "estimated_file_count": 10,
+      "notes": "Best source for recent empirical radon data. Preferred over EPA Zones (static 1993) and LBNL model (outdated). Use CDC EPHT as primary, EPA Zones for complete coverage."
     },
     {
       "source_id": "05_BUREAU_OF_LAND_MANAGEMENT_BLM_",
