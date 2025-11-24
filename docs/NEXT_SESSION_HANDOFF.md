@@ -136,15 +136,18 @@ git push origin --tags
 
 ---
 
-## Next Development Phase: Continue Systematic Implementation
+## Next Development Phase: Systematic 200+ Source Implementation
 
-**IMPORTANT**: We are following the **systematic, one-step-at-a-time** approach documented in `config/sources_registry.json`. The master orchestration script (`scripts/99_process_all.py`) will be used to keep all datasets up to date once complete.
+**SYSTEM GOAL**: Download from **200+ authoritative sources** documented in companion repository: **SocialEnvironmentalObservatoryDataList**
+
+**IMPORTANT**: We are following the **systematic, one-step-at-a-time** approach. The master orchestration script (`scripts/99_process_all.py`) will be repeatedly run once complete to keep all datasets up to date.
 
 **Implementation Philosophy**:
-1. One data source at a time
-2. Fully implement → test → debug → fix → run → document → commit/push
+1. One data source at a time, bite-sized chunks
+2. Fully implement → test → debug → fix → run → document → commit/push to GitHub
 3. Each step is backed up to local git and remote GitHub before moving to next
-4. No options - following the documented priority order in sources_registry.json
+4. No options - following the documented priority order in config/sources_registry.json
+5. Working directory: `~/Dropbox/Environments/Code/GetData/SocialEnvironmentalObservatoryData`
 
 ### Priority Order (from sources_registry.json):
 1. ✅ **IPUMS NHGIS** (Priority 1) - IN PROGRESS (88.4% complete, maps remaining)
@@ -361,11 +364,16 @@ Before next session:
 ```
 Continue development of the US County-Level Observatory Data Download System from the current state.
 
+SYSTEM GOAL:
+- Download from 200+ authoritative sources (documented in SocialEnvironmentalObservatoryDataList)
+- Working directory: ~/Dropbox/Environments/Code/GetData/SocialEnvironmentalObservatoryData
+- One master orchestration script (scripts/99_process_all.py) will be repeatedly run once complete to keep all datasets up to date
+
 IMPLEMENTATION APPROACH:
-- Following SYSTEMATIC, ONE-STEP-AT-A-TIME methodology
-- Master orchestration script (scripts/99_process_all.py) will keep datasets updated
+- Following SYSTEMATIC, ONE-STEP-AT-A-TIME methodology in bite-sized chunks
 - Priority order from config/sources_registry.json (NO OPTIONS - following documented plan)
 - Each source: implement → test → debug → fix → run → document → commit/push to GitHub
+- Each step backed up to local git and remote GitHub before moving to next
 
 CURRENT STATUS:
 - EPA AQS (Priority 2): 243 TSVs + 243 maps (100% COMPLETE) ✅
@@ -377,6 +385,7 @@ IMMEDIATE TASK (Complete Priority 1):
 1. Generate remaining 6,779 IPUMS NHGIS maps (11.6%) to achieve 100% completion
    Command: python scripts/05_generate_maps.py --category 02_DEMOGRAPHICS_SOCIAL --log-level INFO
    Expected time: ~10-15 minutes with 8 parallel workers
+   Note: Previous attempts failed/were interrupted - may need debugging
 
 2. Verify 100% completion:
    - Check map count: find data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS -name "*.png" | wc -l
@@ -395,15 +404,15 @@ NEXT PRIORITY SOURCE (Once Priority 1 complete):
 - See docs/NEXT_SESSION_HANDOFF.md section "Next Source: CDC WONDER" for implementation steps
 
 KEY FILES TO REVIEW FIRST:
-- docs/NEXT_SESSION_HANDOFF.md - READ THIS FIRST (detailed session state and systematic approach)
+- docs/NEXT_SESSION_HANDOFF.md - READ THIS FIRST (detailed session state)
 - docs/DATA_COMPLETENESS_REPORT.md - Comprehensive validation results
 - config/sources_registry.json - Priority order and source specifications
-- .gitignore - Data exclusion verified working
+- README.md - Project overview and workflow documentation
 
 AUTONOMOUSLY:
 - Read docs/NEXT_SESSION_HANDOFF.md first
 - Check current IPUMS map count
-- Complete remaining maps if needed
+- Complete remaining maps (debug if process fails again)
 - DO NOT ASK for user preference on next source - it's CDC WONDER per systematic plan
 - Begin CDC WONDER implementation only after IPUMS 100% complete and committed
 
