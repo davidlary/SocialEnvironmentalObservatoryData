@@ -136,11 +136,27 @@ git push origin --tags
 
 ---
 
-## Next Development Phase: Add Priority Data Sources
+## Next Development Phase: Continue Systematic Implementation
 
-### Source 3: CDC WONDER Mortality Data
+**IMPORTANT**: We are following the **systematic, one-step-at-a-time** approach documented in `config/sources_registry.json`. The master orchestration script (`scripts/99_process_all.py`) will be used to keep all datasets up to date once complete.
 
-**Implementation Steps**:
+**Implementation Philosophy**:
+1. One data source at a time
+2. Fully implement → test → debug → fix → run → document → commit/push
+3. Each step is backed up to local git and remote GitHub before moving to next
+4. No options - following the documented priority order in sources_registry.json
+
+### Priority Order (from sources_registry.json):
+1. ✅ **IPUMS NHGIS** (Priority 1) - IN PROGRESS (88.4% complete, maps remaining)
+2. ✅ **EPA AQS** (Priority 2) - COMPLETE (100%)
+3. ⏳ **CDC WONDER** (Priority 3) - NEXT
+4. ⏳ **USGS NWIS** (Priority 4) - FUTURE
+
+---
+
+### Next Source: CDC WONDER Mortality Data (Priority 3)
+
+**Implementation Steps** (ONE COMPLETE SOURCE AT A TIME):
 
 1. **Create downloader** (`src/downloaders/python/cdc_wonder_downloader.py`):
    ```python
@@ -345,30 +361,53 @@ Before next session:
 ```
 Continue development of the US County-Level Observatory Data Download System from the current state.
 
+IMPLEMENTATION APPROACH:
+- Following SYSTEMATIC, ONE-STEP-AT-A-TIME methodology
+- Master orchestration script (scripts/99_process_all.py) will keep datasets updated
+- Priority order from config/sources_registry.json (NO OPTIONS - following documented plan)
+- Each source: implement → test → debug → fix → run → document → commit/push to GitHub
+
 CURRENT STATUS:
-- EPA AQS: 243 TSVs + 243 maps (100% complete)
-- IPUMS NHGIS: 58,243 TSVs + 51,464 maps (88.4% complete)
+- EPA AQS (Priority 2): 243 TSVs + 243 maps (100% COMPLETE) ✅
+- IPUMS NHGIS (Priority 1): 58,243 TSVs + 51,464 maps (88.4% complete) ⏳
 - Branch: phase1-core-framework
-- Uncommitted: Documentation updates
+- Git: All code/documentation committed and pushed to GitHub
 
-IMMEDIATE TASKS:
-1. Generate remaining 6,779 IPUMS NHGIS maps to achieve 100% completion
-2. Update README.md with final statistics
-3. Commit all changes and push to GitHub (excluding data files)
-4. Begin implementing next data source (CDC WONDER, USGS NWIS, or NOAA - ask user preference)
+IMMEDIATE TASK (Complete Priority 1):
+1. Generate remaining 6,779 IPUMS NHGIS maps (11.6%) to achieve 100% completion
+   Command: python scripts/05_generate_maps.py --category 02_DEMOGRAPHICS_SOCIAL --log-level INFO
+   Expected time: ~10-15 minutes with 8 parallel workers
 
-KEY FILES TO REVIEW:
+2. Verify 100% completion:
+   - Check map count: find data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS -name "*.png" | wc -l
+   - Should equal: 58,243 maps
+
+3. Commit completion to GitHub:
+   - Update README.md if needed
+   - git add/commit/push (excluding data files)
+
+NEXT PRIORITY SOURCE (Once Priority 1 complete):
+- CDC WONDER Mortality Data (Priority 3)
+- NO OPTIONS - this is the next systematic step per sources_registry.json
+- Implement complete downloader following BaseDownloader pattern
+- Test with small dataset first
+- Full run → validate → document → commit/push
+- See docs/NEXT_SESSION_HANDOFF.md section "Next Source: CDC WONDER" for implementation steps
+
+KEY FILES TO REVIEW FIRST:
+- docs/NEXT_SESSION_HANDOFF.md - READ THIS FIRST (detailed session state and systematic approach)
 - docs/DATA_COMPLETENESS_REPORT.md - Comprehensive validation results
-- docs/NEXT_SESSION_HANDOFF.md - This file (detailed session state)
-- .gitignore - Verify data exclusion working properly
-- scripts/99_process_all.py - May need fix for failure handling
+- config/sources_registry.json - Priority order and source specifications
+- .gitignore - Data exclusion verified working
 
 AUTONOMOUSLY:
-- Check current map count and complete if needed
-- Run git status to see pending changes
-- Ask user which data source to implement next before starting work
+- Read docs/NEXT_SESSION_HANDOFF.md first
+- Check current IPUMS map count
+- Complete remaining maps if needed
+- DO NOT ASK for user preference on next source - it's CDC WONDER per systematic plan
+- Begin CDC WONDER implementation only after IPUMS 100% complete and committed
 
-Please proceed with completing the remaining tasks and preparing for the next data source implementation.
+Please proceed with systematic implementation per the documented plan.
 ```
 
 ---
