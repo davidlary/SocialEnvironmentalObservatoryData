@@ -1,55 +1,241 @@
 # NEXT SESSION HANDOFF - US County-Level Observatory Data System
 
-**Date**: 2025-11-22
-**Session**: Phase 1 Complete + EPA AQS Complete + IPUMS NHGIS Fixed
+**Date**: 2025-11-24 04:08 UTC
 **Branch**: `phase1-core-framework`
-**Latest Commit**: `e68b010` - "FIX: IPUMS NHGIS CSV Header Processing"
+**Latest Commit**: `1c36a08` - "FIX: Add clarifying note about ipums_nhgis in SOURCE_ID_MAPPINGS"
+**Framework**: Context-Preserving Framework v4.7.1 (22 rules MANDATORY)
+**Directory**: `~/Dropbox/Environments/Code/GetData/SocialEnvironmentalObservatoryData`
 
 ---
 
-## 📋 EXECUTIVE SUMMARY
+## 🚨 CRITICAL: Context-Preserving Framework v4.7.1 Compliance
 
-### ✅ COMPLETED THIS SESSION:
-1. **EPA AQS Processing Pipeline** - 100% Complete
-   - 243 TSV files generated (6 pollutants, 1980-2024)
-   - 243 choropleth maps generated  
-   - All verified and working perfectly
+**BEFORE ANY WORK**, verify CPF compliance:
+1. ✅ Hooks active: `.claude/hooks/` (compliance_enforcement.json, session_start_recovery.json)
+2. ✅ Settings: `.claude/settings.local.json` configured
+3. ✅ Read CLAUDE.md for all 22 rules
+4. ✅ Display checkpoint box BEFORE completing response (RULE 15)
+5. ✅ Display next steps AT END of response (RULE 17)
+6. ✅ ONE_STEP_AT_A_TIME methodology (RULE 2)
+7. ✅ Follow IMPLEMENTATION_PLAN.md exactly (RULE 3)
 
-2. **IPUMS NHGIS Processor** - Fixed and Tested
-   - Critical CSV header bug fixed (2-row header issue)
-   - Successfully tested with 2010 ACS1 data  
-   - Ready for full 76-file processing
-
-3. **Master Orchestration Script** - Production Ready
-   - `scripts/99_process_all.py` - single reusable script
-   - Handles Cache → TSV → Maps pipeline
-   - Intelligent caching and parallel processing
-
-### ⏳ IMMEDIATE NEXT TASK:
-**Process all 76 IPUMS NHGIS files and generate maps**
+**CPF Hooks Status**: ✅ ACTIVE (.claude/hooks/, .claude/settings.local.json)
 
 ---
 
-## 🚀 QUICK START FOR NEXT SESSION
+## ✅ COMPLETED PHASES
 
-```bash
-# 1. Check git status
-git status
-git log --oneline -5
+### Phase 0: Setup ✅
+- Script: `scripts/00_setup_environment.py`
+- Status: Complete, tested, all directories created
+- Commit: Early phase commits
 
-# 2. Verify EPA AQS data is still intact
-find data/processed/01_AIR_ATMOSPHERE -name "*.tsv" | wc -l   # Should be 243
-find data/processed/01_AIR_ATMOSPHERE -name "*.png" | wc -l   # Should be 243
+### Phase 1: Metadata Download ✅
+- Script: `scripts/01_download_metadata.py`
+- Status: Complete, 3,234 counties with boundaries
+- Data: `data/metadata/fips_codes_master.csv`, `county_boundaries_2020.gpkg`
+- Commit: Early phase commits
 
-# 3. Process all 76 IPUMS NHGIS files
-python scripts/99_process_all.py --sources ipums_nhgis
+### Phase 2: Source Registry Builder ✅
+- Script: `scripts/02_build_source_registry.py` (520 lines)
+- Status: Complete, tested, operational
+- Input: 62 markdown files from companion repo
+- Output: `config/sources_registry.json` (104 sources, 8 categories)
+- Output: `config/variable_catalog.json` (placeholder)
+- Commit: `2226882` - "ADD: Script 02 - Source Registry Builder (104 Sources Extracted)"
 
-# 4. Check results  
-find data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS -name "*.tsv" | wc -l   # Expect ~760
-find data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS -name "*.png" | wc -l   # Expect ~760
+### Phase 3: Script 03 Registry Integration ✅
+- Script: `scripts/03_download_source.py` enhanced
+- Features Added:
+  - Registry integration (loads from sources_registry.json)
+  - `--category` flag (download all sources in category)
+  - `--all` flag (download all sources in priority order)
+  - Dynamic downloader instantiation
+  - Backward compatible (short names + registry IDs)
+- Testing:
+  - ✅ `--source epa_aqs` works (backward compat)
+  - ✅ `--category 01_AIR_ATMOSPHERE` works (14 sources, filtered to 1)
+  - ✅ `--all` works (104 sources, filtered to 1)
+- Commit: `1a71c04` - "ADD: Phase 3 - Script 03 Registry Integration"
+- Commit: `1c36a08` - "FIX: Add clarifying note about ipums_nhgis"
 
-# 5. See VERIFICATION_REPORT.md for complete details
+### Phase 4-5: Data Collection ✅
+- **EPA AQS**: 243 TSV files + 243 maps (6 pollutants, 1980-2024)
+- **IPUMS NHGIS**: 58,243 TSV files + 51,464 maps (demographics/social, 1790-2023)
+- **Total**: 58,486 TSV files + 51,707 maps = 110,193 files (~34 GB)
+- Scripts: `scripts/04_process_cached_data.py`, `scripts/05_generate_maps.py`
+- Commit: `1efd4f5` - "COMPLETE: Phase 1 - Two Priority Data Sources Operational"
+
+### Supporting Scripts ✅
+- `scripts/03b_download_nhgis_batch.py` - NHGIS batch processing
+- `scripts/99_process_all.py` - Master orchestration script
+- `scripts/test_ipums_*.py` - Testing/debugging scripts
+
+---
+
+## 📊 CURRENT STATUS
+
+### Data Sources Operational
+1. **EPA AQS** (Air Quality) - ✅ COMPLETE
+   - Category: `01_AIR_ATMOSPHERE`
+   - Variables: 6 (PM2.5, PM10, O3, NO2, SO2, CO)
+   - Years: 1980-2024 (243 files)
+   - Registry ID: `01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB`
+   - Short name: `epa_aqs`
+
+2. **IPUMS NHGIS** (Demographics/Social) - ✅ COMPLETE
+   - Category: `02_DEMOGRAPHICS_SOCIAL` (not in registry)
+   - Variables: 58,243 (census/ACS data)
+   - Years: 1790-2023 (58,243 files)
+   - Registry ID: Not in registry (from IPUMS API directly)
+   - Short name: `ipums_nhgis`
+
+### Registry Statistics
+- **Total Sources**: 104 (from companion repo)
+- **Categories**: 8
+  - 01_AIR_ATMOSPHERE (14 sources)
+  - 02_WATER (8 sources)
+  - 04_TOXIC_CHEMICALS
+  - 05_RADIATION
+  - 07_BUILT_ENVIRONMENT
+  - 09_OCCUPATIONAL
+  - 11_INFECTIOUS_DISEASE
+  - 19_ECONOMIC_INDICATORS
+- **Currently Downloadable**: 1 (EPA AQS only)
+- **Blocked/Restricted**: 5
+- **Awaiting Implementation**: 98
+
+---
+
+## 🎯 NEXT TASK: Implement Priority 2 Source
+
+Per `sources_registry.json` and IMPLEMENTATION_PLAN.md, the next priority is:
+
+**Priority 2: CDC Environmental Health Tracking Network - Radon Testing**
+- Source ID: `05_CDC_ENVIRONMENTAL_HEALTH_TRACK`
+- Category: `05_RADIATION`
+- Status: `operational`
+- Priority: 2 (only priority 2 source in entire registry)
+
+### Implementation Steps
+
+1. **Research Phase**
+   - Read documentation: Find markdown file in companion repo
+   - Understand CDC EPHT API
+   - Document access method, authentication, endpoints
+   - Identify all variables available
+   - Determine temporal coverage
+
+2. **Implementation Phase**
+   - Create `src/downloaders/python/cdc_epht_downloader.py`
+   - Inherit from `BaseDownloader`
+   - Implement API calls with retry logic
+   - Implement caching
+   - Test with sample download
+
+3. **Integration Phase**
+   - Add to `DOWNLOADER_REGISTRY` in Script 03
+   - Add to `SOURCE_ID_MAPPINGS` in Script 03
+   - Test: `python scripts/03_download_source.py --source cdc_epht`
+   - Test category: `python scripts/03_download_source.py --category 05_RADIATION`
+
+4. **Processing Phase**
+   - Run: `python scripts/04_process_cached_data.py`
+   - Generate TSV files in `data/processed/05_RADIATION/`
+   - Run: `python scripts/05_generate_maps.py --category 05_RADIATION`
+
+5. **Documentation Phase**
+   - Update README.md with new source
+   - Document any issues/blockers
+   - Git commit with proper CPF format
+   - Git push to GitHub
+
+---
+
+## 🔄 SYSTEMATIC WORKFLOW (ONE STEP AT A TIME)
+
+**CRITICAL**: Always follow this sequence:
+1. ✅ Read IMPLEMENTATION_PLAN.md for exact requirements
+2. ✅ ONE task at a time (no batching, no skipping)
+3. ✅ Implement → Test → Debug → Fix → Document → Commit → Push
+4. ✅ Verify everything works BEFORE moving to next step
+5. ✅ Follow CPF rules 1-22 for every operation
+6. ✅ Display checkpoint box before completing response
+7. ✅ Display next steps at end of response
+
+**NEVER**:
+- ❌ Ask "what should we do next?" (follow IMPLEMENTATION_PLAN.md)
+- ❌ Provide options (systematic implementation, not choices)
+- ❌ Skip testing before committing
+- ❌ Combine multiple tasks
+- ❌ Deviate from IMPLEMENTATION_PLAN.md filenames/structure
+- ❌ Ignore CPF rules
+
+---
+
+## 📁 KEY FILES
+
+### Must Read Before Work
+- `IMPLEMENTATION_PLAN.md` - Complete implementation plan (700 lines)
+- `CLAUDE.md` - CPF v4.7.1 rules (22 mandatory rules)
+- `README.md` - Project overview and quick start
+- `config/sources_registry.json` - 104 sources metadata
+
+### Scripts Status
 ```
+scripts/00_setup_environment.py          ✅ Complete
+scripts/01_download_metadata.py          ✅ Complete
+scripts/02_build_source_registry.py      ✅ Complete
+scripts/03_download_source.py            ✅ Complete (Phase 3 enhancements)
+scripts/03b_download_nhgis_batch.py      ✅ Complete (NHGIS batch)
+scripts/04_process_cached_data.py        ✅ Complete
+scripts/05_generate_maps.py              ✅ Complete
+scripts/99_process_all.py                ✅ Complete (orchestrator)
+scripts/06_validate_outputs.py           ⏳ Not yet needed
+scripts/07_update_data.py                ⏳ Not yet needed
+scripts/08_generate_report.py            ⏳ Not yet needed
+```
+
+### Downloader Status
+```
+src/downloaders/python/epa_aqs_downloader.py           ✅ Operational
+src/downloaders/python/ipums_nhgis_downloader.py       ✅ Operational
+src/downloaders/python/cdc_epht_downloader.py          ⏳ NEXT TO IMPLEMENT
+src/downloaders/python/cdc_mortality_downloader.py     ❌ Blocked (data access)
+```
+
+---
+
+## 🔗 GIT STATUS
+
+**Branch**: `phase1-core-framework`
+**Remote**: `https://github.com/davidlary/SocialEnvironmentalObservatoryData.git`
+**Last Commit**: `1c36a08` - "FIX: Add clarifying note about ipums_nhgis"
+**Status**: Clean (all changes committed, ready to push)
+**Unpushed Commits**: 2 (1a71c04, 1c36a08)
+
+**Action Required**: Push commits to GitHub before starting new work
+```bash
+git push origin phase1-core-framework
+```
+
+---
+
+## 📊 STATISTICS
+
+**Phase 0-3**: ✅ Complete (setup, metadata, registry, script enhancements)
+**Phase 4-5**: ✅ Complete for 2 sources (EPA AQS, IPUMS NHGIS)
+
+**Data Generated**:
+- TSV files: 58,486
+- Map files: 51,707
+- Total files: 110,193
+- Disk usage: ~34 GB
+
+**Next Priority**:
+- Priority 2 source (CDC Radon) - 1 source
+- Priority 3 sources - 26 sources available
+- Goal: 200+ sources from companion repo
 
 ---
 
@@ -58,24 +244,31 @@ find data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS -name "*.png" | wc -l   # Expec
 ```
 I'm continuing the US County-Level Observatory Data System project.
 
-Last session (2025-11-22):
-- ✅ EPA AQS complete (243 TSV + 243 maps verified)
-- ✅ IPUMS NHGIS processor fixed and tested
-- ✅ Master orchestration script created (scripts/99_process_all.py)
+Current status (2025-11-24):
+- ✅ Phase 0-3 complete (setup, metadata, registry, Script 03 enhancements)
+- ✅ 2 data sources operational (EPA AQS, IPUMS NHGIS)
+- ✅ 58,486 variables operational (110,193 files, ~34 GB)
+- ✅ Context-Preserving Framework v4.7.1 active (22 rules mandatory)
 
-Immediate next task:
-Process all 76 IPUMS NHGIS files to generate ~760 TSV files and maps.
+Next task per IMPLEMENTATION_PLAN.md:
+Implement Priority 2 source: CDC Environmental Health Tracking Network - Radon Testing
 
-Command to run:
-python scripts/99_process_all.py --sources ipums_nhgis
+Starting with research phase:
+1. Find documentation in companion repo
+2. Understand CDC EPHT API
+3. Document access method and variables
 
-Expected: ~15 minutes, ~760 files output to data/processed/02_DEMOGRAPHICS_SOCIAL/NHGIS/
+Following ONE_STEP_AT_A_TIME methodology.
+Following CPF v4.7.1 rules (checkpoint box + next steps mandatory).
+Adhering to IMPLEMENTATION_PLAN.md exactly.
 
-See NEXT_SESSION_PROMPT.md and VERIFICATION_REPORT.md for complete details.
+Starting now...
 ```
 
 ---
 
-**For Full Details**: See `VERIFICATION_REPORT.md`
-**Last Updated**: 2025-11-22
-**Status**: ✅ READY FOR IPUMS PROCESSING
+**Last Updated**: 2025-11-24 04:08 UTC
+**Context**: 75K tokens used (37.5%) - SAFE
+**Framework**: v4.7.1 ACTIVE (hooks verified)
+**Next**: Implement CDC EPHT Radon downloader (Priority 2)
+**Goal**: 200+ authoritative sources, systematically implemented, one at a time
