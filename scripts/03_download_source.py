@@ -72,7 +72,9 @@ DOWNLOADER_REGISTRY = {
 # Source ID mappings: registry source_id → short_name used in DOWNLOADER_REGISTRY
 SOURCE_ID_MAPPINGS = {
     "01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB": "epa_aqs",
-    "ipums_nhgis": "ipums_nhgis",  # Not yet in registry, keep for backward compatibility
+    "ipums_nhgis": "ipums_nhgis",  # Not yet in registry (from different source), backward compat
+    # NOTE: ipums_nhgis has 58,243 variables operational but not in sources_registry.json
+    # because it came from IPUMS directly, not from the companion repo used by Script 02
 }
 
 
