@@ -1,8 +1,8 @@
 # NEXT SESSION HANDOFF - US County-Level Observatory Data System
 
-**Date**: 2025-11-24 04:08 UTC
+**Date**: 2025-11-24 05:20 UTC
 **Branch**: `phase1-core-framework`
-**Latest Commit**: `1c36a08` - "FIX: Add clarifying note about ipums_nhgis in SOURCE_ID_MAPPINGS"
+**Latest Commit**: `2098477` - "RESEARCH: CDC EPHT Radon - Priority 2 Source Analysis Complete"
 **Framework**: Context-Preserving Framework v4.7.1 (22 rules MANDATORY)
 **Directory**: `~/Dropbox/Environments/Code/GetData/SocialEnvironmentalObservatoryData`
 
@@ -59,6 +59,23 @@
 - Commit: `1a71c04` - "ADD: Phase 3 - Script 03 Registry Integration"
 - Commit: `1c36a08` - "FIX: Add clarifying note about ipums_nhgis"
 
+### Phase 6: Priority 2 Source Research ✅
+- Source: **CDC Environmental Public Health Tracking Network - Radon Testing**
+- Status: ✅ RESEARCH COMPLETE
+- Files Created:
+  - `docs/CDC_EPHT_RADON_IMPLEMENTATION_NOTES.md` (425 lines)
+  - Updated `config/sources_registry.json` (CDC EPHT entry)
+- Research Findings:
+  - ✅ API endpoint: https://ephtracking.cdc.gov/apigateway/api/v1/getCoreHolder/479/{stateId}/{countyId}
+  - ✅ Measure ID: 479 (radon testing)
+  - ✅ Authentication: Free API key (email trackingsupport@cdc.gov)
+  - ✅ Coverage: 46 states + DC, county-level, 2013-2022
+  - ✅ Variables: 8 (test counts, mean/median radon, EPA/WHO exceedances)
+  - ✅ Data Quality: 11.9M tests from 21 states + 6 national labs
+  - ✅ Implementation Blockers: NONE (API key required)
+  - ✅ Status: "ready_for_implementation"
+- Commit: `2098477` - "RESEARCH: CDC EPHT Radon - Priority 2 Source Analysis Complete"
+
 ### Phase 4-5: Data Collection ✅
 - **EPA AQS**: 243 TSV files + 243 maps (6 pollutants, 1980-2024)
 - **IPUMS NHGIS**: 58,243 TSV files + 51,464 maps (demographics/social, 1790-2023)
@@ -107,41 +124,65 @@
 
 ---
 
-## 🎯 NEXT TASK: Implement Priority 2 Source
+## 🎯 NEXT TASK: Implement CDC EPHT Radon Downloader
 
-Per `sources_registry.json` and IMPLEMENTATION_PLAN.md, the next priority is:
+**Status**: Research complete ✅ → Ready for implementation
 
 **Priority 2: CDC Environmental Health Tracking Network - Radon Testing**
 - Source ID: `05_CDC_ENVIRONMENTAL_HEALTH_TRACK`
 - Category: `05_RADIATION`
-- Status: `operational`
+- Status: `ready_for_implementation` (updated from "operational")
 - Priority: 2 (only priority 2 source in entire registry)
+- Documentation: `docs/CDC_EPHT_RADON_IMPLEMENTATION_NOTES.md` (425 lines)
 
-### Implementation Steps
+### Implementation Steps (Remaining)
 
-1. **Research Phase**
-   - Read documentation: Find markdown file in companion repo
-   - Understand CDC EPHT API
-   - Document access method, authentication, endpoints
-   - Identify all variables available
-   - Determine temporal coverage
+1. **Research Phase** ✅ COMPLETE
+   - ✅ Documentation reviewed (RADON_OIL_GAS_ENERGY_COMPREHENSIVE.md)
+   - ✅ API structure understood (RESTful JSON API)
+   - ✅ Authentication documented (free API key via email)
+   - ✅ Endpoints documented (measure ID 479, getCoreHolder endpoint)
+   - ✅ Variables identified (8 variables documented)
+   - ✅ Temporal coverage determined (2013-2022)
+   - ✅ Implementation plan created (5 phases outlined)
 
-2. **Implementation Phase**
-   - Create `src/downloaders/python/cdc_epht_downloader.py`
-   - Inherit from `BaseDownloader`
-   - Implement API calls with retry logic
-   - Implement caching
-   - Test with sample download
+2. **API Key Acquisition** ⏳ BLOCKED
+   - Email: trackingsupport@cdc.gov
+   - Subject: "API Key Request for US County-Level Observatory Data System"
+   - Body: Brief project description, planned usage
+   - Expected: Free key within 1-2 business days
+   - Storage: Environment variable `CDC_EPHT_API_KEY`
 
-3. **Integration Phase**
+3. **Implementation Phase** ⏳ PENDING (after API key)
+   - Create `src/downloaders/python/cdc_epht_radon_downloader.py`
+   - Class: `CDCEPHTRadonDownloader(BaseDownloader)`
+   - Methods:
+     - `fetch_available_data()` - discover states/counties/years
+     - `download_state_year(state_fips, year)` - download data
+     - `process_data(raw_data)` - JSON → TSV
+     - `validate_data(df)` - quality checks
+   - Test with single state (Illinois FIPS 17, year 2021)
+
+4. **Integration Phase** ⏳ PENDING
    - Add to `DOWNLOADER_REGISTRY` in Script 03
-   - Add to `SOURCE_ID_MAPPINGS` in Script 03
-   - Test: `python scripts/03_download_source.py --source cdc_epht`
+   - Add to `SOURCE_ID_MAPPINGS` in Script 03:
+     - Short name: `cdc_epht_radon`
+     - Registry ID: `05_CDC_ENVIRONMENTAL_HEALTH_TRACK`
+   - Test: `python scripts/03_download_source.py --source cdc_epht_radon`
    - Test category: `python scripts/03_download_source.py --category 05_RADIATION`
 
-4. **Processing Phase**
+5. **Full Download Phase** ⏳ PENDING
+   - Download all 51 states (50 + DC)
+   - Years: 2013-2022 (10 years)
+   - Expected: ~10 TSV files (1 per year)
+   - Expected: ~8 variables per file
+   - Expected: ~3,000 counties with data (suppression where <10 tests)
+
+6. **Processing Phase** ⏳ PENDING
    - Run: `python scripts/04_process_cached_data.py`
-   - Generate TSV files in `data/processed/05_RADIATION/`
+   - Generate TSV files in `data/processed/05_RADIATION/CDC_EPHT_RADON/`
+   - Generate maps: `python scripts/05_generate_maps.py`
+   - Update registry: variable_count = 8
    - Run: `python scripts/05_generate_maps.py --category 05_RADIATION`
 
 5. **Documentation Phase**
