@@ -4,11 +4,19 @@ Download Data from a Specific Source.
 
 This is the MAIN DOWNLOADER script that orchestrates data acquisition.
 
-Usage:
-    # Download specific source
-    python scripts/03_download_source.py --source epa_aqs
+PHASE 3 ENHANCEMENTS (2025-11-24):
+- Registry integration: Loads sources from config/sources_registry.json
+- Category-based downloads: Download all sources in a category
+- All-source downloads: Download all sources in priority order
+- Dynamic downloader instantiation from registry
+- Backward compatible: Still accepts short names (epa_aqs) or full registry IDs
 
-    # Download specific category
+Usage:
+    # Download specific source (short name or registry ID)
+    python scripts/03_download_source.py --source epa_aqs
+    python scripts/03_download_source.py --source 01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB
+
+    # Download all sources in category
     python scripts/03_download_source.py --category 01_AIR_ATMOSPHERE
 
     # Download all sources (WARNING: takes days/weeks!)
@@ -19,6 +27,18 @@ Usage:
 
     # Force refresh (re-download even if cached)
     python scripts/03_download_source.py --source epa_aqs --force-refresh
+
+Registry Integration:
+    The script now loads source metadata from config/sources_registry.json:
+    - 104 sources across 8 categories
+    - Priority-based ordering (1=highest, 5=lowest)
+    - Automatic filtering of blocked/restricted/unimplemented sources
+    - Dynamic downloader class instantiation via SOURCE_ID_MAPPINGS
+
+Categories Available:
+    01_AIR_ATMOSPHERE, 02_WATER, 04_TOXIC_CHEMICALS, 05_RADIATION,
+    07_BUILT_ENVIRONMENT, 09_OCCUPATIONAL, 11_INFECTIOUS_DISEASE,
+    19_ECONOMIC_INDICATORS
 """
 
 import argparse
@@ -40,7 +60,7 @@ from downloaders.python.ipums_nhgis_downloader import IPUMSNHGISDownloader
 
 
 # ============================================================================
-# DOWNLOADER REGISTRY
+# DOWNLOADER REGISTRY (Manual mapping: short_name → class)
 # ============================================================================
 
 DOWNLOADER_REGISTRY = {
@@ -48,6 +68,115 @@ DOWNLOADER_REGISTRY = {
     "ipums_nhgis": IPUMSNHGISDownloader,
     # Add more downloaders here as implemented
 }
+
+# Source ID mappings: registry source_id → short_name used in DOWNLOADER_REGISTRY
+SOURCE_ID_MAPPINGS = {
+    "01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB": "epa_aqs",
+    "ipums_nhgis": "ipums_nhgis",  # Not yet in registry, keep for backward compatibility
+}
+
+
+# ============================================================================
+# REGISTRY LOADING FUNCTIONS
+# ============================================================================
+
+
+def load_sources_registry() -> dict:
+    """
+    Load sources from the registry JSON file.
+
+    Returns:
+        Dictionary with 'sources' key containing list of source records
+    """
+    logger = get_logger()
+    registry_path = CONFIG_DIR / "sources_registry.json"
+
+    if not registry_path.exists():
+        logger.error(f"Registry not found: {registry_path}")
+        return {"sources": []}
+
+    try:
+        registry = read_json_file(registry_path)
+        logger.debug(f"Loaded {len(registry['sources'])} sources from registry")
+        return registry
+    except Exception as e:
+        logger.error(f"Failed to load registry: {e}")
+        return {"sources": []}
+
+
+def get_sources_by_category(category: str) -> List[dict]:
+    """
+    Get all sources in a specific category.
+
+    Args:
+        category: Category ID (e.g., "01_AIR_ATMOSPHERE")
+
+    Returns:
+        List of source records matching the category
+    """
+    logger = get_logger()
+    registry = load_sources_registry()
+    sources = [s for s in registry["sources"] if s["category"] == category]
+    logger.info(f"Found {len(sources)} sources in category {category}")
+    return sources
+
+
+def get_all_sources_by_priority() -> List[dict]:
+    """
+    Get all sources sorted by priority (1 = highest priority).
+
+    Returns:
+        List of source records sorted by priority
+    """
+    logger = get_logger()
+    registry = load_sources_registry()
+    sources = sorted(registry["sources"], key=lambda s: s.get("priority", 99))
+    logger.info(f"Loaded {len(sources)} sources sorted by priority")
+    return sources
+
+
+def filter_downloadable_sources(sources: List[dict]) -> List[dict]:
+    """
+    Filter sources to only those that are downloadable.
+
+    Excludes:
+    - Sources with status == "blocked" or "restricted"
+    - Sources with no downloader class mapping
+
+    Args:
+        sources: List of source records
+
+    Returns:
+        Filtered list of downloadable sources
+    """
+    logger = get_logger()
+    downloadable = []
+
+    for source in sources:
+        source_id = source["source_id"]
+        status = source.get("status", "unknown")
+
+        # Skip blocked/restricted sources
+        if status in ["blocked", "restricted"]:
+            logger.debug(f"Skipping {source_id}: status={status}")
+            continue
+
+        # Check if we have a downloader for this source
+        short_name = SOURCE_ID_MAPPINGS.get(source_id)
+        if not short_name or short_name not in DOWNLOADER_REGISTRY:
+            logger.debug(
+                f"Skipping {source_id}: no downloader class "
+                f"(short_name={short_name})"
+            )
+            continue
+
+        downloadable.append(source)
+
+    logger.info(
+        f"Filtered to {len(downloadable)} downloadable sources "
+        f"(from {len(sources)} total)"
+    )
+    return downloadable
 
 
 # ============================================================================
@@ -65,7 +194,9 @@ def download_source(
     Download data from a specific source.
 
     Args:
-        source_id: Source identifier (e.g., "epa_aqs")
+        source_id: Source identifier - can be:
+                   - Short name (e.g., "epa_aqs") for backward compatibility
+                   - Full registry ID (e.g., "01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB")
         variables: Specific variables to download (None = all)
         years: Specific years to download (None = all)
         force_refresh: Force re-download even if cached
@@ -78,17 +209,20 @@ def download_source(
     logger.info(f"DOWNLOADING SOURCE: {source_id}")
     logger.info("=" * 70)
 
+    # Convert registry source_id to short name if needed
+    short_name = SOURCE_ID_MAPPINGS.get(source_id, source_id)
+
     # Check if downloader exists
-    if source_id not in DOWNLOADER_REGISTRY:
+    if short_name not in DOWNLOADER_REGISTRY:
         logger.error(
-            f"Unknown source: {source_id}. "
+            f"Unknown source: {source_id} (short_name: {short_name}). "
             f"Available: {list(DOWNLOADER_REGISTRY.keys())}"
         )
         return False
 
     try:
         # Initialize downloader
-        downloader_class = DOWNLOADER_REGISTRY[source_id]
+        downloader_class = DOWNLOADER_REGISTRY[short_name]
         downloader = downloader_class()
 
         # Get variables to download
@@ -249,17 +383,73 @@ Examples:
     try:
         # Determine which sources to download
         if args.source:
+            # Single source (backward compatible: accepts short names or registry IDs)
             sources = [args.source]
+            logger.info(f"Downloading single source: {args.source}")
+
         elif args.category:
-            # TODO: Implement category-based source lookup
-            logger.error("Category-based download not yet implemented")
-            logger.info("Please use --source instead")
-            sys.exit(1)
+            # All sources in category
+            logger.info(f"Loading sources from category: {args.category}")
+            category_sources = get_sources_by_category(args.category)
+
+            if not category_sources:
+                logger.error(f"No sources found in category: {args.category}")
+                logger.info("Available categories:")
+                registry = load_sources_registry()
+                categories = sorted(set(s["category"] for s in registry["sources"]))
+                for cat in categories:
+                    logger.info(f"  - {cat}")
+                sys.exit(1)
+
+            # Filter to downloadable sources
+            downloadable = filter_downloadable_sources(category_sources)
+
+            if not downloadable:
+                logger.warning(
+                    f"No downloadable sources in category {args.category} "
+                    f"({len(category_sources)} total, but no downloaders implemented)"
+                )
+                sys.exit(0)
+
+            # Extract source IDs
+            sources = [s["source_id"] for s in downloadable]
+            logger.info(
+                f"Will download {len(sources)} sources from category {args.category}:"
+            )
+            for s in downloadable:
+                logger.info(
+                    f"  - {s['source_id']} (priority {s.get('priority', '?')})"
+                )
+
         elif args.all:
-            # TODO: Implement all-sources download
-            logger.error("All-sources download not yet implemented")
-            logger.info("Please use --source instead")
-            sys.exit(1)
+            # All sources in priority order
+            logger.info("Loading ALL sources from registry...")
+            all_sources = get_all_sources_by_priority()
+
+            # Filter to downloadable sources
+            downloadable = filter_downloadable_sources(all_sources)
+
+            if not downloadable:
+                logger.warning(
+                    f"No downloadable sources found "
+                    f"({len(all_sources)} total, but no downloaders implemented)"
+                )
+                sys.exit(0)
+
+            # Extract source IDs
+            sources = [s["source_id"] for s in downloadable]
+            logger.info(f"Will download {len(sources)} sources (priority order):")
+            for s in downloadable:
+                logger.info(
+                    f"  - {s['source_id']} "
+                    f"(priority {s.get('priority', '?')}, category {s['category']})"
+                )
+
+            logger.warning("")
+            logger.warning("⚠️  WARNING: Downloading ALL sources may take days/weeks!")
+            logger.warning("⚠️  Consider using --category instead for targeted downloads")
+            logger.warning("")
+
         else:
             logger.error("No source, category, or --all specified")
             sys.exit(1)
