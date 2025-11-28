@@ -57,6 +57,7 @@ from utils.file_utils import read_json_file
 # Import downloaders
 from downloaders.python.epa_aqs_downloader import EPAAQSDownloader
 from downloaders.python.ipums_nhgis_downloader import IPUMSNHGISDownloader
+from downloaders.python.cdc_epht_radon_downloader import CDCEPHTRadonDownloader
 
 
 # ============================================================================
@@ -66,12 +67,14 @@ from downloaders.python.ipums_nhgis_downloader import IPUMSNHGISDownloader
 DOWNLOADER_REGISTRY = {
     "epa_aqs": EPAAQSDownloader,
     "ipums_nhgis": IPUMSNHGISDownloader,
+    "cdc_epht_radon": CDCEPHTRadonDownloader,
     # Add more downloaders here as implemented
 }
 
 # Source ID mappings: registry source_id → short_name used in DOWNLOADER_REGISTRY
 SOURCE_ID_MAPPINGS = {
     "01_EPA_AQS_AIR_QUALITY_SYSTEM_AMB": "epa_aqs",
+    "05_CDC_ENVIRONMENTAL_HEALTH_TRACK": "cdc_epht_radon",
     "ipums_nhgis": "ipums_nhgis",  # Not yet in registry (from different source), backward compat
     # NOTE: ipums_nhgis has 58,243 variables operational but not in sources_registry.json
     # because it came from IPUMS directly, not from the companion repo used by Script 02
