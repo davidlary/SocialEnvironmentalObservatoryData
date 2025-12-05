@@ -20,6 +20,7 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+import polars as pl
 from core.logger import setup_logging
 from downloaders.python.csn_downloader import CSNDownloader, CSN_PARAMETERS
 from utils.file_utils import read_csv
@@ -140,10 +141,11 @@ except Exception as e:
 # Test 6: Verify FIPS codes
 print("\n[TEST 6] Verifying FIPS codes...")
 try:
-    # Check FIPS format (should be 5-digit strings)
+    # Check FIPS format (should be 5-digit strings or integers)
     fips_codes = df["FIPS"].unique().to_list()
 
-    invalid_fips = [fips for fips in fips_codes if len(fips) != 5 or not fips.isdigit()]
+    # Convert to strings for validation
+    invalid_fips = [fips for fips in fips_codes if len(str(fips).zfill(5)) != 5 or not str(fips).zfill(5).isdigit()]
 
     if invalid_fips:
         print(f"❌ Found {len(invalid_fips)} invalid FIPS codes:")
@@ -153,11 +155,16 @@ try:
 
     print(f"✅ All {len(fips_codes)} FIPS codes are valid (5-digit format)")
 
-    # Check State_FIPS + County_FIPS = FIPS
-    fips_check = (df["State_FIPS"] + df["County_FIPS"]) == df["FIPS"]
+    # Check State_FIPS + County_FIPS = FIPS (with proper zero-padding)
+    fips_constructed = df["State_FIPS"].cast(pl.Utf8).str.zfill(2) + df["County_FIPS"].cast(pl.Utf8).str.zfill(3)
+    fips_original = df["FIPS"].cast(pl.Utf8).str.zfill(5)
+    fips_check = fips_constructed == fips_original
 
     if not fips_check.all():
         print(f"❌ FIPS code construction error detected")
+        mismatches = df.filter(~fips_check)
+        print(f"   Mismatches (first 5):")
+        print(mismatches.select(["FIPS", "State_FIPS", "County_FIPS"]).head(5))
         sys.exit(1)
 
     print("✅ FIPS code construction verified (State_FIPS + County_FIPS = FIPS)")
