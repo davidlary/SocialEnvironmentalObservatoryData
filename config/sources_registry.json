@@ -160,31 +160,31 @@
         "coverage_description": "Major urban areas (aggregable to county)"
       },
       "temporal_coverage": {
-        "start_year": 2000,
-        "end_year": 2025,
+        "start_year": 2007,
+        "end_year": 2024,
         "frequency": "daily",
-        "update_schedule": "",
-        "last_updated": ""
+        "update_schedule": "annual",
+        "last_updated": "2025-12-04"
       },
       "access_method": {
-        "type": "unknown",
-        "url": "",
+        "type": "ftp",
+        "url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html#Speciation",
         "api_endpoint": "",
-        "authentication": "unknown",
+        "authentication": "none",
         "format": "csv"
       },
       "documentation": {
-        "file_path": "01_AIR_ATMOSPHERE/ATMOSPHERIC_EMISSIONS_CHEMISTRY_COMPREHENSIVE.md",
+        "file_path": "docs/CSN_IMPLEMENTATION_NOTES.md",
         "source_section": "Source: Chemical Speciation Network (CSN)",
-        "notes": ""
+        "notes": "18 variables x 18 years (2007-2024)"
       },
       "implementation": {
-        "downloader_class": null,
-        "implemented": false,
+        "downloader_class": "CSNDownloader",
+        "implemented": true,
         "script": "scripts/03_download_source.py",
-        "test_status": "not_tested"
+        "test_status": "passed"
       },
-      "variable_count": 0
+      "variable_count": 97
     },
     {
       "source_id": "05_EIA_COAL_PRODUCTION_BY_COUNTY",
